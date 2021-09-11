@@ -3,7 +3,7 @@ THIS_DIR=$(cd $(dirname $0); pwd)
 Version=`lsb_release -rs | cut -f1 -d"."`
 install() {
 echo -e "\033[0;36m"
-echo -e "~ Welcome To Source DevTwix - اهلا بك في سورس بروك ~"
+echo -e "~ Welcome To Source DevTwix - اهلا بك في سورس ديف تويكس ~"
 echo -e "     ~ { Setting Up Offices - جاري رفع المكاتب } ~"
 echo -e "\033[0m"
 sudo apt-get update -y
@@ -18,7 +18,7 @@ sudo apt-get install libreadline-dev -y libconfig-dev -y libssl-dev -y lua5.2 -y
 if [ "$Version" == "18" ]; then
 echo -e "\033[0;31m\n~ Installing Depedencies For Ubuntu 18... \n\033[0m"
 cd /lib/x86_64-linux-gnu/ && sudo ln -s libreadline.so.7.0 libreadline.so.6
-wget "apiabs.ml/installubuntu18/compat-libevent2-5_2.0.21-1ubuntu18_amd64.deb" && sudo dpkg -i compat-libevent2-5_2.0.21-1ubuntu18_amd64.deb
+wget "apiHmD.ml/installubuntu18/compat-libevent2-5_2.0.21-1ubuntu18_amd64.deb" && sudo dpkg -i compat-libevent2-5_2.0.21-1ubuntu18_amd64.deb
 rm compat-libevent2-5_2.0.21-1ubuntu18_amd64.deb
 fi
 sudo apt-get install screen -y
@@ -43,16 +43,16 @@ sudo luarocks install luautf8
 cd .. ;sudo rm -rf luarocks*
 sudo timedatectl set-timezone Asia/Baghdad
 echo -e "\033[0;36m"
-echo -e "--------------------------------------------------------"                                       
-echo -e "____             _____          ___  __           |"
-echo -e "|  _ \  _____   _|_   _|_      _(_) \/ /        |"
-echo -e "| | | |/ _ \ \ / / | | \ \ /\ / / |\  /             |"
-echo -e "| |_| |  __/\ V /  | |  \ V  V /| |/  \           |"
-echo -e "|____/ \___| \_/   |_|   \_/\_/ |_/_/\_\   |"
-echo -e "|--------------------------------------------------------|"
-echo -e "| This Source Was Developed By (HmD) @DevTwixTeAm.|"
-echo -e "|   This Is The Source Channel @DQQQP .     |"
-echo -e "|                - DevTwix -                  |"
+echo -e "---------------------------------------------"
+echo -e "|    ____             ____                  |"
+echo -e "|   |  _ \  _____   _|  _ \ _ __ _____  __  |"
+echo -e "|   | | | |/ _ \ \ / / |_) | '__/ _ \ \/ /  |"
+echo -e "|   | |_| |  __/\ V /|  __/| | | (_) >  <   |"
+echo -e "|   |____/ \___| \_/ |_|   |_|  \___/_/\_\  |"
+echo -e "|-------------------------------------------|"
+echo -e "|This Source Was Developed By (HmD) @VLVLVI .|"
+echo -e "|  This Is The Source Channel @DevTwix .   |"
+echo -e "|               - DevTwix -                 |"
 echo -e "---------------------------------------------"
 echo -e "\033[0m"
 cd $THIS_DIR && sudo chmod +x tg
