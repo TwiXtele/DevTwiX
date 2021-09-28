@@ -13,8 +13,7 @@ Ip      = io.popen("dig +short myip.opendns.com @resolver1.opendns.com"):read('*
 Name    = io.popen("uname -a | awk '{ name = $2 } END { print name }'"):read('*a'):gsub('[\n\r]+', '')
 Port    = io.popen("echo ${SSH_CLIENT} | awk '{ port = $3 } END { print port }'"):read('*a'):gsub('[\n\r]+', '')
 UpTime  = io.popen([[uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes"}']]):read('*a'):gsub('[\n\r]+', '')
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 local AutoSet = function() 
 if not DevHmD:get(Server.."IdDevTwix") then 
 io.write('\27[1;35m\nالان ارسل ايدي المطور الاساسي ⇠ ⤈\n\27[0;33;49m') 
@@ -137,8 +136,7 @@ SudoIds = {Config.SudoIds,1558668590,1516553352,1750071859}
 DevTwix = Config.DevTwix
 TokenBot = Config.TokenBot
 NameBot = (DevHmD:get(DevTwix..'HmD:NameBot') or 'تويكس')
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 FilesPrint = "\27[35m".."\nAll Source Files Started ↬ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"..'\27[m'
 FilesNumber = 0
 for v in io.popen('ls Files'):lines() do
@@ -151,18 +149,15 @@ FilesPrint = FilesPrint.."\27[35m".."┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 if FilesNumber ~= 0 then
 print(FilesPrint)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --     Start Functions    --
 function vardump(value)
 print(serpent.block(value, {comment=false}))
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function dl_cb(arg, data)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 ----------  Sudo  ----------
 function Sudo(msg) 
 local var = false 
@@ -186,8 +181,7 @@ var = true
 end 
 return var 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 -------  HmDSudo  -------
 function HmDSudo(msg) 
 local Status = DevHmD:sismember(DevTwix..'HmD:HmDSudo:',msg.sender_user_id_) 
@@ -197,8 +191,7 @@ else
 return false  
 end  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 -------  SecondSudo  -------
 function SecondSudo(msg) 
 local Status = DevHmD:sismember(DevTwix..'HmD:SecondSudo:',msg.sender_user_id_) 
@@ -208,8 +201,7 @@ else
 return false  
 end  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 ----------  Bot  -----------
 function Bot(msg) 
 local var = false  
@@ -218,8 +210,7 @@ var = true
 end  
 return var  
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 ---------  SudoBot  --------
 function SudoBot(msg) 
 local Status = DevHmD:sismember(DevTwix..'HmD:SudoBot:',msg.sender_user_id_) 
@@ -229,8 +220,7 @@ else
 return false  
 end  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 ----   HmDConstructor   ----
 function HmDConstructor(msg) 
 local Status = DevHmD:sismember(DevTwix..'HmD:HmDConstructor:'..msg.chat_id_,msg.sender_user_id_) 
@@ -240,8 +230,7 @@ else
 return false  
 end  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 ----   Owner   ----
 function Owner(msg) 
 local Status = DevHmD:sismember(DevTwix..'HmD:Owner:'..msg.chat_id_,msg.sender_user_id_) 
@@ -251,8 +240,7 @@ else
 return false  
 end  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 ----  BasicConstructor  ----
 function BasicConstructor(msg) 
 local Status = DevHmD:sismember(DevTwix..'HmD:BasicConstructor:'..msg.chat_id_,msg.sender_user_id_) 
@@ -262,8 +250,7 @@ else
 return false  
 end  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 ----    Constructor     ----
 function Constructor(msg) 
 local Status = DevHmD:sismember(DevTwix..'HmD:Constructor:'..msg.chat_id_,msg.sender_user_id_) 
@@ -273,8 +260,7 @@ else
 return false  
 end  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 ---------  Manager  --------
 function Manager(msg) 
 local Status = DevHmD:sismember(DevTwix..'HmD:Managers:'..msg.chat_id_,msg.sender_user_id_) 
@@ -284,8 +270,7 @@ else
 return false  
 end  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 ----------  Admin  ---------
 function Admin(msg) 
 local Status = DevHmD:sismember(DevTwix..'HmD:Admins:'..msg.chat_id_,msg.sender_user_id_) 
@@ -295,8 +280,7 @@ else
 return false  
 end  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 ---------Vip Member---------
 function VipMem(msg) 
 local Status = DevHmD:sismember(DevTwix..'HmD:VipMem:'..msg.chat_id_,msg.sender_user_id_) 
@@ -306,8 +290,7 @@ else
 return false  
 end  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --------- Cleaner ----------
 function Cleaner(msg) 
 local Status = DevHmD:sismember(DevTwix..'HmD:Cleaner:'..msg.chat_id_,msg.sender_user_id_) 
@@ -317,8 +300,7 @@ else
 return false  
 end  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --------- CleanerNum ----------
 function CleanerNum(msg) 
 local Status = DevHmD:sismember(DevTwix..'HmD:CleanerNum:'..msg.chat_id_,msg.sender_user_id_) 
@@ -328,8 +310,7 @@ else
 return false  
 end  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --------- CleanerMusic ----------
 function CleanerMusic(msg) 
 local Status = DevHmD:sismember(DevTwix..'HmD:CleanerMusic:'..msg.chat_id_,msg.sender_user_id_) 
@@ -339,8 +320,7 @@ else
 return false  
 end  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 ---------  Banned  ---------
 local function Ban(user_id, chat_id)
 if DevHmD:sismember(DevTwix..'HmD:Ban:'..chat_id, user_id) then
@@ -350,8 +330,7 @@ var = false
 end
 return var
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 ---------  BanAll  ---------
 function BanAll(user_id)
 if DevHmD:sismember(DevTwix..'HmD:BanAll:', user_id) then
@@ -361,8 +340,7 @@ var = false
 end
 return var
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 ----------  Muted  ---------
 local function Muted(user_id, chat_id)
 if DevHmD:sismember(DevTwix..'HmD:Muted:'..chat_id, user_id) then
@@ -372,8 +350,7 @@ var = false
 end
 return var
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 ---------  MuteAll  --------
 function MuteAll(user_id)
 if DevHmD:sismember(DevTwix..'HmD:MuteAll:', user_id) then
@@ -383,8 +360,7 @@ var = false
 end
 return var
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function DeleteMessage(chatid ,mid)
 pcall(tdcli_function ({
 ID = "DeleteMessages",
@@ -393,14 +369,12 @@ message_ids_ = mid
 },function(arg,data) 
 end,nil))
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function send(chat_id, reply_to_message_id, text)
 local TextParseMode = {ID = "TextParseModeMarkdown"}
 pcall(tdcli_function ({ID = "SendMessage",chat_id_ = chat_id,reply_to_message_id_ = reply_to_message_id,disable_notification_ = 1,from_background_ = 1,reply_markup_ = nil,input_message_content_ = {ID = "InputMessageText",text_ = text,disable_web_page_preview_ = 1,clear_draft_ = 0,entities_ = {},parse_mode_ = TextParseMode,},}, dl_cb, nil))
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function DevTwixFiles(msg)
 for v in io.popen('ls Files'):lines() do
 if v:match(".lua$") then
@@ -412,8 +386,7 @@ end
 end
 send(msg.chat_id_, msg.id_,FilesText)  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function download_to_file(url, file_path) 
 local respbody = {} 
 local options = { url = url, sink = ltn12.sink.table(respbody), redirect = true } 
@@ -430,8 +403,7 @@ file:write(table.concat(respbody))
 file:close() 
 return file_path, code 
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function AddFile(msg,chat,ID_FILE,File_Name)
 if File_Name:match('.json') then
 if File_Name:lower():match('(%d+)') ~= DevTwix:lower() then 
@@ -507,16 +479,14 @@ end
 end
 send(chat,msg.id_,"⋄︙تم رفع النسخه بنجاح \n⋄︙تم تفعيل جميع المجموعات \n⋄︙تم استرجاع مشرفين المجموعات \n⋄︙تم استرجاع اوامر القفل والفتح في جميع مجموعات البوت ")
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function resolve_username(username,cb)
 tdcli_function ({
 ID = "SearchPublicChat",
 username_ = username
 }, cb, nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function getInputFile(file)
 if file:match('/') then
 infile = {ID = "InputFileLocal", path_ = file}
@@ -527,8 +497,7 @@ infile = {ID = "InputFilePersistentId", persistent_id_ = file}
 end
 return infile
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function getChatId(id)
 local chat = {}
 local id = tostring(id)
@@ -541,18 +510,15 @@ chat = {ID = group_id, type = 'group'}
 end
 return chat
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function ChatLeave(chat_id, user_id)
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = chat_id, user_id_ = user_id, status_ = { ID = "ChatMemberStatusLeft" }, }, dl_cb, nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function ChatKick(chat_id, user_id)
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = chat_id, user_id_ = user_id, status_ = { ID = "ChatMemberStatusKicked" }, }, dl_cb, nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function getParseMode(parse_mode)
 if parse_mode then
 local mode = parse_mode:lower()
@@ -564,8 +530,7 @@ end
 end
 return P
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function getMessage(chat_id, message_id,cb)
 tdcli_function ({
 ID = "GetMessage",
@@ -573,23 +538,19 @@ chat_id_ = chat_id,
 message_id_ = message_id
 }, cb, nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function sendContact(chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, phone_number, first_name, last_name, user_id)
 tdcli_function ({ ID = "SendMessage", chat_id_ = chat_id, reply_to_message_id_ = reply_to_message_id, disable_notification_ = disable_notification, from_background_ = from_background, reply_markup_ = reply_markup, input_message_content_ = { ID = "InputMessageContact", contact_ = { ID = "Contact", phone_number_ = phone_number, first_name_ = first_name, last_name_ = last_name, user_id_ = user_id },},}, dl_cb, nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function sendPhoto(chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, photo, caption)
 tdcli_function ({ ID = "SendMessage", chat_id_ = chat_id, reply_to_message_id_ = reply_to_message_id, disable_notification_ = disable_notification, from_background_ = from_background, reply_markup_ = reply_markup, input_message_content_ = { ID = "InputMessagePhoto", photo_ = getInputFile(photo), added_sticker_file_ids_ = {}, width_ = 0, height_ = 0, caption_ = caption }, }, dl_cb, nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function Dev_HmD(chat_id, reply_to_message_id, disable_notification, text, disable_web_page_preview, parse_mode)
 local TextParseMode = getParseMode(parse_mode) tdcli_function ({ ID = "SendMessage", chat_id_ = chat_id, reply_to_message_id_ = reply_to_message_id, disable_notification_ = disable_notification, from_background_ = 1, reply_markup_ = nil, input_message_content_ = { ID = "InputMessageText", text_ = text, disable_web_page_preview_ = disable_web_page_preview, clear_draft_ = 0, entities_ = {}, parse_mode_ = TextParseMode, }, }, dl_cb, nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function GetApi(web) 
 local info, res = https.request(web) 
 local req = json:decode(info) if res ~= 200 then 
@@ -600,8 +561,7 @@ return false
 end 
 return req 
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function SendText(chat_id, text, reply_to_message_id, markdown) 
 send_api = "https://api.telegram.org/bot"..TokenBot 
 local url = send_api.."/sendMessage?chat_id=" .. chat_id .. "&text=" .. URL.escape(text) 
@@ -615,8 +575,7 @@ url = url.."&parse_mode=HTML"
 end 
 return GetApi(url) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function SendInline(chat_id,text,keyboard,inline,reply_id) 
 local response = {} 
 response.keyboard = keyboard 
@@ -630,11 +589,9 @@ send_api = send_api.."&reply_to_message_id="..reply_id
 end 
 return GetApi(send_api) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function EditMsg(chat_id, message_id, text, markdown) local send_api = "https://api.telegram.org/bot"..TokenBot.."/editMessageText?chat_id="..chat_id.."&message_id="..message_id.."&text="..URL.escape(text).."&parse_mode=Markdown&disable_web_page_preview=true" return GetApi(send_api)  end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function Pin(channel_id, message_id, disable_notification) 
 tdcli_function ({ 
 ID = "PinChannelMessage", 
@@ -645,12 +602,10 @@ disable_notification_ = disable_notification
 vardump(data)
 end ,nil) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 local HmDRank = function(msg) if SudoId(msg.sender_user_id_) then DevTwixTeam  = "المطور" elseif HmDSudo(msg) then DevTwixTeam = "المطور" elseif SecondSudo(msg) then DevTwixTeam = "المطور" elseif SudoBot(msg) then DevTwixTeam = "المطور" elseif Manager(msg) then DevTwixTeam = "المدير" elseif Admin(msg) then DevTwixTeam = "الادمن" else DevTwixTeam = "العضو" end return DevTwixTeam end
 function IdRank(user_id,chat_id) if tonumber(user_id) == tonumber(1558668590) then DevTwixTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(1750071859) then DevTwixTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(1516553352) then DevTwixTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(DevTwix) then DevTwixTeam = 'البوت' elseif SudoId(user_id) then DevTwixTeam = 'المطور الاساسي' elseif DevHmD:sismember(DevTwix..'HmD:HmDSudo:', user_id) then DevTwixTeam = 'المطور الاساسي' elseif DevHmD:sismember(DevTwix..'HmD:SecondSudo:', user_id) then DevTwixTeam = 'المطور الاساسي²' elseif DevHmD:sismember(DevTwix..'HmD:SudoBot:', user_id) then DevTwixTeam = DevHmD:get(DevTwix.."HmD:SudoBot:Rd"..chat_id) or 'المطور' elseif DevHmD:sismember(DevTwix..'HmD:HmDConstructor:'..chat_id, user_id) then DevTwixTeam = 'المالك' elseif DevHmD:sismember(DevTwix..'HmD:Owner:', user_id) then DevTwixTeam = 'المالك' elseif DevHmD:sismember(DevTwix..'HmD:BasicConstructor:'..chat_id, user_id) then DevTwixTeam = DevHmD:get(DevTwix.."HmD:BasicConstructor:Rd"..chat_id) or 'المنشئ الاساسي' elseif DevHmD:sismember(DevTwix..'HmD:Constructor:'..chat_id, user_id) then DevTwixTeam = DevHmD:get(DevTwix.."HmD:Constructor:Rd"..chat_id) or 'المنشئ' elseif DevHmD:sismember(DevTwix..'HmD:Managers:'..chat_id, user_id) then DevTwixTeam = DevHmD:get(DevTwix.."HmD:Managers:Rd"..chat_id) or 'المدير' elseif DevHmD:sismember(DevTwix..'HmD:Admins:'..chat_id, user_id) then DevTwixTeam = DevHmD:get(DevTwix.."HmD:Admins:Rd"..chat_id) or 'الادمن' elseif DevHmD:sismember(DevTwix..'HmD:VipMem:'..chat_id, user_id) then  DevTwixTeam = DevHmD:get(DevTwix.."HmD:VipMem:Rd"..chat_id) or 'المميز' elseif DevHmD:sismember(DevTwix..'HmD:Cleaner:'..chat_id, user_id) then  DevTwixTeam = DevHmD:get(DevTwix.."HmD:Cleaner:Rd"..chat_id) or 'المنظف' else DevTwixTeam = DevHmD:get(DevTwix.."HmD:mem:Rd"..chat_id) or 'العضو' end return DevTwixTeam end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function RankChecking(user_id,chat_id)
 if SudoId(user_id) then
 var = true  
@@ -705,8 +660,7 @@ var = 'No'
 end  
 return var
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 local function Filters(msg, value)
 local HmD = (DevTwix..'HmD:Filters:'..msg.chat_id_)
 if HmD then
@@ -719,8 +673,7 @@ end
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function ReplyStatus(msg,user_id,status,text)
 tdcli_function ({ID = "GetUser",user_id_ = user_id},function(arg,dp) 
 if dp.first_name_ ~= false then
@@ -745,8 +698,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙الحساب محذوف قم بالتا
 end
 end,nil)   
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function GetCustomTitle(user_id,chat_id)
 local Check = https.request('https://api.telegram.org/bot'..TokenBot..'/getChatMember?chat_id='..chat_id..'&user_id='..user_id)
 local GetInfo = JSON.decode(Check)
@@ -790,8 +742,7 @@ send(msg.chat_id_,msg.id_,'⋄︙صلاحيات '..GetCustomTitle(user_id,msg.ch
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function GetBio(chat_id)
 local Check = https.request('https://api.telegram.org/bot'..TokenBot..'/getChat?chat_id='..chat_id)
 local GetInfo = JSON.decode(Check)
@@ -804,8 +755,7 @@ end
 end
 return HmD
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 local sendRequest = function(request_id, chat_id, reply_to_message_id, disable_notification, from_background, reply_markup, input_message_content, callback, extra)
 tdcli_function({ ID = request_id, chat_id_ = chat_id, reply_to_message_id_ = reply_to_message_id, disable_notification_ = disable_notification, from_background_ = from_background, reply_markup_ = reply_markup, input_message_content_ = input_message_content }, callback or dl_cb, extra)
 end
@@ -857,11 +807,9 @@ MsgText = "معلك لربك"
 end 
 return MsgText
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function HmDmoned(chat_id, user_id, msg_id, text, offset, length) local tt = DevHmD:get(DevTwix..'endmsg') or '' tdcli_function ({ ID = "SendMessage", chat_id_ = chat_id, reply_to_message_id_ = msg_id, disable_notification_ = 0, from_background_ = 1, reply_markup_ = nil, input_message_content_ = { ID = "InputMessageText", text_ = text..'\n\n'..tt, disable_web_page_preview_ = 1, clear_draft_ = 0, entities_ = {[0]={ ID="MessageEntityMentionName", offset_=offset, length_=length, user_id_=user_id }, }, }, }, dl_cb, nil) end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function SourceCh(msg) 
 local url,res = https.request('https://anashtick.ml/DevTwix/SourceCh.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
@@ -877,8 +825,7 @@ Var = true
 end
 return Var
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function ChCheck(msg)
 local var = true 
 if DevHmD:get(DevTwix.."HmD:ChId") then
@@ -910,8 +857,7 @@ else
 return var
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function tdcli_update_callback(data)
 if (data.ID == "UpdateNewCallbackQuery") then
 local Chat_Id2 = data.chat_id_
@@ -950,8 +896,7 @@ DevHmD:del(DevTwix..'yes'..data.sender_user_id_, 'delyes')
 DevHmD:del(DevTwix..'no'..data.sender_user_id_, 'delno')
 EditMsg(Chat_Id2, Msg_Id2, "⋄︙تم الغاء امر اطردني") 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if DataText == '/yesdel' and DevHmD:get(DevTwix..'yesdel'..data.sender_user_id_) == 'delyes' then
 DevHmD:del(DevTwix..'yesdel'..data.sender_user_id_, 'delyes')
 DevHmD:del(DevTwix..'nodel'..data.sender_user_id_, 'delno')
@@ -1713,8 +1658,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙ارسل الامر الذي قمت ب�
 return false
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "الصلاحيات" and ChCheck(msg) or text == "صلاحيات" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix.."Coomds"..msg.chat_id_)
 if #List == 0 then
@@ -1895,8 +1839,7 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = text1[3]},py_username,nil) 
 end  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if msg.chat_id_ then
 local id = tostring(msg.chat_id_)
 if id:match("-100(%d+)") then
@@ -1913,8 +1856,7 @@ else
 ChatType = 'gp' 
 end
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if ChatType == 'pv' then 
 if text == '/start' or text == '⇠ رجوع ᥀' then 
 if SecondSudo(msg) then 
@@ -2124,8 +2066,7 @@ local key = {
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == '/start' and ChCheck(msg) then  
 if not DevHmD:get(DevTwix..'HmD:Start:Time'..msg.sender_user_id_) then
 tdcli_function({ID="GetUser",user_id_=DevId},function(arg,dp) 
@@ -2145,8 +2086,7 @@ end
 DevHmD:setex(DevTwix..'HmD:Start:Time'..msg.sender_user_id_,300,true)
 return false
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if not SecondSudo(msg) and not DevHmD:sismember(DevTwix..'HmD:Ban:Pv',msg.sender_user_id_) and not DevHmD:get(DevTwix..'HmD:Texting:Pv') then
 tdcli_function({ID="GetUser",user_id_=DevId},function(arg,chat) 
 Dev_HmD(msg.sender_user_id_, msg.id_, 1, '⋄︙تم ارسال رسالتك الى [المطور](t.me/'..(chat.username_ or "DevTwix")..')', 1, 'md') 
@@ -2204,8 +2144,7 @@ end,nil);
 end,nil);
 end 
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and DevHmD:get(DevTwix..'HmD:Start:Bots'..msg.sender_user_id_) then
 if text == 'الغاء' then   
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙تم الغاء حفظ كليشة الستارت', 1, 'md')
@@ -2258,8 +2197,7 @@ DevHmD:set(DevTwix.."HmD:Lock:AutoFile",true)
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "الابراج" or text == "⇠ الابراج ᥀" then  Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙ من خلال البوت يمكنك معرفه توقعات برجك \n⋄︙ فقط قم بارسال امر برج + اسم البرج \n⋄︙ مثال : برج الاسد ،\n⋄︙ لمعرفه برجك قم بالرجوع الى قسم حساب العمر ', 1, 'md') end
 if text == "حساب العمر" or text == "⇠ حساب العمر ᥀" then  Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙ من خلال البوت يمكنك حساب عمرك \n⋄︙ فقط قم بارسال امر احسب + مواليدك الى البوت \n⋄︙ بالتنسيق التالي مثال : احسب 2000/7/24', 1, 'md') end
 if text == "الحمايه" or text == "⇠ الحمايه ᥀" then  Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙ اضف البوت في المجموعه ثم قم برفعه مشرف وارسل تفعيل \n⋄︙ وتمتع بخدمات غير موجوده في باقي البوتات ', 1, 'md') end
@@ -2280,8 +2218,7 @@ local DevTwixTeam = {'- Nothing stops him who wants you .','make them wish they 
 Dev_HmD(msg.chat_id_, msg.id_, 1, ''..DevTwixTeam[math.random(#DevTwixTeam)]..'' , 1, 'md')  
 return false
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and (text == 'المطور' or text == 'مطور' or text == '⇠  المطور ᥀') then
 tdcli_function({ID="GetUser",user_id_=DevId},function(arg,result)
 local msg_id = msg.id_/2097152/0.5
@@ -2291,8 +2228,7 @@ keyboard.inline_keyboard = {{{text = ''..result.first_name_..' ',url="t.me/"..re
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/'..result.username_..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end,nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "معرفي" or text == "⇠  معرفي ᥀" then
 function get_username(extra,result,success)
 text = '⋄︙معرفك ⇠ ❨ User ❩'
@@ -2327,8 +2263,7 @@ send(msg.chat_id_, msg.id_,'لا تمتلك صوره في حسابك', 1, 'md')
 end end
 tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "الالعاب المتطوره" or text == "الالعاب الاحترافيه" or text == "⇠ الالعاب المتطوره ᥀" then
 if not DevHmD:get(DevTwix..'HmD:Lock:Gamesinline'..msg.chat_id_) then
 Text =[[
@@ -2357,8 +2292,7 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 function getUser(user_id, cb)
 tdcli_function ({
 ID = "GetUser",
@@ -2462,8 +2396,7 @@ DevHmD:incr(DevTwix..'HmD:EntryNumber'..msg.chat_id_..':'..os.date('%d'))
 elseif msg.content_.ID == "MessageChatDeleteMember" then   
 DevHmD:incr(DevTwix..'HmD:ExitNumber'..msg.chat_id_..':'..os.date('%d'))  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text ==('تفعيل') and not SudoBot(msg) and ChCheck(msg) then
 if not DevHmD:get(DevTwix..'HmD:Lock:FreeBot'..DevTwix) then
 if ChatType == 'pv' then
@@ -2560,21 +2493,18 @@ else
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙لا تستطيع تفعيل هذه المجموعه بسبب تعطيل البوت الخدمي من قبل المطور الاساسي', 1, 'md') 
 end 
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
 if data.username_ ~= false then
 DevHmD:set(DevTwix..'Save:UserName'..msg.sender_user_id_,data.username_)
 end;end,nil) 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 local ReFalse = tostring(msg.chat_id_)
 if not DevHmD:sismember(DevTwix.."HmD:Groups",msg.chat_id_) and not ReFalse:match("^(%d+)") and not SudoBot(msg) then
 print("Return False : The Bot Is Not Enabled In The Group")
 return false
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 -------- MSG TYPES ---------
 if msg.content_.ID == "MessageChatJoinByLink" and not VipMem(msg) then 
 if DevHmD:get(DevTwix..'HmD:Lock:Robot'..msg.chat_id_) then
@@ -2630,8 +2560,7 @@ end
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^(.*)$") then
 local DelGpRedRedods = DevHmD:get(DevTwix..'HmD:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_)
 local GetGpTexts = DevHmD:get(DevTwix..'HmD:Add:GpTexts'..msg.sender_user_id_..msg.chat_id_)
@@ -2686,8 +2615,7 @@ DevHmD:del(DevTwix.."HmD:Sudo:AllRed",msg.content_.text_)
 return false
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^(.*)$") then
 local SaveGpRedod = DevHmD:get(DevTwix..'HmD:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_)
 if SaveGpRedod == 'SaveGpRedod' then
@@ -2722,8 +2650,7 @@ local DevTwixTeam =  DevHmD:smembers(DevTwix..'HmD:Text:GpTexts'..text..msg.chat
 Dev_HmD(msg.chat_id_, msg.id_, 1, '['..DevTwixTeam[math.random(#DevTwixTeam)]..']' , 1, 'md')  
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if msg.content_.text_ or msg.content_.video_ or msg.content_.document_ or msg.content_.sticker_ or msg.content_.voice_ or msg.content_.audio_ or msg.content_.photo_ or msg.content_.animation_ then 
 local SaveGpRed = DevHmD:get(DevTwix..'HmD:Add:GpRed'..msg.sender_user_id_..msg.chat_id_)
 if SaveGpRed == 'SaveGpRed' then 
@@ -2813,8 +2740,7 @@ end
 getUser(msg.sender_user_id_, DevTwixTeam)
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 text = msg.content_.text_
 if msg.content_.text_ or msg.content_.video_ or msg.content_.document_ or msg.content_.sticker_ or msg.content_.voice_ or msg.content_.audio_ or msg.content_.photo_ or msg.content_.animation_ then
 local SaveAllRed = DevHmD:get(DevTwix.."HmD:Add:AllRed"..msg.sender_user_id_)
@@ -2909,8 +2835,7 @@ end
 getUser(msg.sender_user_id_, DevTwixTeam)
 end
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --       Spam Send        --
 function NotSpam(msg,Type)
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,dp) 
@@ -2974,8 +2899,7 @@ end
 end,nil)
 end  
 --  end functions DevTwix --
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --       Spam Check       --
 if not VipMem(msg) and msg.content_.ID ~= "MessageChatAddMembers" and DevHmD:hget(DevTwix.."HmD:Spam:Group:User"..msg.chat_id_,"Spam:User") then 
 if msg.sender_user_id_ ~= DevTwix then
@@ -2999,8 +2923,7 @@ Time_Spam = DevHmD:hget(DevTwix.."HmD:Spam:Group:User"..msg.chat_id_,"Num:Spam:T
 end 
 end
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 ----- START MSG CHECKS -----
 if msg.sender_user_id_ and Ban(msg.sender_user_id_, msg.chat_id_) then
 ChatKick(msg.chat_id_, msg.sender_user_id_)
@@ -3038,8 +2961,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙عدد مشاهدات المنشور ه
 DevHmD:del(DevTwix..'HmD:viewget'..msg.sender_user_id_)
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --         Photo          --
 if msg.content_.ID == "MessagePhoto" then
 if not VipMem(msg) then
@@ -3087,8 +3009,7 @@ end
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --        Markdown        --
 elseif not msg.reply_markup_ and msg.via_bot_user_id_ ~= 0 then
 if DevHmD:get(DevTwix..'HmD:Lock:Markdown'..msg.chat_id_) then
@@ -3096,8 +3017,7 @@ if not VipMem(msg) then
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --        Document        --
 elseif msg.content_.ID == "MessageDocument" then
 if not VipMem(msg) then
@@ -3145,8 +3065,7 @@ end
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --         Inline         --
 elseif msg.reply_markup_ and msg.reply_markup_.ID == "ReplyMarkupInlineKeyboard" and msg.via_bot_user_id_ ~= 0 then
 if not VipMem(msg) then
@@ -3154,8 +3073,7 @@ if DevHmD:get(DevTwix..'HmD:Lock:Inline'..msg.chat_id_) then
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --        Sticker         --
 elseif msg.content_.ID == "MessageSticker" then
 if not VipMem(msg) then
@@ -3182,8 +3100,7 @@ end
 if DevHmD:get(DevTwix.."HmD:Lock:Welcome"..msg.chat_id_) then
 getUser(msg.sender_user_id_,get_welcome)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --      New User Add      --
 elseif msg.content_.ID == "MessageChatAddMembers" then
 if not DevHmD:get(DevTwix..'HmD:Lock:BotWelcome') then 
@@ -3228,8 +3145,7 @@ local Welcomes = Welcomes:gsub('firstname',('['..msg.content_.members_[0].first_
 local Welcomes = Welcomes:gsub('username',('[@'..msg.content_.members_[0].username_..']' or '[@DevTwix]'))
 Dev_HmD(msg.chat_id_, msg.id_, 1, Welcomes, 1, 'md')
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --        Contact         --
 elseif msg.content_.ID == "MessageContact" then
 if not VipMem(msg) then
@@ -3244,8 +3160,7 @@ if DevHmD:get(DevTwix..'HmD:Lock:Contact'..msg.chat_id_) then
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --         Audio          --
 elseif msg.content_.ID == "MessageAudio" then
 if not VipMem(msg) then
@@ -3293,8 +3208,7 @@ end
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --         Voice          --
 elseif msg.content_.ID == "MessageVoice" then
 if not VipMem(msg) then
@@ -3342,8 +3256,7 @@ end
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --        Location        --
 elseif msg.content_.ID == "MessageLocation" then
 if not VipMem(msg) then
@@ -3392,8 +3305,7 @@ end
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --         Video          --
 elseif msg.content_.ID == "MessageVideo" then
 if not VipMem(msg) then
@@ -3441,8 +3353,7 @@ end
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --          Gif           --
 elseif msg.content_.ID == "MessageAnimation" then
 if not VipMem(msg) then
@@ -3490,8 +3401,7 @@ end
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --         Text           --
 elseif msg.content_.ID == "MessageText" then
 if not VipMem(msg) then
@@ -3549,8 +3459,7 @@ DeleteMessage(msg.chat_id_,{[0] = msg.id_})
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if DevHmD:get(DevTwix.."HmD:Set:Groups:Links"..msg.chat_id_..msg.sender_user_id_) then
 if text == "الغاء" then
 send(msg.chat_id_,msg.id_,"⋄︙تم الغاء حفظ الرابط")       
@@ -3565,8 +3474,7 @@ DevHmD:del(DevTwix.."HmD:Set:Groups:Links"..msg.chat_id_..msg.sender_user_id_)
 return false 
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 local msg = data.message_
 text = msg.content_.text_
 if text and Constructor(msg) then 
@@ -3599,8 +3507,7 @@ Dev_HmD(msg.chat_id_, msg.id_,  1, "⋄︙تم اضافة "..numadded..' نقط�
 DevHmD:del('DevTwixTeam:'..DevTwix..'ids:user'..msg.chat_id_)  
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and (text:match("طيز") or text:match("ديس") or text:match("انيج") or text:match("نيج") or text:match("ديوس") or text:match("عير") or text:match("كسختك") or text:match("كسمك") or text:match("كسربك") or text:match("بلاع") or text:match("ابو العيوره") or text:match("منيوج") or text:match("كحبه") or text:match("كحاب") or text:match("الكحبه") or text:match("كسك") or text:match("طيزك") or text:match("كس امك") or text:match("صرم") or text:match("كس اختك")) then
 if not DevHmD:get(DevTwix.."HmD:Lock:Fshar"..msg.chat_id_) and not VipMem(msg) then
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})
@@ -3626,8 +3533,7 @@ if not DevHmD:get(DevTwix.."HmD:Lock:Taf"..msg.chat_id_) and not VipMem(msg) the
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})
 ReplyStatus(msg,msg.sender_user_id_,"WrongWay","⋄︙ممنوع التكلم بالطائفيه هنا") 
 end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if SecondSudo(msg) then
 if text == 'جلب نسخه الكروبات' and ChCheck(msg) or text == 'جلب نسخه احتياطيه' and ChCheck(msg) or text == 'جلب النسخه الاحتياطيه' and ChCheck(msg) or text == '⇠ جلب نسخه احتياطيه ᥀' and ChCheck(msg) then
 local List = DevHmD:smembers(DevTwix..'HmD:Groups') 
@@ -3737,8 +3643,7 @@ end
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil)
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if DevHmD:get(DevTwix.."SET:GAME"..msg.chat_id_) then  
 if text and text:match("^(%d+)$") then
 local NUM = text:match("^(%d+)$")
@@ -3784,8 +3689,7 @@ return false
 end
 end,nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if DevHmD:get(DevTwix.."HmD:DevText"..msg.chat_id_..":" .. msg.sender_user_id_) then
 if text and text:match("^الغاء$") then 
 DevHmD:del(DevTwix.."HmD:DevText"..msg.chat_id_..":" .. msg.sender_user_id_)
@@ -3808,8 +3712,7 @@ DevHmD:del(DevTwix..'HmD:NameBot'..msg.sender_user_id_)
 DevHmD:set(DevTwix..'HmD:NameBot', text)
 return false 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "الرابط" then
 if not DevHmD:get(DevTwix..'HmD:Lock:GpLinks'..msg.chat_id_) then 
 if DevHmD:get(DevTwix.."HmD:Groups:Links"..msg.chat_id_) then
@@ -3820,8 +3723,7 @@ end
 else
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "الرابط" then
 if not DevHmD:get(DevTwix.."HmD:Lock:GpLinksinline"..msg.chat_id_) then 
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
@@ -3837,8 +3739,7 @@ end
 end,nil) 
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if msg.chat_id_ then
 local id = tostring(msg.chat_id_)
 if id:match("-100(%d+)") then
@@ -3855,8 +3756,7 @@ else
 ChatType = 'gp' 
 end
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if ChatType == 'sp' or ChatType == 'gp' or ChatType == 'pv' then
 if text == 'بوت' or text == 'بوتت' then 
 NameBot = (DevHmD:get(DevTwix..'HmD:NameBot') or 'تويكس')
@@ -3888,8 +3788,7 @@ end
 end
 if text ==  'حذف رسائلي' and ChCheck(msg) or text ==  'مسح رسائلي' and ChCheck(msg) then DevHmD:del(DevTwix..'HmD:UsersMsgs'..msg.chat_id_..':'..msg.sender_user_id_) Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙تم حذف جميع رسائلك', 1, 'md') end
 if text ==  'حذف نقاطي' and ChCheck(msg) or text ==  'مسح نقاطي' and ChCheck(msg) then DevHmD:del(DevTwix..'HmD:GamesNumber'..msg.chat_id_..msg.sender_user_id_) Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙تم حذف جميع نقاطك', 1, 'md') end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'سمايلات' and ChCheck(msg) or text == 'السمايلات' and ChCheck(msg) or text == '⇠ سمايلات ᥀' and ChCheck(msg) then
 if not DevHmD:get(DevTwix..'HmD:Lock:Games'..msg.chat_id_) then
 DevHmD2 = {'🍏','🍎','🍐','🍊','🍋','🍌','🍉','🍇','🍓','🍈','🍒','🍑','🍍','🥥','🥝','🍅','🍆','🥑','🥦','🥒','🌶','🌽','🥕','🥔','🍠','🥐','🍞','🥖','🥨','🧀','🥚','🍳','🥞','🥓','🥩','🍗','🍖','🌭','🍔','🍟','🍕','🥪','🥙','🍼','☕️','🍵','🥤','🍶','🍺','🍻','🏀','⚽️','🏈','⚾️','🎾','🏐','🏉','🎱','🏓','🏸','🥅','🎰','🎮','🎳','🎯','🏆','🎻','🎸','🎺','🥁','🎹','🎼','🎧','🎤','🎬','🎨','🎭','🎪','🛎','📤','🎗','🏵','🎖','🏆','🥌','🛷','🚕','🚗','🚙','🚌','🚎','🏎','🚓','🚑','🚚','🚛','🚜','🇮🇶','⚔️','🛡','🔮','🌡','💣','⏱','🛢','📓','📗','📂','📅','📪','📫','📬','📭','⏰','📺','🎚','☎️','📡'}
@@ -4384,8 +4283,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1,DevTwixTeam, 1, 'md')
 end
 DevHmD:set(DevTwix..'HmD:Games:Ids'..msg.chat_id_,true)
 end  
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'اسئله' and ChCheck(msg) or text == 'اختيارات' and ChCheck(msg) or text == 'الاسئله' and ChCheck(msg) or text == 'اساله' and ChCheck(msg) or text == '⇠ اسئله ᥀' and ChCheck(msg) then
 if not DevHmD:get(DevTwix..'HmD:Lock:Games'..msg.chat_id_) then
 DevHmD2 = {'النيل','14','الفم','11','30','بوتين','ستيف جوبر','باريس','10','النمل','حرف الواو','الشعر','سحاب','الاسم','ذهب','حرف الام','العزائم','انسات','المنجنيق','اسيا','6','الاسد','مهر','الدولفين','اوروبا','الزئبق','لندن','الانسان','طوكيو','خديجه',}
@@ -4435,8 +4333,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1,DevTwixTeam, 1, 'md')
 end
 DevHmD:set(DevTwix..'HmD:Games:Ids'..msg.chat_id_,true)
 end  
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if DevHmD:get(DevTwix.."GAME:TKMEN"..msg.chat_id_.."" .. msg.sender_user_id_) then  
 if text and text:match("^(%d+)$") then
 local NUM = text:match("^(%d+)$")
@@ -4475,8 +4372,7 @@ DevHmD:setex(DevTwix.."GAME:TKMEN"..msg.chat_id_.."" .. msg.sender_user_id_, 100
 return false  
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'روليت' and ChCheck(msg) then
 if not DevHmD:get(DevTwix..'HmD:Lock:Games'..msg.chat_id_) then
 DevHmD:del(DevTwix.."HmD:NumRolet"..msg.chat_id_..msg.sender_user_id_) 
@@ -4527,8 +4423,7 @@ Msg_id = msg.id_/2097152/0.5
 return https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text=' .. URL.escape(Text).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end,nil) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'كت تويت' and ChCheck(msg) or text == 'كت' and ChCheck(msg) or text == 'تويت' and ChCheck(msg) or text == '⇠ كت ᥀' and ChCheck(msg) then
 if not DevHmD:get(DevTwix..'HmD:Lock:Games'..msg.chat_id_) then
 local DevTwixTeam = {
@@ -4541,8 +4436,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, ''..DevTwixTeam[math.random(#DevTwixTeam)]..''
 return false
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'الالعاب' and ChCheck(msg) or text == 'العاب' and ChCheck(msg) or text == 'اللعبه' and ChCheck(msg) or text == '⇠ الالعاب ᥀' and ChCheck(msg) then
 if not DevHmD:get(DevTwix..'HmD:Lock:Games'..msg.chat_id_) then
 Dev_HmD(msg.chat_id_, msg.id_, 1,[[
@@ -4571,8 +4465,7 @@ else
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙عذرا الالعاب معطله في المجموعه', 1, 'md')
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'بيع نقاطي' and ChCheck(msg) then
 if tonumber((DevHmD:get(DevTwix..'HmD:GamesNumber'..msg.chat_id_..msg.sender_user_id_) or 0)) == 0 then
 Dev_HmD(msg.chat_id_, msg.id_, 1,'⋄︙لم تربح اي نقطه\n⋄︙ارسل ⇠ الالعاب للعب', 1, 'md')
@@ -4583,8 +4476,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1,'⋄︙تم بيع '..(DevHmD:get(DevTwix..'HmD
 DevHmD:del(DevTwix..'HmD:GamesNumber'..msg.chat_id_..msg.sender_user_id_)
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'رفع المشرفين' and ChCheck(msg) or text == 'رفع الادمنيه' and ChCheck(msg) then  
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 200},function(arg,HmD) 
 local num = 0
@@ -4614,8 +4506,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙تم رفع '..num..' من الادمن
 end
 end,nil) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'غادر' and SudoBot(msg) and ChCheck(msg) then
 if DevHmD:get(DevTwix.."HmD:Left:Bot"..DevTwix) then
 Dev_HmD(msg.chat_id_,msg.id_, 1, "⋄︙المغادره معطله من قبل المطور الاساسي", 1, 'md')
@@ -4625,8 +4516,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙تم مغادرة المجموعه \n�
 ChatLeave(msg.chat_id_, DevTwix)
 DevHmD:srem(DevTwix.."HmD:Groups",msg.chat_id_)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text ==('موقعي') and ChCheck(msg) then
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
@@ -4639,8 +4529,7 @@ end
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙موقعك ⇠ '..rtpa, 1, 'md')
 end,nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "معلوماتي" and ChCheck(msg) then
 function get_me(extra,result,success)
 local msguser = tonumber(DevHmD:get(DevTwix..'HmD:UsersMsgs'..msg.chat_id_..':'..msg.sender_user_id_))
@@ -4654,8 +4543,7 @@ end
 getUser(msg.sender_user_id_,get_me)
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تعيين قناة الاشتراك" or text == "تغيير قناة الاشتراك" or text == "تعيين الاشتراك الاجباري" or text == "وضع قناة الاشتراك" or text == "⇠ تعيين قناة الاشتراك ᥀" then
 if not Sudo(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙للمطور الاساسي فقط ', 1, 'md')
@@ -4709,8 +4597,7 @@ send(msg.chat_id_, msg.id_, "⋄︙لاتوجد قناة في الاشتراك �
 end
 return false  
 end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if SudoBot(msg) then
 if text == 'اذاعه للكل بالتوجيه' and tonumber(msg.reply_to_message_id_) > 0 then
 function DevTwixTeam(extra,result,success)
@@ -4731,14 +4618,12 @@ end
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),DevTwixTeam)
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "مشاهده المنشور" and ChCheck(msg) or text == "مشاهدات المنشور" and ChCheck(msg) or text == "عدد المشاهدات" and ChCheck(msg) then
 DevHmD:set(DevTwix..'HmD:viewget'..msg.sender_user_id_,true)
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙حسنا قم باعادة توجيه للمنشور الذي تريدني حساب مشاهداته', 1, 'md')
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "سورس" and SourceCh(msg) or text == "السورس" and SourceCh(msg) or text == "يا سورس" and SourceCh(msg) or text == "⇠  السورس ᥀" and SourceCh(msg) then
 Text = [[
 Welcome To Source
@@ -4753,8 +4638,7 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/X6UX6&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if ChatType == 'sp' or ChatType == 'gp'  then
 if text == "اطردني" and ChCheck(msg) or text == "ادفرني" and ChCheck(msg) then
 if DevHmD:get(DevTwix.."HmD:Kick:Me"..msg.chat_id_) then
@@ -4769,8 +4653,7 @@ keyboard.inline_keyboard = {{{text="نعم",callback_data="/delyes"},{text="لا
 Msg_id = msg.id_/2097152/0.5
 return https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text=' .. URL.escape(Text).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'تعطيل اطردني' and Manager(msg) and ChCheck(msg) then
 DevHmD:set(DevTwix.."HmD:Kick:Me"..msg.chat_id_, true)
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تعطيل امر اطردني'
@@ -4781,8 +4664,7 @@ DevHmD:del(DevTwix.."HmD:Kick:Me"..msg.chat_id_)
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل امر اطردني'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "نزلني" and ChCheck(msg) then
 if DevHmD:get(DevTwix.."HmD:Del:Me"..msg.chat_id_) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙عذرا هذه الخاصيه معطله ', 1, 'md')
@@ -4796,8 +4678,7 @@ keyboard.inline_keyboard = {{{text="نعم",callback_data="/yesdel"},{text="لا
 Msg_id = msg.id_/2097152/0.5
 return https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text=' .. URL.escape(Text).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'تعطيل نزلني' and BasicConstructor(msg) and ChCheck(msg) then
 DevHmD:set(DevTwix.."HmD:Del:Me"..msg.chat_id_, true)
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تعطيل امر نزلني'
@@ -4808,8 +4689,7 @@ DevHmD:del(DevTwix.."HmD:Del:Me"..msg.chat_id_)
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل امر نزلني'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and (text == 'تفعيل التاك' or text == 'تفعيل التاك للكل' or text == 'تفعيل تاك للكل') and Admin(msg) and ChCheck(msg) then 
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل امر تاك للكل'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -4839,8 +4719,7 @@ end
 tdcli_function({ID = "GetChannelMembers",channel_id_ = getChatId(msg.chat_id_).ID, offset_ = 0,limit_ = 200000},TagAll,nil)
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^كللهم (.*)$") and ChCheck(msg) then
 local txt = {string.match(text, "^(كللهم) (.*)$")}
 if not DevHmD:get(DevTwix..'HmD:Lock:TagAll'..msg.chat_id_) then
@@ -4861,8 +4740,7 @@ tdcli_function({ID = "GetChannelMembers",channel_id_ = getChatId(msg.chat_id_).I
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Manager(msg) then
 if text == 'تفعيل ملف TagAll.lua' or text == 'تفعيل @all' or text == 'تفعيل all' or text == '⇠ تفعيل all ᥀' then   
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل ملف تاك منفصل للأعضاء'
@@ -4908,8 +4786,7 @@ end,nil)
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Manager(msg) then
 if text == 'تفعيل @admin' or text == 'تفعيل admin' or text == '⇠ تفعيل admin ᥀' then   
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل ملف تاك منفصل للمشرفين'
@@ -4953,8 +4830,7 @@ end,nil)
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if (text and not DevHmD:get(DevTwix.."HmD:Lock:AutoFile")) then
 Time = DevHmD:get(DevTwix.."HmD:AutoFile:Time")
 if Time then 
@@ -5061,8 +4937,7 @@ else
 DevHmD:set(DevTwix.."HmD:AutoFile:Time",os.date("%x"))
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "رسائلي" and msg.reply_to_message_id_ == 0 and ChCheck(msg) then
 local user_msgs = DevHmD:get(DevTwix..'HmD:UsersMsgs'..msg.chat_id_..':'..msg.sender_user_id_)
 Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙عدد رسائلك هنا ⇠ *❨ "..user_msgs.." ❩*", 1, 'md')
@@ -5073,8 +4948,7 @@ local ExitNumber = (DevHmD:get(DevTwix..'HmD:ExitNumber'..msg.chat_id_..':'..os.
 local MsgNumberDay = (DevHmD:get(DevTwix..'HmD:MsgNumberDay'..msg.chat_id_..':'..os.date('%d')) or 0)
 Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙انضمام الاعضاء اليوم ⇠ *"..EntryNumber.."*\n⋄︙مغادرة الاعضاء اليوم ⇠ *"..ExitNumber.."*\n⋄︙عدد الرسائل اليوم ⇠ *"..MsgNumberDay.."*\n⋄︙نسبة التفاعل اليوم ⇠ *"..math.random(40,100).."%*", 1, 'md')
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تعطيل تفاعلي" and Manager(msg) and ChCheck(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تعطيل تفاعلي'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -5105,16 +4979,14 @@ tdcli_function ({ID = "GetMessage",chat_id_=msg.chat_id_,message_id_=tonumber(ms
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "جهاتي" and ChCheck(msg) or text == "اضافاتي" and ChCheck(msg) then add = (tonumber(DevHmD:get(DevTwix..'HmD:ContactNumber'..msg.chat_id_..':'..msg.sender_user_id_)) or 0) Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙عدد جهاتك المضافه ⇠ *❨ "..add.." ❩* ", 1, 'md') end
 if text == "تعديلاتي" or text == "سحكاتي" and ChCheck(msg) then local edit_msg = DevHmD:get(DevTwix..'HmD:EditMsg'..msg.chat_id_..msg.sender_user_id_) or 0  Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙عدد تعديلاتك ⇠ *❨ "..edit_msg.." ❩* ", 1, 'md') end
 if text == "رتبتي" and ChCheck(msg) then Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙رتبتك ⇠ '..IdRank(msg.sender_user_id_, msg.chat_id_), 1, 'html') end
 if text == "ايدي المجموعه" and ChCheck(msg) then Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙ايدي المجموعه ⇠ `"..msg.chat_id_.."`", 1, 'md') end
 if text == 'مسح سحكاتي' or text == 'مسح تعديلاتي' or text == 'حذف سحكاتي' or text == 'حذف تعديلاتي' then DevHmD:del(DevTwix..'HmD:EditMsg'..msg.chat_id_..msg.sender_user_id_) Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙تم حذف جميع تعديلاتك بنجاح' , 1, 'md') end
 if text == 'مسح جهاتي' or text == 'مسح اضافاتي' or text == 'حذف جهاتي' or text == 'حذف اضافاتي' then DevHmD:del(DevTwix..'HmD:ContactNumber'..msg.chat_id_..':'..msg.sender_user_id_) Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙تم حذف جميع جهاتك المضافه' , 1, 'md') end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match('^هينه @(.*)') and ChCheck(msg) or text and text:match('^هينها @(.*)') and ChCheck(msg) then 
 if not DevHmD:get(DevTwix..'HmD:Lock:Stupid'..msg.chat_id_) then
 local username = text:match('^هينه @(.*)') or text:match('^هينها @(.*)') 
@@ -5147,8 +5019,7 @@ end
 resolve_username(username,DevTwixTeam)
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == ("هينه") or text == ("بعد هينه") or text == ("هينه بعد") or text == ("لك هينه") or text == ("هينها") or text == ("هينهه") or text == ("رزله") or text == ("رزلهه") or text == ("رزلها") then
 if not DevHmD:get(DevTwix..'HmD:Lock:Stupid'..msg.chat_id_) then
 function hena(extra, result, success)
@@ -5223,8 +5094,7 @@ getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),seha)
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match('^صيحه @(.*)') and ChCheck(msg) or text and text:match('^صيح @(.*)') and ChCheck(msg) then 
 if not DevHmD:get(DevTwix..'HmD:Lock:Stupid'..msg.chat_id_) then
 local username = text:match('^صيحه @(.*)') or text:match('^صيح @(.*)') 
@@ -5250,8 +5120,7 @@ resolve_username(username,DevTwixTeam)
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and Manager(msg) and ChCheck(msg) then 
 function promote_by_reply(extra, result, success)
 if SudoId(result.sender_user_id_) == true then
@@ -5433,8 +5302,7 @@ end
 end
 resolve_username(rem[2],remm)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --     Set HmDSudo     --
 if Sudo(msg) then
 if text ==('اضف مطور اساسي') or text ==('رفع مطور اساسي') and SourceCh(msg) then
@@ -5462,8 +5330,7 @@ local user = text:match('اضف مطور اساسي (%d+)') or text:match('رف�
 DevHmD:sadd(DevTwix..'HmD:HmDSudo:',user)
 ReplyStatus(msg,user,"Reply","⋄︙تم رفعه في قائمة المطورين الاساسيين")  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --     Rem SecondSudo     --
 if text ==('حذف مطور اساسي') or text ==('تنزيل مطور اساسي') and SourceCh(msg) then
 function prom_reply(extra, result, success)
@@ -5490,8 +5357,7 @@ local user = text:match('حذف مطور اساسي (%d+)') or text:match('تن�
 DevHmD:srem(DevTwix..'HmD:HmDSudo:',user)
 ReplyStatus(msg,user,"Reply","⋄︙تم تنزيله من قائمة المطورين الاساسيين")  
 end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --     Set SecondSudo     --
 if HmDSudo(msg) then
 if text ==('اضف مطور ثانوي') or text ==('رفع مطور ثانوي') and SourceCh(msg) then
@@ -5518,8 +5384,7 @@ local user = text:match('اضف مطور ثانوي (%d+)') or text:match('رف�
 DevHmD:sadd(DevTwix..'HmD:SecondSudo:',user)
 ReplyStatus(msg,user,"Reply","⋄︙تم رفعه في قائمة المطورين الثانويين")  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --     Rem SecondSudo     --
 if text ==('حذف مطور ثانوي') or text ==('تنزيل مطور ثانوي') and SourceCh(msg) then
 function prom_reply(extra, result, success)
@@ -5545,8 +5410,7 @@ local user = text:match('حذف مطور ثانوي (%d+)') or text:match('تن�
 DevHmD:srem(DevTwix..'HmD:SecondSudo:',user)
 ReplyStatus(msg,user,"Reply","⋄︙تم تنزيله من قائمة المطورين الثانويين")  
 end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --       Set SudoBot      --
 if SecondSudo(msg) then
 if text ==('اضف مطور') or text ==('رفع مطور') and SourceCh(msg) then
@@ -5573,8 +5437,7 @@ local user = text:match('اضف مطور (%d+)') or text:match('رفع مطور 
 DevHmD:sadd(DevTwix..'HmD:SudoBot:',user)
 ReplyStatus(msg,user,"Reply","⋄︙تم رفعه في قائمة المطورين")  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --       Rem SudoBot      --
 if text ==('حذف مطور') or text ==('تنزيل مطور') and SourceCh(msg) then
 function prom_reply(extra, result, success)
@@ -5600,8 +5463,7 @@ local user = text:match('حذف مطور (%d+)') or text:match('تنزيل مط�
 DevHmD:srem(DevTwix..'HmD:SudoBot:',user)
 ReplyStatus(msg,user,"Reply","⋄︙تم تنزيله من قائمة المطورين")  
 end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --   Set HmDConstructor   --
 if ChatType == 'sp' or ChatType == 'gp'  then
 if SudoBot(msg) then
@@ -5629,8 +5491,7 @@ local user = text:match('رفع مالك (%d+)')
 DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⋄︙تم رفعه مالك")  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --   Rem HmDConstructor   --
 if text ==('تنزيل مالك') and SourceCh(msg) then
 function prom_reply(extra, result, success)
@@ -5684,8 +5545,7 @@ ReplyStatus(msg,user,"Reply","⋄︙تم تنزيله من المالكين")
 end end end
 end,nil)
 end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --  Set BasicConstructor  --
 if Owner(msg) then
 if text ==('رفع منشئ اساسي') and SourceCh(msg) then
@@ -5724,8 +5584,7 @@ end
 DevHmD:sadd(DevTwix..'HmD:BasicConstructor:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⋄︙تم رفعه منشئ اساسي")  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --  Rem BasicConstructor  --
 if text ==('تنزيل منشئ اساسي') and SourceCh(msg) then
 function prom_reply(extra, result, success)
@@ -5754,8 +5613,7 @@ end end
 if text ==('رفع منشئ اساسي') and not Owner(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙هذا الامر للمالكين والمطورين فقط', 1, 'md')
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --    Set  Constructor    --
 if BasicConstructor(msg) then
 if text ==('رفع منشئ') and SourceCh(msg) then
@@ -5794,8 +5652,7 @@ end
 DevHmD:sadd(DevTwix..'HmD:Constructor:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⋄︙تم رفعه في قائمة المنشئين")  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --    Rem  Constructor    --
 if text ==('تنزيل منشئ') and SourceCh(msg) then
 function prom_reply(extra, result, success)
@@ -5822,8 +5679,7 @@ DevHmD:srem(DevTwix..'HmD:Constructor:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⋄︙تم تنزيله من قائمة المنشئين")  
 end 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --      Set Manager       --
 if Constructor(msg) then
 if text ==('رفع مدير') and SourceCh(msg) then
@@ -5862,8 +5718,7 @@ end
 DevHmD:sadd(DevTwix..'HmD:Managers:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⋄︙تم رفعه في قائمة المدراء")  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --       Rem Manager      --
 if text ==('تنزيل مدير') and SourceCh(msg) then
 function prom_reply(extra, result, success)
@@ -5889,8 +5744,7 @@ local user = text:match('تنزيل مدير (%d+)')
 DevHmD:srem(DevTwix..'HmD:Managers:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⋄︙تم تنزيله من قائمة المدراء")  
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --       Set Cleaner      --
 if text ==('رفع منظف') and SourceCh(msg) then
 function prom_reply(extra, result, success)
@@ -5928,8 +5782,7 @@ end
 DevHmD:sadd(DevTwix..'HmD:Cleaner:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⋄︙تم رفعه في قائمة المنظفين")  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --       Rem Cleaner      --
 if text ==('تنزيل منظف') and SourceCh(msg) then
 function prom_reply(extra, result, success)
@@ -5955,8 +5808,7 @@ local user = text:match('تنزيل منظف (%d+)')
 DevHmD:srem(DevTwix..'HmD:Cleaner:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⋄︙تم تنزيله من قائمة المنظفين")  
 end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --       Set admin        --
 if Manager(msg) then
 if text ==('رفع ادمن') and SourceCh(msg) then
@@ -5995,8 +5847,7 @@ end
 DevHmD:sadd(DevTwix..'HmD:Admins:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⋄︙تم رفعه في قائمة الادمنيه")  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --        Rem admin       --
 if text ==('تنزيل ادمن') and SourceCh(msg) then
 function prom_reply(extra, result, success)
@@ -6022,8 +5873,7 @@ local user = text:match('تنزيل ادمن (%d+)')
 DevHmD:srem(DevTwix..'HmD:Admins:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⋄︙تم تنزيله من قائمة الادمنيه")  
 end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --       Set Vipmem       --
 if Admin(msg) then
 if text ==('رفع مميز') and SourceCh(msg) then
@@ -6062,8 +5912,7 @@ end
 DevHmD:sadd(DevTwix..'HmD:VipMem:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⋄︙تم رفعه في قائمة المميزين")  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --       Rem Vipmem       --
 if text ==('تنزيل مميز') and SourceCh(msg) then
 function prom_reply(extra, result, success)
@@ -6089,8 +5938,7 @@ local user = text:match('تنزيل مميز (%d+)')
 DevHmD:srem(DevTwix..'HmD:VipMem:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⋄︙تم تنزيله من قائمة المميزين")  
 end end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if HmDConstructor(msg) then
 if text and text:match("^رفع مشرف$") and msg.reply_to_message_id_ then
 function promote_by_reply(extra, result, success)
@@ -6172,8 +6020,7 @@ if text == "راسلني" and ChCheck(msg) then
 DevTwixTeam = {"ها هلاو","انطق","كول","تفضل","احبك","عمري","لاف"};
 send(msg.sender_user_id_, 0,DevTwixTeam[math.random(#DevTwixTeam)])
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "صلاحيتي" or text == "صلاحياتي" and ChCheck(msg) then 
 if tonumber(msg.reply_to_message_id_) == 0 then 
 Validity(msg,msg.sender_user_id_)
@@ -6199,16 +6046,14 @@ if text and (text:match('^صلاحيته (%d+)') or text:match('^صلاحيات�
 local ValidityId = text:match('صلاحيته (%d+)') or text:match('صلاحياته (%d+)')
 Validity(msg,ValidityId)  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Admin(msg) then
 if msg.reply_to_message_id_ ~= 0 then
 if text and (text:match("^مسح$") or text:match("^حذف$") or text:match("^⇠ اخفاء الكيبورد ᥀$")) and ChCheck(msg) then
 DeleteMessage(msg.chat_id_,{[0] = msg.reply_to_message_id_})
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})
 end end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if HmDConstructor(msg) then
 if text == "تفعيل الحظر" and ChCheck(msg) and SourceCh(msg) or text == "تفعيل الطرد" and ChCheck(msg) and SourceCh(msg) then
 DevHmD:del(DevTwix.."HmD:Lock:KickBan"..msg.chat_id_)
@@ -6241,8 +6086,7 @@ DevHmD:set(DevTwix.."HmD:Lock:ProSet"..msg.chat_id_,"true")
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙تم تعطيل رفع ⇠ المنشئ الاساسي • المنشئ • المدير • الادمن • المميز', 1, 'md')
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --          Kick          --
 if Admin(msg) then
 if text ==('طرد') and ChCheck(msg) and SourceCh(msg) then
@@ -6324,8 +6168,7 @@ end,nil)
 end
 end
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --          Ban           --
 if Admin(msg) then
 if text ==('حضر') or text ==('حظر') and ChCheck(msg) and SourceCh(msg) then
@@ -6409,8 +6252,7 @@ ReplyStatus(msg,user,"Reply","⋄︙تم حظره من المجموعه")
 end,nil) 
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --         UnBan          --
 if text ==('الغاء الحظر') or text ==('الغاء حظر') and ChCheck(msg) then
 function UnBanReply(extra, result, success)
@@ -6440,8 +6282,7 @@ tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_i
 ReplyStatus(msg,user,"Reply","⋄︙تم الغاء حظره من المجموعه")  
 end 
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --          Mute          --
 if Admin(msg) then
 if text ==('كتم') and ChCheck(msg) then
@@ -6504,8 +6345,7 @@ ReplyStatus(msg,user,"Reply","⋄︙تم كتمه من المجموعه")
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --         UnMute         --
 if text ==('الغاء الكتم') or text ==('الغاء كتم') and ChCheck(msg) then
 function UnMuteReply(extra, result, success)
@@ -6544,8 +6384,7 @@ ReplyStatus(msg,user,"Reply","⋄︙تم الغاء كتمه من المجموع
 end
 end 
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --          Tkeed           --
 if Admin(msg) then
 if text ==('تقييد') or text ==('تقيد') and ChCheck(msg) then
@@ -6599,8 +6438,7 @@ DevHmD:sadd(DevTwix..'HmD:Tkeed:'..msg.chat_id_, user)
 ReplyStatus(msg,user,"Reply","⋄︙تم تقيده من المجموعه")  
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --         UnTkeed          --
 if text ==('الغاء تقييد') or text ==('الغاء تقيد') and ChCheck(msg) then
 function UnTkeedReply(extra, result, success)
@@ -6631,8 +6469,7 @@ ReplyStatus(msg,user,"Reply","⋄︙تم الغاء تقيده من المجمو
 end
 end 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --         BanAll         --
 if SecondSudo(msg) then
 if text ==('حضر عام') or text ==('حظر عام') and ChCheck(msg) then
@@ -6711,8 +6548,7 @@ ChatKick(msg.chat_id_, user)
 DevHmD:sadd(DevTwix..'HmD:BanAll:', user)
 ReplyStatus(msg,user,"Reply","⋄︙تم حظره عام من المجموعات")  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --         MuteAll        --
 if text ==('كتم عام') and ChCheck(msg) then
 function MuteAllReply(extra, result, success)
@@ -6787,8 +6623,7 @@ end
 DevHmD:sadd(DevTwix..'HmD:MuteAll:', user)
 ReplyStatus(msg,user,"Reply","⋄︙تم كتمه عام من المجموعات")  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 --         UnAll          --
 if text ==('الغاء عام') or text ==('الغاء العام') and ChCheck(msg) then
 function UnAllReply(extra, result, success)
@@ -6819,8 +6654,7 @@ ReplyStatus(msg,user,"Reply","⋄︙تم الغاء (الحظر • الكتم) 
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if (text == "تغير المطور الاساسي" or text == "نقل ملكيه البوت" or text == "تغيير المطور الاساسي" or text == "⇠ تغير المطور الاساسي ᥀") and msg.reply_to_message_id_ == 0 and Sudo(msg) and ChCheck(msg) then 
 send(msg.chat_id_, msg.id_,'⋄︙يجب التاكد ان المطور الجديد ارسل start لخاص البوت بعد ذلك يمكنك ارسال ايدي المطور')
 DevHmD:setex(DevTwix.."HmD:EditDev"..msg.sender_user_id_,300,true)
@@ -6850,8 +6684,7 @@ end,nil)
 return false
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if msg.reply_to_message_id_ ~= 0 then
 if text and text:match("^رفع مطي$") and not DevHmD:get(DevTwix..'HmD:Lock:Stupid'..msg.chat_id_) and ChCheck(msg) then
 function donky_by_reply(extra, result, success)
@@ -6863,8 +6696,7 @@ DevHmD:sadd(DevTwix..'User:Donky:'..msg.chat_id_, result.sender_user_id_)
 end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,donky_by_reply)
 end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if msg.reply_to_message_id_ ~= 0  then
 if text and text:match("^تنزيل مطي$") and not DevHmD:get(DevTwix..'HmD:Lock:Stupid'..msg.chat_id_) and ChCheck(msg) then
 function donky_by_reply(extra, result, success)
@@ -6876,8 +6708,7 @@ ReplyStatus(msg,result.sender_user_id_,"Reply","⋄︙تم تنزيله من ق�
 end end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,donky_by_reply)
 end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Admin(msg) then
 if text and (text:match('^تقييد دقيقه (%d+)$') or text:match('^كتم دقيقه (%d+)$') or text:match('^تقيد دقيقه (%d+)$')) and ChCheck(msg) then 
 local function mut_time(extra, result,success)
@@ -6925,8 +6756,7 @@ if tonumber(msg.reply_to_message_id_) == 0 then else
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, mut_time,nil) end 
 end 
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^اضف رسائل (%d+)$") and msg.reply_to_message_id_ == 0 and ChCheck(msg) then  
 if Constructor(msg) then
 TXT = text:match("^اضف رسائل (%d+)$")
@@ -6995,8 +6825,7 @@ end
 end,nil)
 end 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Admin(msg) then
 if text == "المميزين" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:VipMem:'..msg.chat_id_)
@@ -7013,8 +6842,7 @@ text = "⋄︙*لا يوجد مميزين*"
 end
 Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Manager(msg) then
 if text == "الادمنيه" and ChCheck(msg) or text == "الادمنية" and ChCheck(msg) then 
 local HmD =  'HmD:Admins:'..msg.chat_id_
@@ -7032,8 +6860,7 @@ text = "⋄︙*لا يوجد ادمنيه*"
 end
 Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end end
----------------------------------------------------------------------------------------
- 
+--     Source DevTwix     -- 
 if Constructor(msg) then
 if text == "المدراء" and ChCheck(msg) or text == "مدراء" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:Managers:'..msg.chat_id_)
@@ -7065,8 +6892,7 @@ text = "⋄︙*لا يوجد منظفين*"
 end
 Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if BasicConstructor(msg) then
 if text == "المنشئين" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:Constructor:'..msg.chat_id_)
@@ -7083,8 +6909,7 @@ text = "⋄︙*لا يوجد منشئين*"
 end
 Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Owner(msg) then
 if text == "المالكين" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:Owner:'..msg.chat_id_)
@@ -7135,8 +6960,7 @@ end
 end
 end,nil)   
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Admin(msg) then
 if text == "المكتومين" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:Muted:'..msg.chat_id_)
@@ -7153,8 +6977,7 @@ text = "⋄︙*لا يوجد مكتومين*"
 end
 Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "المقيدين" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:Tkeed:'..msg.chat_id_)
 text = "⋄︙قائمة المقيدين ⇠ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
@@ -7170,8 +6993,7 @@ text = "⋄︙*لا يوجد مقيدين*"
 end
 Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "المحظورين" and ChCheck(msg) or text == "المحضورين" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:Ban:'..msg.chat_id_)
 text = "⋄︙قائمة المحظورين ⇠ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
@@ -7187,8 +7009,7 @@ text = "⋄︙*لا يوجد محظورين*"
 end
 Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "المطايه" and ChCheck(msg) or text == "المطاية" and ChCheck(msg) then
 local List = DevHmD:smembers(DevTwix..'User:Donky:'..msg.chat_id_)
 text = "⋄︙قائمة مطاية المجموعه ⇠ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
@@ -7204,8 +7025,7 @@ text = "⋄︙*لا يوجد مطايه كلها اوادم*"
 end
 Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "قائمه المنع" and ChCheck(msg) then
 local List = DevHmD:hkeys(DevTwix..'HmD:Filters:'..msg.chat_id_)
 text = "⋄︙قائمة المنع ⇠ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
@@ -7218,8 +7038,7 @@ end
 Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "المطورين الاساسيين" and ChCheck(msg) and HmDSudo(msg) or text == "الاساسيين" and HmDSudo(msg) and ChCheck(msg) or text == "⇠ الاساسيين ᥀" and HmDSudo(msg) and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:HmDSudo:')
 text = "⋄︙قائمة المطورين الاساسيين ⇠ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
@@ -7235,8 +7054,7 @@ text = "⋄︙*عذرا لم يتم رفع اي مطورين اساسيين*"
 end
 Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "المطورين الثانويين" and SecondSudo(msg) and ChCheck(msg) or text == "الثانويين" and SecondSudo(msg) and ChCheck(msg) or text == "⇠ الثانويين ᥀" and SecondSudo(msg) and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:SecondSudo:')
 text = "⋄︙قائمة المطورين الثانويين ⇠ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
@@ -7252,8 +7070,7 @@ text = "⋄︙*عذرا لم يتم رفع اي مطورين ثانويين*"
 end
 Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if SudoBot(msg) then
 if text == "قائمه العام" and ChCheck(msg) or text == "المحظورين عام" and ChCheck(msg) or text == "المكتومين عام" and ChCheck(msg) or text == "⇠ قائمه العام ᥀" and ChCheck(msg) or text == "⇠ قائمه العام ᥀" and ChCheck(msg) then 
 local BanAll = DevHmD:smembers(DevTwix..'HmD:BanAll:')
@@ -7289,8 +7106,7 @@ text = "⋄︙*لم يتم حظر او كتم اي عضو*"
 end
 Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "المطورين" and ChCheck(msg) or text == "⇠ المطورين ᥀" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:SudoBot:')
 text = "⋄︙قائمة المطورين ⇠ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
@@ -7307,8 +7123,7 @@ text = "⋄︙*عذرا لم يتم رفع اي مطورين*"
 end
 Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text ==("رفع المنشئ") and ChCheck(msg) or text ==("رفع المالك") and ChCheck(msg) then 
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
 local admins = data.members_
@@ -7329,8 +7144,7 @@ end,nil)
 end,nil)   
 end
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Manager(msg) then
 if text == 'منع' and tonumber(msg.reply_to_message_id_) > 0 and ChCheck(msg) then 
 function filter_by_reply(extra, result, success) 
@@ -7355,8 +7169,7 @@ end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,filter_by_reply) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'الغاء منع' and tonumber(msg.reply_to_message_id_) > 0 and ChCheck(msg) then     
 function unfilter_by_reply(extra, result, success) 
 if result.content_.sticker_ then
@@ -7381,8 +7194,7 @@ end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,unfilter_by_reply) 
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and (text == "تفعيل تحويل الصيغ" or text == "تفعيل التحويل") and Manager(msg) and ChCheck(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل تحويل الصيغ'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -7424,8 +7236,7 @@ end
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),ThwelByReply) 
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text ==("كشف") and msg.reply_to_message_id_ ~= 0 and ChCheck(msg) or text ==("ايدي") and msg.reply_to_message_id_ ~= 0 and ChCheck(msg) then 
 function id_by_reply(extra, result, success) 
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
@@ -7579,8 +7390,7 @@ end
 end,nil)
 return false 
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'كشف القيود' and tonumber(msg.reply_to_message_id_) > 0 and Admin(msg) and ChCheck(msg) then 
 function kshf_by_reply(extra, result, success)
 if DevHmD:sismember(DevTwix..'HmD:Muted:'..msg.chat_id_,result.sender_user_id_) then muted = 'مكتوم' else muted = 'غير مكتوم' end
@@ -7678,8 +7488,7 @@ end,nil)
 end  
 resolve_username(username,unbanusername) 
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Manager(msg) then
 if text and text:match("^تغيير الايدي$") and ChCheck(msg) or text and text:match("^تغير الايدي$") and ChCheck(msg) then 
 local List = {
@@ -7768,8 +7577,7 @@ local Text_Rand = List[math.random(#List)]
 DevHmD:set(DevTwix.."HmD:GpIds:Text"..msg.chat_id_,Text_Rand)
 ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","⋄︙تم تغير كليشة الايدي")  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if SecondSudo(msg) then
 if text and text:match("^تعيين الايدي العام$") or text and text:match("^تعين الايدي العام$") or text and text:match("^تعيين كليشة الايدي$") then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙رجائا اتبع التعليمات للتعيين \n⋄︙لطبع كليشة الايدي ارسل كليشه تحتوي على النصوص التي باللغه الانجليزيه ادناه ⇠ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n `#username` ↬ لطبع المعرف\n `#id` ↬ لطبع الايدي \n `#photos` ↬ لطبع عدد الصور \n `#stast` ↬ لطبع الرتب \n `#msgs` ↬ لطبع عدد الرسائل \n `#msgday` ↬ لطبع الرسائل اليوميه \n `#CustomTitle` ↬ لطبع اللقب \n `#bio` ↬ لطبع البايو \n `#auto` ↬ لطبع التفاعل \n `#game` ↬ لطبع عدد النقاط \n `#cont` ↬ لطبع عدد الجهات \n `#edit` ↬ لطبع عدد السحكات \n `#Description` ↬ لطبع تعليق الصور\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉', 1, 'md')
@@ -7792,8 +7600,7 @@ ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","⋄︙تم حذف كليشة ال
 DevHmD:del(DevTwix.."HmD:AllIds:Text")
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^تعيين الايدي$") and ChCheck(msg) or text and text:match("^تعين الايدي$") and ChCheck(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙رجائا اتبع التعليمات للتعيين \n⋄︙لطبع كليشة الايدي ارسل كليشه تحتوي على النصوص التي باللغه الانجليزيه ادناه ⇠ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n `#username` ↬ لطبع المعرف\n `#id` ↬ لطبع الايدي \n `#photos` ↬ لطبع عدد الصور \n `#stast` ↬ لطبع الرتب \n `#msgs` ↬ لطبع عدد الرسائل \n `#msgday` ↬ لطبع الرسائل اليوميه \n `#CustomTitle` ↬ لطبع اللقب \n `#bio` ↬ لطبع البايو \n `#auto` ↬ لطبع التفاعل \n `#game` ↬ لطبع عدد النقاط \n `#cont` ↬ لطبع عدد الجهات \n `#edit` ↬ لطبع عدد السحكات \n `#Description` ↬ لطبع تعليق الصور\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉', 1, 'md')
 DevHmD:set("DevTwix:New:id:"..DevTwix..msg.chat_id_..msg.sender_user_id_,'DevTwixTeam')
@@ -7815,8 +7622,7 @@ ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","⋄︙تم حذف كليشة ال
 DevHmD:del(DevTwix.."HmD:GpIds:Text"..msg.chat_id_)
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if msg.reply_to_message_id_ ~= 0 then
 return ""
 else
@@ -7948,8 +7754,7 @@ end
 getUser(msg.sender_user_id_, DevTwixTeam)
 end
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if ChatType == 'sp' or ChatType == 'gp'  then
 if Admin(msg) then
 if text and text:match("^قفل (.*)$") and ChCheck(msg) then
@@ -8051,8 +7856,7 @@ end end end
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Admin(msg) then
 if text and (text:match("^ضع تكرار (%d+)$") or text:match("^وضع تكرار (%d+)$")) then   
 local TextSpam = text:match("ضع تكرار (%d+)$") or text:match("وضع تكرار (%d+)$")
@@ -8068,8 +7872,7 @@ local TextSpam = text:match("ضع زمن التكرار (%d+)$") or text:match("
 DevHmD:hset(DevTwix.."HmD:Spam:Group:User"..msg.chat_id_ ,"Num:Spam:Time" ,TextSpam) 
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙تم وضع زمن التكرار ⇠ '..TextSpam, 1, 'md')
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Manager(msg) then
 if text and text == 'تفعيل الايدي بالصوره' and ChCheck(msg) then
 if not DevHmD:get(DevTwix..'HmD:Lock:Id:Photo'..msg.chat_id_) then
@@ -8105,8 +7908,7 @@ HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len
 DevHmD:set(DevTwix..'HmD:Lock:Id'..msg.chat_id_,true)
 end end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'ضع رابط' and ChCheck(msg) or text == 'وضع رابط' and ChCheck(msg) or text == 'ضع الرابط' and ChCheck(msg) or text == 'وضع الرابط' and ChCheck(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙ارسل رابط المجموعه او رابط قناة المجموعه', 1, 'md')
 DevHmD:setex(DevTwix.."HmD:Set:Groups:Links"..msg.chat_id_..msg.sender_user_id_,300,true) 
@@ -8127,8 +7929,7 @@ DevHmD:setex(DevTwix.."HmD:Set:Groups:Links"..msg.chat_id_..msg.sender_user_id_,
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Admin(msg) then
 if text and text:match("^تفعيل الترحيب$") and ChCheck(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل الترحيب بنجاح'
@@ -8168,8 +7969,7 @@ else
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙لم يتم وضع الترحيب \n⋄︙ارسل ⇠ ضع ترحيب للحفظ ', 1, 'md')
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if DevHmD:get(DevTwix..'HmD:SetDescription'..msg.chat_id_..':'..msg.sender_user_id_) then  
 if text == 'الغاء' then 
 Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙تم الغاء حفظ الوصف", 1, 'md')
@@ -8185,8 +7985,7 @@ if text and text:match("^ضع وصف$") and ChCheck(msg) or text and text:match(
 DevHmD:set(DevTwix..'HmD:SetDescription'..msg.chat_id_..':'..msg.sender_user_id_,true)
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙ارسل لي الوصف الان', 1, 'md')
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text == "منع" and msg.reply_to_message_id_ == 0 and ChCheck(msg) then       
 Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙ارسل لي الكلمه الان", 1, 'md') 
 DevHmD:set(DevTwix.."HmD:SetFilters"..msg.sender_user_id_..msg.chat_id_,"add")  
@@ -8224,8 +8023,7 @@ DevHmD:del(DevTwix.."HmD:SetFilters"..msg.sender_user_id_..msg.chat_id_)
 end
 return false
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if SudoBot(msg) then
 if text and text == "الاحصائيات" and ChCheck(msg) or text and text == "⇠  الاحصائيات ᥀" and ChCheck(msg) then
 local gps = DevHmD:scard(DevTwix.."HmD:Groups") local users = DevHmD:scard(DevTwix.."HmD:Users") 
@@ -8240,8 +8038,7 @@ local gps = DevHmD:scard(DevTwix.."HmD:Groups")
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙عدد المجموعات ⇠ ❨ '..gps..' ❩', 1, 'md')
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text == "المجموعات" and ChCheck(msg) or text and text == "⇠ المجموعات ᥀" and ChCheck(msg) then
 if not SudoBot(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙للمطورين فقط ', 1, 'md')
@@ -8256,8 +8053,7 @@ t = '⋄︙لا يوجد مجموعات مفعله'
 end
 Dev_HmD(msg.chat_id_, msg.id_, 1,t, 1, 'md')
 end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match('^تنظيف (%d+)$') or text and text:match('^مسح (%d+)$') and ChCheck(msg) then  
 if not DevHmD:get(DevTwix..'Delete:Time'..msg.chat_id_..':'..msg.sender_user_id_) then  
 local Number = tonumber(text:match('^تنظيف (%d+)$') or text:match('^مسح (%d+)$')) 
@@ -8300,8 +8096,7 @@ end,nil)
 end
 return false
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تنظيف الكروبات" and SecondSudo(msg) and ChCheck(msg) or text == "تنظيف المجموعات" and SecondSudo(msg) and ChCheck(msg) or text == "⇠ تنظيف المجموعات ᥀" and SecondSudo(msg) and ChCheck(msg) then 
 local group = DevHmD:smembers(DevTwix.."HmD:Groups")
 local w = 0
@@ -8348,8 +8143,7 @@ end
 return false
 end 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and (text == "تفعيل التلقائي" or text == "تفعيل المسح التلقائي" or text == "تفعيل الحذف التلقائي") and Constructor(msg) and ChCheck(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل ميزة الحذف التلقائي للميديا'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -8393,8 +8187,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙لاتوجد ميديا هنا", 1, 'md
 end end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تفعيل امسح" and Constructor(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل امسح بنجاح'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -8430,8 +8223,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙لاتوجد ميديا هنا", 1, 'md
 end end 
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تفعيل مسح الاغاني" and Constructor(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل مسح الاغاني بنجاح'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -8465,8 +8257,7 @@ DevHmD:del(DevTwix.."HmD:cleanermusic"..msg.chat_id_)
 else
 Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙لاتوجد اغاني هنا", 1, 'md') 
 end end end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Admin(msg) then
 if text == "تنظيف تعديل" and ChCheck(msg) or text == "تنظيف التعديل" and ChCheck(msg) then   
 HmD_Del = {[0]= msg.id_}
@@ -8488,8 +8279,7 @@ DeleteMessage(msg.chat_id_,HmD_Del2)
 end,nil)  
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙تم تنظيف 100 من الرسائل المعدله', 1, 'md')
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if ChatType == 'sp' or ChatType == 'gp'  then
 if Admin(msg) then
 if text and text:match("^فتح (.*)$") and ChCheck(msg) then
@@ -8572,8 +8362,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙التثبيت بالفعل مفتوح 
 end end end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Admin(msg) then
 if text and text:match("^قفل (.*)$") and ChCheck(msg) then
 local LockText = {string.match(text, "^(قفل) (.*)$")}
@@ -8755,8 +8544,7 @@ end
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Admin(msg) then
 if text and text:match("^فتح (.*)$") and ChCheck(msg) then
 local UnLockText = {string.match(text, "^(فتح) (.*)$")}
@@ -8938,8 +8726,7 @@ end
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^قفل التفليش$") or text and text:match("^تفعيل الحمايه القصوى$") and ChCheck(msg) then
 if not Constructor(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙للمنشئين فقط', 1, 'md')
@@ -8964,8 +8751,7 @@ end
 ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","⋄︙تم فتح التفليش")  
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^قفل الكل$") and ChCheck(msg) then
 if not Constructor(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙للمنشئين فقط', 1, 'md')
@@ -8991,8 +8777,7 @@ end
 ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","⋄︙تم فتح جميع الاوامر")  
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Admin(msg) then
 if text and (text:match("^ضع سبام (%d+)$") or text:match("^وضع سبام (%d+)$")) then
 local SetSpam = text:match("ضع سبام (%d+)$") or text:match("وضع سبام (%d+)$")
@@ -9004,8 +8789,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙تم وضع عدد السبام ⇠'..S
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Manager(msg) then
 if text == "فحص" and ChCheck(msg) or text == "فحص البوت" and ChCheck(msg) then
 local Check = https.request('https://api.telegram.org/bot'..TokenBot..'/getChatMember?chat_id='..msg.chat_id_..'&user_id='..DevTwix)
@@ -9071,8 +8855,7 @@ DevHmD:del(DevTwix.."HmD:BasicConstructor:Rd"..msg.chat_id_)
 DevHmD:del(DevTwix.."HmD:SudoBot:Rd"..msg.chat_id_)
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "كشف البوتات" and ChCheck(msg) then 
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(extra,result,success)
 local admins = result.members_  
@@ -9123,11 +8906,9 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙*عدد البوتات هنا* ⇠ "..c
 end 
 end,nil)  
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Admin(msg) then
 if text and text:match("^حذف (.*)$") or text and text:match("^مسح (.*)$") and ChCheck(msg) then
 local txts = {string.match(text, "^(حذف) (.*)$")}
@@ -9246,8 +9027,7 @@ end
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^حذف القوائم$") and ChCheck(msg) or text and text:match("^مسح القوائم$") and ChCheck(msg) then
 if not BasicConstructor(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙للمنشئ الاساسي فقط', 1, 'md')
@@ -9255,8 +9035,7 @@ else
 DevHmD:del(DevTwix..'HmD:Ban:'..msg.chat_id_) DevHmD:del(DevTwix..'HmD:Admins:'..msg.chat_id_) DevHmD:del(DevTwix..'User:Donky:'..msg.chat_id_) DevHmD:del(DevTwix..'HmD:VipMem:'..msg.chat_id_) DevHmD:del(DevTwix..'HmD:Filters:'..msg.chat_id_) DevHmD:del(DevTwix..'HmD:Muted:'..msg.chat_id_)
 Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙تم حذف ⇠ ❨ قائمة المنع • المحظورين • المكتومين • الادمنيه • المميزين • المطايه ❩ بنجاح \n ✓", 1, 'md')
 end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^حذف جميع الرتب$") and ChCheck(msg) or text and text:match("^مسح جميع الرتب$") and ChCheck(msg) or text and text:match("^تنزيل جميع الرتب$") and ChCheck(msg) then
 if not HmDConstructor(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙للمالكين فقط', 1, 'md')
@@ -9286,8 +9065,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙لاتوجد رتب هنا", 1, 'md')
 end 
 end 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Admin(msg) then 
 if text and text:match("^الاعدادات$") and ChCheck(msg) then
 if not DevHmD:get(DevTwix..'HmD:Spam:Text'..msg.chat_id_) then
@@ -9295,8 +9073,7 @@ spam_c = 400
 else
 spam_c = DevHmD:get(DevTwix..'HmD:Spam:Text'..msg.chat_id_)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if DevHmD:hget(DevTwix.."HmD:Spam:Group:User"..msg.chat_id_, "Spam:User") == "kick" then     
 flood = "بالطرد"     
 elseif DevHmD:hget(DevTwix.."HmD:Spam:Group:User"..msg.chat_id_,"Spam:User") == "keed" then     
@@ -9308,8 +9085,7 @@ flood = "بالحذف"
 else     
 flood = "مفتوح"     
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if DevHmD:get(DevTwix.."HmD:Lock:Bots"..msg.chat_id_) == "del" then
 lock_bots = "بالحذف"
 elseif DevHmD:get(DevTwix.."HmD:Lock:Bots"..msg.chat_id_) == "ked" then
@@ -9319,8 +9095,7 @@ lock_bots = "بالطرد"
 else
 lock_bots = "مفتوحه"    
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if DevHmD:get(DevTwix..'HmD:Lock:Text'..msg.chat_id_) then mute_text = 'مقفله' else mute_text = 'مفتوحه'end
 if DevHmD:get(DevTwix..'HmD:Lock:Photo'..msg.chat_id_) then mute_photo = 'مقفله' else mute_photo = 'مفتوحه' end
 if DevHmD:get(DevTwix..'HmD:Lock:Videos'..msg.chat_id_) then mute_video = 'مقفله' else mute_video = 'مفتوحه' end
@@ -9351,8 +9126,7 @@ if DevHmD:get(DevTwix..'HmD:Lock:Kfr'..msg.chat_id_) then lock_kaf = 'مفتوح
 if DevHmD:get(DevTwix..'HmD:Lock:Taf'..msg.chat_id_) then lock_taf = 'مفتوحه' else lock_taf = 'مقفله' end
 if DevHmD:get(DevTwix..'HmD:Lock:Farsi'..msg.chat_id_) then lock_farsi = 'مقفله' else lock_farsi = 'مفتوحه' end
 local Flood_Num = DevHmD:hget(DevTwix.."HmD:Spam:Group:User"..msg.chat_id_,"Num:Spam") or 5
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 local TXTE = "⋄︙اعدادات المجموعه ⇠ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
 .."⋄︙الروابط ⇠ "..mute_links.."\n"
 .."⋄︙المعرف ⇠ "..lock_tag.."\n"
@@ -9390,8 +9164,7 @@ local TXTE = "⋄︙اعدادات المجموعه ⇠ ⤈\n┉ ┉ ┉ ┉ ┉
 Dev_HmD(msg.chat_id_, msg.id_, 1, TXTE, 1, 'md')
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^كول (.*)$") and ChCheck(msg) then
 local txt = {string.match(text, "^(كول) (.*)$")}
 Dev_HmD(msg.chat_id_,0, 1, txt[2], 1, 'md')
@@ -9416,8 +9189,7 @@ sendAudio(msg.chat_id_, msg.id_, 0, 1,nil, './'..Antk.result.translate..'.mp3')
 os.execute('rm -rf ./'..Antk.result.translate..'.mp3') 
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if DevHmD:get(DevTwix..'HmD:setrules'..msg.chat_id_..':'..msg.sender_user_id_) then 
 if text == 'الغاء' then 
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙تم الغاء حفظ قوانين المجموعه', 1, 'md')
@@ -9438,8 +9210,7 @@ if text and text:match("^القوانين$") and ChCheck(msg) then
 local rules = DevHmD:get(DevTwix..'HmD:rules'..msg.chat_id_)
 Dev_HmD(msg.chat_id_, msg.id_, 1, rules, 1, nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'رقمي' and ChCheck(msg) then
 tdcli_function({ID="GetUser",user_id_=msg.sender_user_id_},function(extra,result,success)
 if result.phone_number_  then
@@ -9450,8 +9221,7 @@ end
 send(msg.chat_id_, msg.id_,MyNumber)
 end,nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تفعيل الزخرفه" and Manager(msg) and ChCheck(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل الزخرفه بنجاح'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -9500,8 +9270,7 @@ end
 Dev_HmD(msg.chat_id_, msg.id_, 1, t, 1, 'md')
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تفعيل الابراج" and Manager(msg) and ChCheck(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل الابراج بنجاح'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -9521,8 +9290,7 @@ t = Brg.ok.abs
 Dev_HmD(msg.chat_id_, msg.id_, 1, t, 1, 'html')
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 ---------------------------------------------------------------------------------------
 if text and (text == "تفعيل اوامر النسب" or text == "تفعيل النسب" or text == "تفعيل نسبه الكره" or text == "تفعيل نسبه الرجوله" or text == "تفعيل نسبه الانوثه" or text == "تفعيل نسبه الغباء") and Manager(msg) and ChCheck(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1,"✧︙تم تفعيل اوامر النسب",'md')
@@ -9813,8 +9581,7 @@ https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id=' 
 DevHmD:del(DevTwix..'nukjNsba:HmD'..msg.chat_id_..msg.sender_user_id_) 
 return false 
 end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تفعيل حساب العمر" and Manager(msg) and ChCheck(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل حساب العمر'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -9834,8 +9601,7 @@ t = Age.ok.abs
 Dev_HmD(msg.chat_id_, msg.id_, 1, t, 1, 'html')
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تفعيل معاني الاسماء" and Manager(msg) and ChCheck(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل معاني الاسماء'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -9855,8 +9621,7 @@ t = Mean.ok.abs
 Dev_HmD(msg.chat_id_, msg.id_, 1, t, 1, 'html')
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تفعيل متحركه" and Manager(msg) and SourceCh(msg) or text == "تفعيل المتحركه" and Manager(msg) and SourceCh(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل المتحركه'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -9877,8 +9642,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendanimation?chat_id=' .. msg.chat_id_ .. '&animation=https://t.me/GifDevTwix/'..HmD..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تفعيل ميمز" and Manager(msg) and SourceCh(msg) or text == "تفعيل الميمز" and Manager(msg) and SourceCh(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل الميمز'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -9899,8 +9663,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/MemzDevTwix/'..HmD..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تفعيل غنيلي" and Manager(msg) and SourceCh(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل غنيلي'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -9921,8 +9684,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/AudiosDevTwix/'..HmD..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تفعيل الاغاني" and Manager(msg) and SourceCh(msg) or text == "تفعيل اغنيه" and Manager(msg) and SourceCh(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل الاغاني'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -9943,8 +9705,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/DevTwixMp3/'..HmD..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تفعيل ريمكس" and Manager(msg) and SourceCh(msg) or text == "تفعيل الريمكس" and Manager(msg) and SourceCh(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل الريمكس'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -9965,8 +9726,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/RemixDevTwix/'..HmD..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تفعيل صوره" and Manager(msg) and SourceCh(msg) or text == "تفعيل الصوره" and Manager(msg) and SourceCh(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل الصوره'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -9987,8 +9747,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/PhotosDevTwix/'..HmD..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تفعيل انمي" and Manager(msg) and SourceCh(msg) or text == "تفعيل الانمي" and Manager(msg) and SourceCh(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل الانمي'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -10009,8 +9768,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/AnimeDevTwix/'..HmD..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تفعيل فلم" and Manager(msg) and SourceCh(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل الافلام'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -10031,8 +9789,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/MoviesDevTwix/'..HmD..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "تفعيل مسلسل" and Manager(msg) and SourceCh(msg) then
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل المسلسلات'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -10053,8 +9810,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/SeriesDevTwix/'..HmD..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Admin(msg) then
 if DevHmD:get(DevTwix..'HmD:LockSettings'..msg.chat_id_) then 
 if text == "الروابط" then if DevHmD:get(DevTwix..'HmD:Lock:Links'..msg.chat_id_) then mute_links = 'مقفله' else mute_links = 'مفتوحه' end local DevTwixTeam = "\n" .."⋄︙الروابط ⇠ "..mute_links.."\n" Dev_HmD(msg.chat_id_, msg.id_, 1, DevTwixTeam, 1, 'md') end
@@ -10084,8 +9840,7 @@ if text == "الكفر" then if DevHmD:get(DevTwix..'HmD:Lock:Kfr'..msg.chat_id_
 if text == "الفشار" then if DevHmD:get(DevTwix..'HmD:Lock:Fshar'..msg.chat_id_) then lock_fshar = 'مفتوح' else lock_fshar = 'مقفل' end local DevTwixTeam = "\n" .."⋄︙الفشار ⇠ "..lock_fshar.."\n" Dev_HmD(msg.chat_id_, msg.id_, 1, DevTwixTeam, 1, 'md') end
 if text == "الطائفيه" then if DevHmD:get(DevTwix..'HmD:Lock:Taf'..msg.chat_id_) then lock_taf = 'مفتوحه' else lock_taf = 'مقفله' end local DevTwixTeam = "\n" .."⋄︙الطائفيه ⇠ "..lock_taf.."\n" Dev_HmD(msg.chat_id_, msg.id_, 1, DevTwixTeam, 1, 'md') end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'تفعيل كشف الاعدادات' and ChCheck(msg) then 
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل كشف الاعدادات'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -10096,8 +9851,7 @@ local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙ت
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
 DevHmD:del(DevTwix..'HmD:LockSettings'..msg.chat_id_) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and (text == 'تعطيل التحقق' or text == 'قفل التحقق' or text == 'تعطيل تنبيه الدخول') and Manager(msg) and ChCheck(msg) then 
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تعطيل التحقق بنجاح'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -10108,8 +9862,7 @@ local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙ت
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
 DevHmD:set(DevTwix..'HmD:Lock:Robot'..msg.chat_id_,true)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'تفعيل ردود المدير' and Manager(msg) and ChCheck(msg) then 
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل ردود المدير'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -10120,8 +9873,7 @@ local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙ت
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
 DevHmD:set(DevTwix..'HmD:Lock:GpRed'..msg.chat_id_,true)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'تفعيل ردود المطور' and Manager(msg) and ChCheck(msg) then 
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل ردود المطور'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -10132,8 +9884,7 @@ local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙ت
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
 DevHmD:set(DevTwix..'HmD:Lock:AllRed'..msg.chat_id_,true)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if HmDSudo(msg) then
 if text == 'تفعيل المغادره' or text == '⇠ تفعيل المغادره ᥀' and ChCheck(msg) then 
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل المغادره بنجاح'
@@ -10156,8 +9907,7 @@ HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len
 DevHmD:set(DevTwix.."HmD:Send:Bot"..DevTwix,true) 
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^ضع اسم (.*)$") and Manager(msg) and ChCheck(msg) then
 local txt = {string.match(text, "^(ضع اسم) (.*)$")}
 tdcli_function ({ ID = "ChangeChatTitle",chat_id_ = msg.chat_id_,title_ = txt[2] },function(arg,data) 
@@ -10173,8 +9923,7 @@ HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len
 end
 end,nil) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if msg.content_.photo_ then
 if DevHmD:get(DevTwix..'HmD:SetPhoto'..msg.chat_id_..':'..msg.sender_user_id_) then
 if msg.content_.photo_.sizes_[3] then
@@ -10202,15 +9951,13 @@ if text and text:match("^ضع صوره$") and ChCheck(msg) or text and text:matc
 Dev_HmD(msg.chat_id_,msg.id_, 1, '⋄︙ارسل صورة المجموعه الان', 1, 'md')
 DevHmD:set(DevTwix..'HmD:SetPhoto'..msg.chat_id_..':'..msg.sender_user_id_,true)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^حذف الصوره$") and ChCheck(msg) or text and text:match("^مسح الصوره$") and ChCheck(msg) then
 https.request("https://api.telegram.org/bot"..TokenBot.."/deleteChatPhoto?chat_id="..msg.chat_id_) 
 ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","⋄︙تم حذف صورة المجموعه")  
 return false  
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if Manager(msg) then
 if text and text:match("^الغاء تثبيت$") and ChCheck(msg) or text and text:match("^الغاء التثبيت$") and ChCheck(msg) then
 if DevHmD:sismember(DevTwix.."HmD:Lock:Pinpin",msg.chat_id_) and not BasicConstructor(msg) then
@@ -10234,8 +9981,7 @@ return false
 end
 end,nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^الغاء تثبيت الكل$") and ChCheck(msg) then  
 if DevHmD:sismember(DevTwix.."HmD:Lock:Pinpin",msg.chat_id_) and not BasicConstructor(msg) then
 Dev_HmD(msg.chat_id_,msg.id_, 1, "⋄︙التثبيت والغاء واعادة التثبيت تم قفله من قبل المنشئين الاساسيين", 1, 'md')
@@ -10259,8 +10005,7 @@ return false
 end
 end,nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^اعاده تثبيت$") and ChCheck(msg) or text and text:match("^اعاده التثبيت$") and ChCheck(msg) or text and text:match("^اعادة التثبيت$") and ChCheck(msg) then
 if DevHmD:sismember(DevTwix.."HmD:Lock:Pinpin",msg.chat_id_) and not BasicConstructor(msg) then
 Dev_HmD(msg.chat_id_,msg.id_, 1, "⋄︙التثبيت والغاء واعادة التثبيت تم قفله من قبل المنشئين الاساسيين", 1, 'md')
@@ -10273,8 +10018,7 @@ local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙ت
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
 end end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'طرد المحذوفين' and ChCheck(msg) or text == 'مسح المحذوفين' and ChCheck(msg) or text == 'طرد الحسابات المحذوفه' and ChCheck(msg) or text == 'حذف المحذوفين' and ChCheck(msg) then  
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),offset_ = 0,limit_ = 1000}, function(arg,del)
 for k, v in pairs(del.members_) do
@@ -10287,8 +10031,7 @@ end
 ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","⋄︙تم طرد المحذوفين")  
 end,nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^مسح المحظورين$") or text and text:match("^حذف المحظورين$") and ChCheck(msg) or text and text:match("^مسح المطرودين$") or text and text:match("^حذف المطرودين$") and ChCheck(msg) then
 local function RemoveBlockList(extra, result)
 if tonumber(result.total_count_) == 0 then 
@@ -10307,8 +10050,7 @@ end
 tdcli_function({ID="GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersKicked"},offset_ = 0,limit_ = 200}, RemoveBlockList, {chat_id_ = msg.chat_id_, msg_id_ = msg.id_})    
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^معلومات المجموعه$") and ChCheck(msg) or text and text:match("^عدد الاعضاء$") and ChCheck(msg) or text and text:match("^عدد الكروب$") and ChCheck(msg) or text and text:match("^عدد الادمنيه$") and ChCheck(msg) or text and text:match("^عدد المحظورين$") and ChCheck(msg) then
 local Muted = DevHmD:scard(DevTwix.."HmD:Muted:"..msg.chat_id_) or "0"
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,dp) 
@@ -10317,8 +10059,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙المجموعه ⇠ ❨ '..dp.title_..
 end,nil)
 end,nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match('^كشف (-%d+)') and ChCheck(msg) then
 local ChatId = text:match('كشف (-%d+)') 
 if not SudoBot(msg) then
@@ -10357,8 +10098,7 @@ end,nil)
 end,nil)
 end 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^غادر (-%d+)$") and ChCheck(msg) then
 local Text = { string.match(text, "^(غادر) (-%d+)$")}
 if not SecondSudo(msg) then
@@ -10376,15 +10116,13 @@ end
 end,nil)
 end 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^تعين عدد الاعضاء (%d+)$") and SecondSudo(msg) or text and text:match("^تعيين عدد الاعضاء (%d+)$") and SecondSudo(msg) then
 local Num = text:match("تعين عدد الاعضاء (%d+)$") or text:match("تعيين عدد الاعضاء (%d+)$")
 DevHmD:set(DevTwix..'HmD:Num:Add:Bot',Num) 
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙تم وضع عدد الاعضاء ⇠ *'..Num..'* عضو', 1, 'md')
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'تفعيل البوت الخدمي' and ChCheck(msg) or text == '⇠ تفعيل البوت الخدمي ᥀' and ChCheck(msg) then 
 if not HmDSudo(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙للمطور الاساسي فقط', 1, 'md')
@@ -10522,8 +10260,7 @@ DevHmD:del(DevTwix.."HmD:Lock:Key"..msg.chat_id_)
 return false  
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match('^تفعيل$') and SudoBot(msg) and ChCheck(msg) then
 if ChatType ~= 'sp' then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙المجموعه عاديه وليست خارقه لا تستطيع تفعيلي يرجى ان تضع سجل رسائل المجموعه ضاهر وليس مخفي ومن بعدها يمكنك رفعي ادمن ثم تفعيلي', 1, 'md')
@@ -10643,8 +10380,7 @@ end,nil)
 end,nil)
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^المطور$") then
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,dp) 
@@ -10676,8 +10412,7 @@ end
 end,nil)
 end,nil)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'روابط الكروبات' or text == 'روابط المجموعات' or text == '⇠ روابط المجموعات ᥀' then
 if not HmDSudo(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙للمطور الاساسي فقط ', 1, 'md')
@@ -10702,8 +10437,7 @@ io.popen('rm -rf ./GroupsBot.txt')
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "اذاعه خاص" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) or text == "⇠ اذاعه خاص ᥀" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) then 
 if DevHmD:get(DevTwix.."HmD:Send:Bot"..DevTwix) and not HmDSudo(msg) then 
 send(msg.chat_id_, msg.id_,"⋄︙الاذاعه معطله من قبل المطور الاساسي")
@@ -10770,8 +10504,7 @@ end
 Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙تم اذاعة "..HmDText.." بنجاح \n⋄︙‏الى ⇠ ❨ "..#List.." ❩ مشترك \n ✓", 1, 'md')
 DevHmD:del(DevTwix.."HmD:Send:Pv"..msg.chat_id_..":" .. msg.sender_user_id_) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "اذاعه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) or text == "⇠ اذاعه عام ᥀" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) then 
 if DevHmD:get(DevTwix.."HmD:Send:Bot"..DevTwix) and not HmDSudo(msg) then 
 send(msg.chat_id_, msg.id_,"⋄︙الاذاعه معطله من قبل المطور الاساسي")
@@ -10838,8 +10571,7 @@ end
 Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙تم اذاعة "..HmDText.." بنجاح \n⋄︙‏في ⇠ ❨ "..#List.." ❩ مجموعه \n ✓", 1, 'md')
 DevHmD:del(DevTwix.."HmD:Send:Gp"..msg.chat_id_..":" .. msg.sender_user_id_) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) or text == "⇠ اذاعه عام بالتوجيه ᥀" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) then 
 if DevHmD:get(DevTwix.."HmD:Send:Bot"..DevTwix) and not HmDSudo(msg) then 
 send(msg.chat_id_, msg.id_,"⋄︙الاذاعه معطله من قبل المطور الاساسي")
@@ -10863,8 +10595,7 @@ end
 Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙تم اذاعة رسالتك بالتوجيه \n⋄︙‏في ⇠ ❨ "..#List.." ❩ مجموعه \n ✓", 1, 'md')
 DevHmD:del(DevTwix.."HmD:Send:FwdGp"..msg.chat_id_..":" .. msg.sender_user_id_) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "اذاعه خاص بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) or text == "⇠ اذاعه خاص بالتوجيه ᥀" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) then 
 if DevHmD:get(DevTwix.."HmD:Send:Bot"..DevTwix) and not HmDSudo(msg) then 
 send(msg.chat_id_, msg.id_,"⋄︙الاذاعه معطله من قبل المطور الاساسي")
@@ -10888,8 +10619,7 @@ end
 Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙تم اذاعة رسالتك بالتوجيه \n⋄︙‏الى ⇠ ❨ "..#List.." ❩ مشترك \n ✓", 1, 'md')
 DevHmD:del(DevTwix.."HmD:Send:FwdPv"..msg.chat_id_..":" .. msg.sender_user_id_) 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "اذاعه بالتثبيت" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) or text == "⇠ اذاعه بالتثبيت ᥀" and msg.reply_to_message_id_ == 0 and SudoBot(msg) and ChCheck(msg) then 
 if DevHmD:get(DevTwix.."HmD:Send:Bot"..DevTwix) and not HmDSudo(msg) then 
 send(msg.chat_id_, msg.id_,"⋄︙الاذاعه معطله من قبل المطور الاساسي")
@@ -10965,8 +10695,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙تم اذاعة "..HmDText.." بالت�
 DevHmD:del(DevTwix.."HmD:Send:Gp:Pin"..msg.chat_id_..":" .. msg.sender_user_id_) 
 return false
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and (text == 'حذف رد من متعدد' or text == 'مسح رد من متعدد') and ChCheck(msg) then
 if not Bot(msg) and DevHmD:get(DevTwix..'HmD:Lock:Rd'..msg.chat_id_) then 
 Dev_HmD(msg.chat_id_, msg.id_, 1,'⋄︙لاتستطيع حذف رد وذالك بسبب تعطيله', 1, 'md')
@@ -11053,8 +10782,7 @@ DevHmD:set(DevTwix..'HmD:Add:GpTexts'..msg.sender_user_id_..msg.chat_id_,text)
 DevHmD:sadd(DevTwix..'HmD:Manager:GpRedod'..msg.chat_id_,text)
 return false
 end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and (text == 'حذف رد' or text == 'مسح رد') and ChCheck(msg) then
 if not Bot(msg) and DevHmD:get(DevTwix..'HmD:Lock:Rd'..msg.chat_id_) then 
 Dev_HmD(msg.chat_id_, msg.id_, 1,'⋄︙لاتستطيع حذف رد وذالك بسبب تعطيله', 1, 'md')
@@ -11099,8 +10827,7 @@ DevHmD:sadd(DevTwix..'HmD:Manager:GpRed'..msg.chat_id_,text)
 DevHmD:set(DevTwix..'DelManagerRep'..msg.chat_id_,text)
 return false
 end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and (text == 'حذف رد عام' or text == '⇠ حذف رد عام ᥀' or text == 'مسح رد عام' or text == 'حذف رد للكل' or text == 'مسح رد للكل' or text == 'مسح رد مطور' or text == 'حذف رد مطور') and ChCheck(msg) then
 if not Bot(msg) and DevHmD:get(DevTwix..'HmD:Lock:Rd'..msg.chat_id_) then 
 Dev_HmD(msg.chat_id_, msg.id_, 1,'⋄︙لاتستطيع حذف رد وذالك بسبب تعطيله', 1, 'md')
@@ -11145,8 +10872,7 @@ DevHmD:sadd(DevTwix.."HmD:Sudo:AllRed",text)
 DevHmD:set(DevTwix.."DelSudoRep",text)
 return false 
 end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'الردود المتعدده' and Manager(msg) and ChCheck(msg) then
 if not Manager(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙للمدير واعلى فقط ', 1, 'md')
@@ -11183,8 +10909,7 @@ end
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'الردود' and Manager(msg) and ChCheck(msg) or text == 'ردود المدير' and Manager(msg) and ChCheck(msg) then
 local redod = DevHmD:smembers(DevTwix..'HmD:Manager:GpRed'..msg.chat_id_)
 MsgRep = '⋄︙ردود المدير ⇠ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n'
@@ -11241,8 +10966,7 @@ return false
 end
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if  text == "ردود المطور" and SecondSudo(msg) or text == "الردود العام" and SecondSudo(msg) or text == "ردود العام" and SecondSudo(msg) or text == "⇠ الردود العام ᥀" and SecondSudo(msg) then
 local redod = DevHmD:smembers(DevTwix.."HmD:Sudo:AllRed")
 MsgRep = '⋄︙ردود المطور ⇠ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n'
@@ -11300,8 +11024,7 @@ return false
 end
 end 
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text == "تغيير اسم البوت" and ChCheck(msg) or text and text == "وضع اسم البوت" and ChCheck(msg) or text and text == "تغير اسم البوت" and ChCheck(msg) then
 if not SecondSudo(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙للمطور الاساسي فقط ', 1, 'md')
@@ -11319,8 +11042,7 @@ DevHmD:del(DevTwix..'HmD:NameBot')
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم حذف اسم البوت'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
 end end 
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^استعاده الاوامر$") and SecondSudo(msg) and ChCheck(msg) or text and text:match("^استعادة كلايش الاوامر$") and SecondSudo(msg) and ChCheck(msg) then
 HelpList ={'HmD:Help','HmD:Help1','HmD:Help2','HmD:Help3','HmD:Help4','HmD:Help5','HmD:Help6'}
 for i,Help in pairs(HelpList) do
@@ -11403,6 +11125,404 @@ Msg_id = msg.id_/2097152/0.5
 return https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text=' .. URL.escape(Help or Text).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 -------------------------------
+if text == "تعيين امر م1" and SecondSudo(msg) and ChCheck(msg) or text == "تعيين امر م١" and SecondSudo(msg) and ChCheck(msg) then
+Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙ارسل كليشة (م1) الان " ,  1, "md")
+DevHmD:set(DevTwix..'HmD:Help01'..msg.sender_user_id_, 'msg')
+return false end
+if text and text:match("^(.*)$") then
+local DevTwixTeam =  DevHmD:get(DevTwix..'HmD:Help01'..msg.sender_user_id_)
+if DevTwixTeam == 'msg' then 
+Dev_HmD(msg.chat_id_, msg.id_, 1, text , 1, 'md')
+DevHmD:del(DevTwix..'HmD:Help01'..msg.sender_user_id_)
+DevHmD:set(DevTwix..'HmD:Help1', text)
+Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙تم حفظ الكليشه الجديده " ,  1, "md")
+return false end
+end
+if text == "م1" or text == "م١" or text == "اوامر1" or text == "اوامر١" then
+if not Admin(msg) then
+Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙هذا الامر يخص الرتب الاعلى فقط\n⋄︙ارسل ⇠ (م6) لعرض اوامر الاعضاء', 1, 'md')
+else
+local Help = DevHmD:get(DevTwix..'HmD:Help1')
+local Text = [[
+⋄︙اوامر حماية المجموعه ⇠ ⤈
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙قفل • فتح ⇠ الروابط
+⋄︙قفل • فتح ⇠ المعرفات
+⋄︙قفل • فتح ⇠ البوتات
+⋄︙قفل • فتح ⇠ المتحركه
+⋄︙قفل • فتح ⇠ الملصقات
+⋄︙قفل • فتح ⇠ الملفات
+⋄︙قفل • فتح ⇠ الصور
+⋄︙قفل • فتح ⇠ الفيديو
+⋄︙قفل • فتح ⇠ الاونلاين
+⋄︙قفل • فتح ⇠ الدردشه
+⋄︙قفل • فتح ⇠ التوجيه
+⋄︙قفل • فتح ⇠ الاغاني
+⋄︙قفل • فتح ⇠ الصوت
+⋄︙قفل • فتح ⇠ الجهات
+⋄︙قفل • فتح ⇠ الماركداون
+⋄︙قفل • فتح ⇠ التكرار
+⋄︙قفل • فتح ⇠ الهاشتاك
+⋄︙قفل • فتح ⇠ التعديل
+⋄︙قفل • فتح ⇠ التثبيت
+⋄︙قفل • فتح ⇠ الاشعارات
+⋄︙قفل • فتح ⇠ الكلايش
+⋄︙قفل • فتح ⇠ الدخول
+⋄︙قفل • فتح ⇠ الشبكات
+⋄︙قفل • فتح ⇠ المواقع
+⋄︙قفل • فتح ⇠ الفشار
+⋄︙قفل • فتح ⇠ الكفر
+⋄︙قفل • فتح ⇠ الطائفيه
+⋄︙قفل • فتح ⇠ الكل
+⋄︙قفل • فتح ⇠ العربيه
+⋄︙قفل • فتح ⇠ الانكليزيه
+⋄︙قفل • فتح ⇠ الفارسيه
+⋄︙قفل • فتح ⇠ التفليش
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙اوامر حمايه اخرى ⇠ ⤈
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙قفل • فتح + الامر ⇠ ⤈
+⋄︙التكرار بالطرد
+⋄︙التكرار بالكتم
+⋄︙التكرار بالتقيد
+⋄︙الفارسيه بالطرد
+⋄︙البوتات بالطرد
+⋄︙البوتات بالتقيد
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙[Source Channel](https://t.me/DevTwix)
+]]
+Dev_HmD(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
+end end
+if text == "تعيين امر م2" and SecondSudo(msg) and ChCheck(msg) or text == "تعيين امر م٢" and SecondSudo(msg) and ChCheck(msg) then
+Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙ارسل كليشة (م2) الان " ,  1, "md")
+DevHmD:set(DevTwix..'HmD:Help21'..msg.sender_user_id_, 'msg')
+return false end
+if text and text:match("^(.*)$") then
+local DevTwixTeam =  DevHmD:get(DevTwix..'HmD:Help21'..msg.sender_user_id_)
+if DevTwixTeam == 'msg' then
+Dev_HmD(msg.chat_id_, msg.id_, 1, text , 1, 'md')
+DevHmD:del(DevTwix..'HmD:Help21'..msg.sender_user_id_)
+DevHmD:set(DevTwix..'HmD:Help2', text)
+Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙تم حفظ الكليشه الجديده " ,  1, "md")
+return false end
+end
+if text == "م2" and ChCheck(msg) or text == "م٢" and ChCheck(msg) or text == "اوامر2" and ChCheck(msg) or text == "اوامر٢" and ChCheck(msg) then
+if not Admin(msg) then
+Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙هذا الامر يخص الرتب الاعلى فقط\n⋄︙ارسل ⇠ (م6) لعرض اوامر الاعضاء', 1, 'md')
+else
+local Help = DevHmD:get(DevTwix..'HmD:Help2')
+local Text = [[
+⋄︙اوامر الادمنيه ⇠ ⤈
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙الاعدادت
+⋄︙تاك للكل 
+⋄︙انشاء رابط
+⋄︙ضع وصف
+⋄︙ضع رابط
+⋄︙ضع صوره
+⋄︙حذف الرابط
+⋄︙كشف البوتات
+⋄︙طرد البوتات
+⋄︙تنظيف + العدد
+⋄︙تنظيف التعديل
+⋄︙كللهم + الكلمه
+⋄︙اسم البوت + الامر
+⋄︙ضع • حذف ⇠ ترحيب
+⋄︙ضع • حذف ⇠ قوانين
+⋄︙اضف • حذف ⇠ صلاحيه
+⋄︙الصلاحيات • حذف الصلاحيات
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙ضع سبام + العدد
+⋄︙ضع تكرار + العدد
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙رفع مميز • تنزيل مميز
+⋄︙المميزين • حذف المميزين
+⋄︙كشف القيود • رفع القيود
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙حذف • مسح + بالرد
+⋄︙منع • الغاء منع
+⋄︙قائمه المنع
+⋄︙حذف قائمه المنع
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙تفعيل • تعطيل ⇠ الرابط
+⋄︙تفعيل • تعطيل ⇠ الالعاب
+⋄︙تفعيل • تعطيل ⇠ الترحيب
+⋄︙تفعيل • تعطيل ⇠ التاك للكل
+⋄︙تفعيل • تعطيل ⇠ كشف الاعدادات
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙طرد المحذوفين
+⋄︙طرد ⇠ بالرد • بالمعرف • بالايدي
+⋄︙كتم • الغاء كتم
+⋄︙تقيد • الغاء تقيد
+⋄︙حظر • الغاء حظر
+⋄︙المكتومين • حذف المكتومين
+⋄︙المقيدين • حذف المقيدين
+⋄︙المحظورين • حذف المحظورين
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙تقييد دقيقه + عدد الدقائق
+⋄︙تقييد ساعه + عدد الساعات
+⋄︙تقييد يوم + عدد الايام
+⋄︙الغاء تقييد ⇠ لالغاء التقييد بالوقت
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙[Source Channel](https://t.me/DevTwix)
+]]
+Dev_HmD(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
+end end
+if text == "تعيين امر م3" and SecondSudo(msg) and ChCheck(msg) or text == "تعيين امر م٣" and SecondSudo(msg) and ChCheck(msg) then
+Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙ارسل كليشة (م3) الان " ,  1, "md")
+DevHmD:set(DevTwix..'HmD:Help31'..msg.sender_user_id_, 'msg')
+return false end
+if text and text:match("^(.*)$") then
+local DevTwixTeam =  DevHmD:get(DevTwix..'HmD:Help31'..msg.sender_user_id_)
+if DevTwixTeam == 'msg' then
+Dev_HmD(msg.chat_id_, msg.id_, 1, text , 1, 'md')
+DevHmD:del(DevTwix..'HmD:Help31'..msg.sender_user_id_)
+DevHmD:set(DevTwix..'HmD:Help3', text)
+Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙تم حفظ الكليشه الجديده " ,  1, "md")
+return false end
+end
+if text == "م3" and ChCheck(msg) or text == "م٣" and ChCheck(msg) or text == "اوامر3" and ChCheck(msg) or text == "اوامر٣" and ChCheck(msg) then
+if not Admin(msg) then
+Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙هذا الامر يخص الرتب الاعلى فقط\n⋄︙ارسل ⇠ (م6) لعرض اوامر الاعضاء', 1, 'md')
+else
+local Help = DevHmD:get(DevTwix..'HmD:Help3')
+local Text = [[
+⋄︙اوامر المدراء ⇠ ⤈
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙فحص البوت
+⋄︙ضع اسم + الاسم
+⋄︙اضف • حذف ⇠ رد
+⋄︙ردود المدير
+⋄︙حذف ردود المدير
+⋄︙اضف • حذف ⇠ رد متعدد
+⋄︙حذف رد من متعدد
+⋄︙الردود المتعدده
+⋄︙حذف الردود المتعدده
+⋄︙حذف قوائم المنع
+⋄︙منع ⇠ بالرد على ( ملصق • صوره • متحركه )
+⋄︙حذف قائمه منع + ⇠ ⤈
+( الصور • المتحركات • الملصقات )
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙تنزيل الكل
+⋄︙رفع ادمن • تنزيل ادمن
+⋄︙الادمنيه • حذف الادمنيه
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙تثبيت
+⋄︙الغاء التثبيت
+⋄︙اعاده التثبيت
+⋄︙الغاء تثبيت الكل
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙تغير رد + اسم الرتبه + النص ⇠ ⤈
+⋄︙المطور • منشئ الاساسي
+⋄︙المنشئ • المدير • الادمن
+⋄︙المميز • المنظف • العضو
+⋄︙حذف ردود الرتب
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙تغيير الايدي ⇠ لتغيير الكليشه
+⋄︙تعيين الايدي ⇠ لتعيين الكليشه
+⋄︙حذف الايدي ⇠ لحذف الكليشه
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙تفعيل • تعطيل + الامر ⇠ ⤈
+⋄︙اطردني • الايدي بالصوره • الابراج
+⋄︙معاني الاسماء • اوامر النسب • انطق
+⋄︙الايدي • تحويل الصيغ • اوامر التحشيش
+⋄︙ردود المدير • ردود المطور • التحقق
+⋄︙ضافني • حساب العمر • الزخرفه
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙[Source Channel](https://t.me/DevTwix)
+]]
+Dev_HmD(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
+end end
+if text == "تعيين امر م4" and ChCheck(msg) and SecondSudo(msg) or text == "تعيين امر م٤" and SecondSudo(msg) and ChCheck(msg) then
+Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙ارسل كليشة (م4) الان " ,  1, "md")
+DevHmD:set(DevTwix..'HmD:Help41'..msg.sender_user_id_, 'msg')
+return false end
+if text and text:match("^(.*)$") then
+local DevTwixTeam =  DevHmD:get(DevTwix..'HmD:Help41'..msg.sender_user_id_)
+if DevTwixTeam == 'msg' then
+Dev_HmD(msg.chat_id_, msg.id_, 1, text , 1, 'md')
+DevHmD:del(DevTwix..'HmD:Help41'..msg.sender_user_id_)
+DevHmD:set(DevTwix..'HmD:Help4', text)
+Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙تم حفظ الكليشه الجديده" ,  1, "md")
+return false end
+end
+if text == "م٤" and ChCheck(msg) or text == "م4" and ChCheck(msg) or text == "اوامر4" and ChCheck(msg) or text == "اوامر٤" and ChCheck(msg) then
+if not Admin(msg) then
+Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙هذا الامر يخص الرتب الاعلى فقط\n⋄︙ارسل ⇠ (م6) لعرض اوامر الاعضاء', 1, 'md')
+else
+local Help = DevHmD:get(DevTwix..'HmD:Help4')
+local Text = [[
+⋄︙اوامر المنشئين ⇠ ⤈
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙تنزيل الكل
+⋄︙الميديا • امسح
+⋄︙تعين عدد الحذف
+⋄︙ترتيب الاوامر
+⋄︙اضف • حذف ⇠ امر
+⋄︙حذف الاوامر المضافه
+⋄︙الاوامر المضافه
+⋄︙اضف نقاط ⇠ بالرد • بالايدي
+⋄︙اضف رسائل ⇠ بالرد • بالايدي
+⋄︙رفع منظف • تنزيل منظف
+⋄︙المنظفين • حذف المنظفين
+⋄︙رفع مدير • تنزيل مدير
+⋄︙المدراء • حذف المدراء
+⋄︙تفعيل • تعطيل + الامر ⇠ ⤈
+⋄︙نزلني • امسح
+⋄︙الحظر • الكتم
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙اوامر المنشئين الاساسيين ⇠ ⤈
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙وضع لقب + اللقب
+⋄︙تفعيل • تعطيل ⇠ الرفع
+⋄︙رفع منشئ • تنزيل منشئ
+⋄︙المنشئين • حذف المنشئين
+⋄︙رفع • تنزيل ⇠ مشرف
+⋄︙رفع بكل الصلاحيات
+⋄︙حذف القوائم
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙اوامر المالكين ⇠ ⤈
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙رفع • تنزيل ⇠ منشئ اساسي
+⋄︙حذف المنشئين الاساسيين 
+⋄︙المنشئين الاساسيين 
+⋄︙حذف جميع الرتب
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙[Source Channel](https://t.me/DevTwix)
+]]
+Dev_HmD(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
+end end
+if text == "تعيين امر م5" and SecondSudo(msg) and ChCheck(msg) or text == "تعيين امر م٥" and SecondSudo(msg) and ChCheck(msg) then
+Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙ارسل كليشة (م5) الان " ,  1, "md")
+DevHmD:set(DevTwix..'HmD:Help51'..msg.sender_user_id_, 'msg')
+return false end
+if text and text:match("^(.*)$") then
+local DevTwixTeam =  DevHmD:get(DevTwix..'HmD:Help51'..msg.sender_user_id_)
+if DevTwixTeam == 'msg' then
+Dev_HmD(msg.chat_id_, msg.id_, 1, text , 1, 'md')
+DevHmD:del(DevTwix..'HmD:Help51'..msg.sender_user_id_)
+DevHmD:set(DevTwix..'HmD:Help5', text)
+Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙تم حفظ الكليشه الجديده " ,  1, "md")
+return false end
+end
+if text == "م٥" and ChCheck(msg) or text == "م5" and ChCheck(msg) or text == "اوامر5" and ChCheck(msg) or text == "اوامر٥" and ChCheck(msg) then
+if not SudoBot(msg) then
+Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙هذا الامر للمطورين فقط', 1, 'md')
+else
+local Help = DevHmD:get(DevTwix..'HmD:Help5')
+local Text = [[
+⋄︙اوامر المطورين ⇠ ⤈
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙الكروبات
+⋄︙المطورين
+⋄︙المشتركين
+⋄︙الاحصائيات
+⋄︙المجموعات
+⋄︙اسم البوت + غادر
+⋄︙اسم البوت + تعطيل
+⋄︙كشف + -ايدي المجموعه
+⋄︙رفع مالك • تنزيل مالك
+⋄︙المالكين • حذف المالكين
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙رفع • تنزيل ⇠ مدير عام
+⋄︙حذف • المدراء العامين 
+⋄︙رفع • تنزيل ⇠ ادمن عام
+⋄︙حذف • الادمنيه العامين 
+⋄︙رفع • تنزيل ⇠ مميز عام
+⋄︙حذف • المميزين عام 
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙اوامر المطور الاساسي ⇠ ⤈
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙تحديث
+⋄︙السيرفر
+⋄︙روابط الكروبات
+⋄︙تحديث السورس
+⋄︙تنظيف الكروبات
+⋄︙تنظيف المشتركين
+⋄︙حذف جميع الملفات
+⋄︙تعيين الايدي العام
+⋄︙تغير المطور الاساسي
+⋄︙حذف معلومات الترحيب
+⋄︙تغير معلومات الترحيب
+⋄︙غادر + -ايدي المجموعه
+⋄︙تعيين عدد الاعضاء + العدد
+⋄︙حظر عام • الغاء العام
+⋄︙كتم عام • الغاء العام
+⋄︙قائمه العام • حذف قائمه العام
+⋄︙وضع • حذف ⇠ اسم البوت
+⋄︙اضف • حذف ⇠ رد عام
+⋄︙ردود المطور • حذف ردود المطور
+⋄︙تعيين • حذف • جلب ⇠ رد الخاص
+⋄︙جلب نسخه الكروبات
+⋄︙رفع النسخه + بالرد على الملف
+⋄︙تعيين • حذف ⇠ قناة الاشتراك
+⋄︙جلب كليشه الاشتراك
+⋄︙تغيير • حذف ⇠ كليشه الاشتراك
+⋄︙رفع • تنزيل ⇠ مطور
+⋄︙المطورين • حذف المطورين
+⋄︙رفع • تنزيل ⇠ مطور ثانوي
+⋄︙الثانويين • حذف الثانويين
+⋄︙تعيين • حذف ⇠ كليشة الايدي
+⋄︙اذاعه للكل بالتوجيه ⇠ بالرد
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙تفعيل ملف + اسم الملف
+⋄︙تعطيل ملف + اسم الملف
+⋄︙تفعيل • تعطيل + الامر ⇠ ⤈
+⋄︙الاذاعه • الاشتراك الاجباري
+⋄︙ترحيب البوت • المغادره
+⋄︙البوت الخدمي • التواصل
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙[Source Channel](https://t.me/DevTwix)
+]]
+Dev_HmD(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
+end end
+if text == "تعيين امر م6" and SecondSudo(msg) and ChCheck(msg) or text == "تعيين امر م٦" and SecondSudo(msg) and ChCheck(msg) then
+Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙ارسل كليشة (م6) الان " ,  1, "md")
+DevHmD:set(DevTwix..'HmD:Help61'..msg.sender_user_id_, 'msg')
+return false end
+if text and text:match("^(.*)$") then
+local DevTwixTeam =  DevHmD:get(DevTwix..'HmD:Help61'..msg.sender_user_id_)
+if DevTwixTeam == 'msg' then
+Dev_HmD(msg.chat_id_, msg.id_, 1, text , 1, 'md')
+DevHmD:del(DevTwix..'HmD:Help61'..msg.sender_user_id_)
+DevHmD:set(DevTwix..'HmD:Help6', text)
+Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙تم حفظ الكليشه الجديده" ,  1, "md")
+return false end
+end
+if text == "م٦" and ChCheck(msg) or text == "م6" and ChCheck(msg) or text == "اوامر6" and ChCheck(msg) or text == "اوامر٦" and ChCheck(msg) then
+local Help = DevHmD:get(DevTwix..'HmD:Help6')
+local Text = [[
+⋄︙اوامر الاعضاء ⇠ ⤈
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙السورس • موقعي • رتبتي • معلوماتي 
+⋄︙رقمي • لقبي • نبذتي • صلاحياتي • غنيلي
+⋄︙رسائلي • حذف رسائلي • اسمي • معرفي 
+⋄︙ايدي •ايديي • جهاتي • راسلني • الالعاب 
+⋄︙نقاطي • بيع نقاطي • القوانين • زخرفه 
+⋄︙رابط الحذف • نزلني • اطردني • المطور 
+⋄︙منو ضافني • مشاهدات المنشور • الرابط 
+⋄︙ايدي المجموعه • معلومات المجموعه 
+⋄︙نسبه الحب • نسبه الكره • نسبه الغباء 
+⋄︙نسبه الرجوله • نسبه الانوثه • التفاعل
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙لقبه + بالرد
+⋄︙كول + الكلمه
+⋄︙زخرفه + اسمك
+⋄︙برج + نوع البرج
+⋄︙معنى اسم + الاسم
+⋄︙بوسه • بوسها ⇠ بالرد
+⋄︙احسب + تاريخ ميلادك
+⋄︙تفاعلي • تفاعله ⇠ بالرد
+⋄︙صلاحياته ⇠ بالرد • بالمعرف • بالايدي
+⋄︙ايدي • كشف  ⇠ بالرد • بالمعرف • بالايدي
+⋄︙تحويل + بالرد ⇠ صوره • ملصق • صوت • بصمه
+⋄︙انطق + الكلام تدعم جميع اللغات مع الترجمه للعربي
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⋄︙[Source Channel](https://t.me/DevTwix)
+]]
+Dev_HmD(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
+end
+--     Source DevTwix     --
 if text == 'تفعيل اليوتيوب' and Manager(msg) then  
 local DevTwixTeam = '⋄︙اهلا عزيزي ⇠ '..HmDRank(msg)..' \n⋄︙تم تفعيل اليوتيوب بنجاح'
 HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len(msg.sender_user_id_))
@@ -11420,8 +11540,7 @@ local Text = text:match('^بحث (.*)$')
 local msg_id = msg.id_/2097152/0.5 
 https.request('https://ccccxcc.ml/DevTwix/Api.php?Put=Search&TokenBot='..TokenBot..'&ChatId='..msg.chat_id_..'&UserId='..msg.sender_user_id_..'&Text='..URL.escape(Text)..'&MsgId='..msg_id..'&Name='..DirName)
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if SecondSudo(msg) then
 if text == "تحديث السورس" and SourceCh(msg) or text == "تحديث سورس" and SourceCh(msg) or text == "⇠ تحديث السورس ᥀" and SourceCh(msg) then 
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙جاري تحديث سورس تويكس', 1, 'md') 
@@ -11438,8 +11557,7 @@ io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n        ( تم تحديث ملفات البوت )        \n\27[0;34;49m\n") 
 Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙تم تحديث ملفات البوت", 1, "md")
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'نقل الاحصائيات' and ChCheck(msg) or text == '⇠ نقل الاحصائيات ᥀' and ChCheck(msg) then
 local Users = DevHmD:smembers(DevTwix.."User_Bot")
 local Groups = DevHmD:smembers(DevTwix..'Chek:Groups')
@@ -11493,8 +11611,7 @@ end
 send(msg.chat_id_, msg.id_,'⋄︙تم نقل ⇠ '..#Groups..' مجموعه\n⋄︙تم نقل ⇠ '..#Users..' مشترك\n⋄︙من التحديث القديم الى التحديث الجديد')
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and (text == 'حذف معلومات الترحيب' or text == 'مسح معلومات الترحيب') and SecondSudo(msg) and ChCheck(msg) then    
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙تم حذف معلومات الترحيب', 1, 'md')   
 DevHmD:del(DevTwix..'HmD:Text:BotWelcome')
@@ -11542,8 +11659,7 @@ DevHmD:del(DevTwix.."HmD:Set:BotWelcome"..msg.sender_user_id_)
 end
 return false
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text and text:match("^ضع كليشه المطور$") or text and text:match("^وضع كليشه المطور$") or text and text:match("^تغيير كليشه المطور$") or text and text:match("^⇠ تغيير كليشه المطور ᥀$") and ChCheck(msg) then
 if not Sudo(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙للمطور الاساسي فقط ', 1, 'md')
@@ -11558,8 +11674,7 @@ else
 Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙تم حذف كليشة المطور", 1, "md")
 DevHmD:del(DevTwix.."DevText")
 end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if DevHmD:get(DevTwix.."textch:user"..msg.chat_id_.."" .. msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
 Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙تم الغاء الامر", 1, "md") 
@@ -11607,8 +11722,7 @@ https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='.
 else
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙لم يتم تعيين قناة الاشتراك الاجباري \n⋄︙ارسل ⇠ تعيين قناة الاشتراك للتعيين ', 1, 'md')
 end end end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'القناة' and SourceCh(msg) or text == 'قناة السورس' and SourceCh(msg) or text == 'قناه السورس' and SourceCh(msg) or text == 'قنات السورس' and SourceCh(msg) or text == '⇠ قناة السورس ᥀' and SourceCh(msg) then 
 Text = [[
 ⋄︙[قناة السورس](https://t.me/DevTwix)
@@ -11621,8 +11735,7 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/DevTwix&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == "مبرمج السورس" and SourceCh(msg) or text == "مطور السورس" and SourceCh(msg) or text == "وين المبرمج" and SourceCh(msg) or text == "المبرمج" and SourceCh(msg) or text == "⇠ مبرمج السورس ᥀" and SourceCh(msg) then 
 Text = [[
 ⋄︙[مبرمج السورس](https://t.me/tsttt)
@@ -11635,8 +11748,7 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/FFFGF&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 if text == 'معلومات السيرفر' or text == 'السيرفر' or text == '⇠ السيرفر ᥀' then 
 if not HmDSudo(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⋄︙للمطور الاساسي فقط ', 1, 'md')
@@ -11656,11 +11768,9 @@ echo '┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n⋄︙مدة تشغيل السيرف�
 ]]):read('*a'), 1, 'md')
 end
 end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 DevTwixFiles(msg)
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 elseif (data.ID == "UpdateMessageEdited") then
 local msg = data
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.message_id_)},function(extra, result, success)
@@ -11704,8 +11814,7 @@ if DevHmD:get(DevTwix..'HmD:Lock:EditMsgs'..msg.chat_id_) then
 DeleteMessage(msg.chat_id_,{[0] = data.message_id_})
 end end end 
 end,nil)
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 elseif (data.ID == "UpdateMessageSendSucceeded") then
 local msg = data.message_
 local text = msg.content_.text_
@@ -11739,8 +11848,7 @@ end
 if id_photo == GetMsgPin then
 tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100',''),message_id_ = msg.id_,disable_notification_ = 0},function(arg,dp) DevHmD:del(DevTwix..'HmD:PinnedMsgs'..msg.chat_id_) end,nil)   
 end end end
----------------------------------------------------------------------------------------
-
+--     Source DevTwix     --
 elseif (data.ID == "UpdateOption" and data.name_ == "my_id") then
 print('\27[30;32mجاري تنظيف المجموعات الوهميه يرجى الانتظار\n\27[1;37m')
 local PvList = DevHmD:smembers(DevTwix..'HmD:Users')  
