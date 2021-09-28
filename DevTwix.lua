@@ -11278,7 +11278,8 @@ io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n        ( تم تحديث ملفات البوت )        \n\27[0;34;49m\n") 
 Dev_HmD(msg.chat_id_, msg.id_, 1, "⋄︙تم تحديث ملفات البوت", 1, "md")
 end
----------------------------------------------------------------------------------------if text == 'نقل الاحصائيات' and ChCheck(msg) or text == '⇠ نقل الاحصائيات ᥀' and ChCheck(msg) then
+---------------------------------------------------------------------------------------
+if text == 'نقل الاحصائيات' and ChCheck(msg) or text == '⇠ نقل الاحصائيات ᥀' and ChCheck(msg) then
 local Users = DevHmD:smembers(DevTwix.."User_Bot")
 local Groups = DevHmD:smembers(DevTwix..'Chek:Groups')
 local Sudos = DevHmD:smembers(DevTwix.."Sudo:User")
