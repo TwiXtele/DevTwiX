@@ -11257,7 +11257,7 @@ if SecondSudo(msg) then
 if text == "تحديث السورس" and SourceCh(msg) or text == "تحديث سورس" and SourceCh(msg) or text == "↫ تحديث السورس ᥀" and SourceCh(msg) then 
 Dev_HmD(msg.chat_id_, msg.id_, 1, '᥀︙جاري تحديث سورس ديفد', 1, 'md') 
 os.execute('rm -rf DevTwix.lua') 
-os.execute('wget https://raw.githubusercontent.com/DevTwixTeam8/DevTwix/master/DevTwix.lua') 
+os.execute('wget https://raw.githubusercontent.com/TwiXtele/DevTwix/master/DevTwix.lua') 
 dofile('DevTwix.lua') 
 io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n          ( تم تحديث السورس )          \n\27[0;34;49m\n") 
