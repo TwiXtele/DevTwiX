@@ -25,7 +25,7 @@ if not DevHmD:get(Server.."IdDevTwix") then
 io.write('\27[1;35m\nالان ارسل ايدي المطور الاساسي ↫ ⤈\n\27[0;33;49m') 
 local DevId = io.read():gsub(' ','') 
 if tostring(DevId):match('%d+') then 
-data,res = https.request("https://apiabs.ml/Api/David/index.php?Ban=DevTwix&Info&Id="..DevId)
+data,res = https.request("https://apiabs.ml/Api/David/index.php?Ban=David&Info&Id="..DevId)
 if res == 200 then
 Abs = json:decode(data)
 if Abs.Result.Info == 'Is_Spam' then
