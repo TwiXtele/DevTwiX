@@ -95,11 +95,11 @@ file:close()
 file = io.open("Run", "w")  
 file:write([[
 #!/usr/bin/env bash
-cd $HOME/DevTwix
+cd $HOME/DevProx
 while(true) do
 rm -fr ../.telegram-cli
-screen -S DevTwix -X kill
-screen -S DevTwix ./DevTwix.sh
+screen -S DevProx -X kill
+screen -S DevProx ./DevProx.sh
 done
 ]]) 
 file:close() 
@@ -108,19 +108,19 @@ os.execute('chmod +x Run;./Run')
 end 
 CreateConfigAuto()
 end
-local Load_DevTwix = function() 
+local Load_DevProx = function() 
 local f = io.open("./config.lua", "r") 
 if not f then 
 AutoSet() 
 else 
 f:close() 
-DevHmD:del(Server.."IdDevTwix");DevHmD:del(Server.."TokenDevTwix")
+DevAbs:del(Server.."IdDevProx");DevAbs:del(Server.."TokenDevProx")
 end 
 local config = loadfile("./config.lua")() 
 return config 
 end  
-Load_DevTwix() 
-print("\27[36m"..[[          
+Load_DevProx() 
+print("\27[36m"..[[ 
 ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '  ' 
 '   ______       ____     __    __    _____   ______     '
 '  (_  __ \     (    )    ) )  ( (   (_   _) (_  __ \    '
