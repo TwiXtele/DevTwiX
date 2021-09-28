@@ -212,16 +212,16 @@ if len == nil then len = '*l' end
 local line, err = client.network.socket:receive(len)
 if not err then return line else
 print("\27[36m"..[[                                           
----------------------------------------------                                        
-|        ____              _   _            |
-|       |  _ \  ___ _    _(_) | |_          |
-|       | | | |/ _ \ \  / / |/ _  |         |  
-|       | |_| | (_| |\ V /| | (_| |         |
-|       |____/ \__,_| \_/ |_|\__,_|         |
+---------------------------------------------
+|    ____             ____                  |
+|   |  _ \  _____   _|  _ \ _ __ _____  __  |
+|   | | | |/ _ \ \ / / |_) | '__/ _ \ \/ /  |
+|   | |_| |  __/\ V /|  __/| | | (_) >  <   |
+|   |____/ \___| \_/ |_|   |_|  \___/_/\_\  |
 |-------------------------------------------|
-| This Source Was Developed By (Rio) @tsttt.|
-|   This Is The Source Channel @L9L9L .     |
-|                - David -                  |
+|This Source Was Developed By (ABS) @IQ_ABS.|
+|  This Is The Source Channel @Dev_Prox .   |
+|               - DevProx -                 |
 ---------------------------------------------
 ]]..'\27[m')
 Config = dofile("config.lua")
@@ -230,7 +230,7 @@ TokenBot = Config.TokenBot
 if DevId then
 https = require("ssl.https")
 URL = require("./libs/url.lua")  
-https.request('https://api.telegram.org/bot'..TokenBot..'/sendMessage?chat_id='..DevId..'&text='..URL.escape("↯︙لقد توقف البوت بسبب انهاير الريدز في السيرفر افتح الترمنال وارسل ↫ ⤈\n`service redis start` ")..'&parse_mode=Markdown')
+https.request('https://api.telegram.org/bot'..TokenBot..'/sendMessage?chat_id='..DevId..'&text='..URL.escape("⌁︙لقد توقف البوت بسبب انهاير الريدز في السيرفر افتح الترمنال وارسل ↫ ⤈\n`service redis start` ")..'&parse_mode=Markdown')
 end
 os.exit()
 end
