@@ -824,7 +824,7 @@ function HmDmoned(chat_id, user_id, msg_id, text, offset, length) local tt = Dev
 function SourceCh(msg) 
 local url,res = https.request('https://anashtick.ml/TwixTeAm/TX.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.ChatMember.DevTwix ~= true then
+if data.Ch_Member.DARK ~= true then
 Var = false
 Text = "*᥀︙عذرا لاتستطيع استخدام البوت !\n᥀︙عليك الاشتراك في قناة السورس اولا :*"
 keyboard = {} 
