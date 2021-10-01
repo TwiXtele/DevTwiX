@@ -11218,13 +11218,13 @@ Text = [[*✫︙اضغط هنا للحصول على بوت زخرفة*]] keyboar
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=t.me/Ul6bot&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) return false end
 if text == "انستا" and SourceCh(msg) or text == "بوت الانستا" and SourceCh(msg) or text == "بوت انستا" and SourceCh(msg) or text == "اريد بوت انستا" or text == "اريد بوت الانستا" and SourceCh(msg) then
-Text = [[*✫︙اضغط هنا للحصول على بوت تيك توك*]] keyboard = {} keyboard.inline_keyboard = {{{text = '• آضغط هنا •',url="https://t.me/H0lbot"}},}
+Text = [[*✫︙اضغط هنا للحصول على بوت انستا*]] keyboard = {} keyboard.inline_keyboard = {{{text = '• آضغط هنا •',url="https://t.me/Y5iBot"}},}
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=t.me/Y5iBot&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) return false end
 if text == "تيك توك" and SourceCh(msg) or text == "بوت تيك توك" and SourceCh(msg) or text == "بوت تكتوك" and SourceCh(msg) or text == "اريد بوت التيكتوك" or text == "اريد بوت تيكتوك" and SourceCh(msg) or text == "اريد بوت تيك توك" and SourceCh(msg) then
-Text = [[*✫︙اضغط هنا للحصول على بوت الانستكرام*]] keyboard = {} keyboard.inline_keyboard = {{{text = '• آضغط هنا •',url="https://t.me/Y5iBot"}},}
+Text = [[*✫︙اضغط هنا للحصول على بوت تيكتوك*]] keyboard = {} keyboard.inline_keyboard = {{{text = '• آضغط هنا •',url="https://t.me/H0lbot"}},}
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=t.me/Y5iBot&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) return false end
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=t.me/H0lbot&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) return false end
 ---------------------------------------------------------------------------------------------------------
 if text == 'معلومات السيرفر' or text == 'السيرفر' or text == '× معلومات السيرفر ×' then 
 if not HmDSudo(msg) then
