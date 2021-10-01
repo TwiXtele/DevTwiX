@@ -7038,7 +7038,7 @@ end
 ---------------------------------------------------------------------------------------------------------
 if text == "المطورين" and ChCheck(msg) or text == "× المطورين ×" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:SudoBot:')
-text = "✫︙قائمة احصائيات مطورين البوت :*   \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*✫︙قائمة احصائيات مطورين البوت :*   \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
 for k,v in pairs(List) do
 local sudouser = DevHmD:get(DevTwix..'HmD:Sudos'..v) 
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
