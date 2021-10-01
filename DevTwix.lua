@@ -2104,7 +2104,7 @@ if text == '/start' and ChCheck(msg) then
 if not DevHmD:get(DevTwix..'HmD:Start:Time'..msg.sender_user_id_) then
 tdcli_function({ID="GetUser",user_id_=DevId},function(arg,dp) 
 local start = DevHmD:get(DevTwix.."HmD:Start:Bot")
-SM = {'🧞‍♂️','🦋','🧞‍♀️','🐲','🎀','🐍','🦇','🧚🏾‍♀️','🧚🏾‍♂️',};
+SM = {'🧞‍♂️','🧞‍♀️','🦇','🧚🏾‍♀️','🧚🏾‍♂️','🐲','🎀','🐍','🐊',};
 sendSM = SM[math.random(#SM)]
 local Text = "*↞ أهلـين انا بوت آسمي "..NameBot.." "..sendSM.." ˛\n↞ اختصاصي ادارة المجموعات من السبام والخ ..\n↞ ارفعني مشرف وارسل تفعيل في المجموعة .\n\n↞ للعب داخل البوت ارسل : { /Game } ˛*"
 keyboard = {} 
@@ -2200,7 +2200,7 @@ local start = DevHmD:get(DevTwix.."HmD:Start:Bot")
 if start then 
 Start_Source = start
 else
-Start_Source = "✫︙مرحبا انا بوت اسمي "..NameBot.."\n✫︙اختصاصي حماية المجموعات\n✫︙من التفليش والسبام والخخ .. . ،\n✫︙تفعيلي سهل ومجانا فقط قم برفعي ادمن في مجموعتك وارسل امر ⇠ تفعيل\n✫︙سيتم رفع الادمنيه والمنشئ تلقائيا"
+Start_Source = "*↞ أهلـين انا بوت آسمي "..NameBot.." "..sendSM.." ˛\n↞ اختصاصي ادارة المجموعات من السبام والخ ..\n↞ ارفعني مشرف وارسل تفعيل في المجموعة .\n\n↞ للعب داخل البوت ارسل : { /Game } ˛*"
 end 
 Dev_HmD(msg.chat_id_, msg.id_, 1, Start_Source, 1, 'md')
 return false
@@ -9598,7 +9598,7 @@ end
 if not DevHmD:get(DevTwix..'HmD:Age:HmD'..msg.chat_id_) then
 if text and text:match("^احسب (.*)$") and ChCheck(msg) or text and text:match("^عمري (.*)$") and ChCheck(msg) then 
 local TextAge = text:match("^احسب (.*)$") or text:match("^عمري (.*)$") 
-UrlAge = https.request('https://apiHmD.ml/age.php?age='..URL.escape(TextAge)) 
+UrlAge = https.request('https://anashtick.ml/api-Twix/Age.php?Age='..URL.escape(TextAge)) 
 Age = JSON.decode(UrlAge) 
 t = Age.ok.HmD
 Dev_HmD(msg.chat_id_, msg.id_, 1, t, 1, 'html')
@@ -9618,7 +9618,7 @@ end
 if not DevHmD:get(DevTwix..'HmD:Mean:HmD'..msg.chat_id_) then
 if text and text:match("^معنى الاسم (.*)$") and SourceCh(msg) or text and text:match("^معنى اسم (.*)$") and SourceCh(msg) then 
 local TextMean = text:match("^معنى الاسم (.*)$") or text:match("^معنى اسم (.*)$") 
-UrlMean = https.request('https://apiHmD.ml/Mean.php?HmD='..URL.escape(TextMean)) 
+UrlMean = https.request('https://anashtick.ml/api-Twix/mana.php?Name='..URL.escape(TextMean)) 
 Mean = JSON.decode(UrlMean) 
 t = Mean.ok.HmD
 Dev_HmD(msg.chat_id_, msg.id_, 1, t, 1, 'html')
