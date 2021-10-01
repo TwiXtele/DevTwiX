@@ -7038,12 +7038,12 @@ end
 ---------------------------------------------------------------------------------------------------------
 if text == "المطورين" and ChCheck(msg) or text == "× المطورين ×" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:SudoBot:')
-text = "✫︙قائمة المطورين ⇠  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "✫︙قائمة احصائيات مطورين البوت :*   \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
 for k,v in pairs(List) do
 local sudouser = DevHmD:get(DevTwix..'HmD:Sudos'..v) 
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
 if username then
-text = text..k.."~ : [@"..username.."] ↬ Gps : "..(sudouser or 0).."\n"
+text = text..k.."~ : [@"..username.."] ⇠ المجموعات المفعلة : "..(sudouser or 0).."\n"
 else
 text = text..k.."~ : `"..v.."` ↬ Gps : "..(sudouser or 0).."\n"
 end end
@@ -7520,7 +7520,7 @@ local List = {
 ]],
 [[
 𖣯 𝕀𝔻 🇮🇶⃤᷂ #id
-?? 𝕌𝕊𝔼ℝ 🇮🇶⃤᷂ #username
+𖣯 𝕌𝕊𝔼ℝ 🇮🇶⃤᷂ #username
 𖣯 𝕄𝕊𝔾  🇮🇶⃤᷂ #msgs
 𖣯 𝕊𝕋𝔸𝕋𝔼 🇮🇶⃤᷂ #stast
 𖣯 𝔼𝔻𝕀𝕋 🇮🇶⃤᷂ #edit
