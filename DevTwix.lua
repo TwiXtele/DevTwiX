@@ -2694,7 +2694,7 @@ end
 if msg.content_.text_ then
 DevHmD:set(DevTwix..'HmD:Text:GpRed'..SaveGpRed..msg.chat_id_, msg.content_.text_)
 end 
-Dev_HmD(msg.chat_id_, msg.id_, 1, '✫︙الرد » (* '..msg.content_.text_..' *) تم الحفظ بنجاح', 'md') 
+Dev_HmD(msg.chat_id_, msg.id_, 1, "*✫︙تم حفظ الرد الجديد*" ,  1, "md")
 DevHmD:del(DevTwix..'HmD:Add:GpText'..msg.sender_user_id_..msg.chat_id_)
 DevHmD:del(DevTwix..'DelManagerRep'..msg.chat_id_)
 return false 
@@ -2791,7 +2791,7 @@ end
 if msg.content_.text_ then
 DevHmD:set(DevTwix.."HmD:Text:AllRed"..SaveAllRed, msg.content_.text_)
 end 
-Dev_HmD(msg.chat_id_, msg.id_, 1, '✫︙الرد » (* '..msg.content_.text_..' *) تم الحفظ بنجاح', 'md') 
+Dev_HmD(msg.chat_id_, msg.id_, 1, "✫︙تم حفظ الرد الجديد*" ,  1, "md")
 DevHmD:del(DevTwix.."HmD:Add:AllText"..msg.sender_user_id_)
 DevHmD:del(DevTwix..'DelSudoRep')
 return false end end
