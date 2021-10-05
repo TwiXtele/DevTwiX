@@ -5850,7 +5850,7 @@ DevHmD:srem(DevTwix..'HmD:VipMem:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","✫︙تم تنزيله من قائمة المميزين")  
 end end 
 ---------------------------------------------------------------------------------------------------------
-if HmDConstructor(msg) then
+if Constructor(msg) then
 if text and text:match("^رفع مشرف$") and msg.reply_to_message_id_ then
 function promote_by_reply(extra, result, success)
 local Check = https.request('https://api.telegram.org/bot'..TokenBot..'/getChatMember?chat_id='..msg.chat_id_..'&user_id='..DevTwix)
