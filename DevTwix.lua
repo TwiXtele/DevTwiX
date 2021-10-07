@@ -7038,12 +7038,12 @@ end
 ---------------------------------------------------------------------------------------------------------
 if text == "المطورين" and ChCheck(msg) or text == "× المطورين ×" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:SudoBot:')
-text = "*✫︙قائمة احصائيات مطورين البوت :*   \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*✫︙قائمة احصائيات المطورين :*   \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
 for k,v in pairs(List) do
 local sudouser = DevHmD:get(DevTwix..'HmD:Sudos'..v) 
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
 if username then
-text = text..k.."~ : [@"..username.."] ⇠ المجموعات المفعلة : "..(sudouser or 0).."\n"
+text = text..k.."*: ~* [@"..username.."] : *{"..(sudouser or 0).."} ⇠ المفعلة*\n"
 else
 text = text..k.."~ : `"..v.."` ↬ Gps : "..(sudouser or 0).."\n"
 end end
@@ -7551,7 +7551,7 @@ end
 ---------------------------------------------------------------------------------------------------------
 if SecondSudo(msg) then
 if text and text:match("^تعيين الايدي العام$") or text and text:match("^تعين الايدي العام$") or text and text:match("^× تعين الايدي عام ×$") then
-Dev_HmD(msg.chat_id_, msg.id_, 1, '✫︙رجائا اتبع التعليمات للتعيين \n✫︙لطبع كليشة الايدي ارسل كليشه تحتوي على النصوص التي باللغه الانجليزيه ادناه ⇠ \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n `#username` ↬ لطبع المعرف\n `#id` ↬ لطبع الايدي \n `#photos` ↬ لطبع عدد الصور \n `#stast` ↬ لطبع الرتب \n `#msgs` ↬ لطبع عدد الرسائل \n `#msgday` ↬ لطبع الرسائل اليوميه \n `#CustomTitle` ↬ لطبع اللقب \n `#bio` ↬ لطبع البايو \n `#auto` ↬ لطبع التفاعل \n `#game` ↬ لطبع عدد النقاط \n `#cont` ↬ لطبع عدد الجهات \n `#edit` ↬ لطبع عدد السحكات \n `#Description` ↬ لطبع تعليق الصور\n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ', 1, 'md')
+Dev_HmD(msg.chat_id_, msg.id_, 1, '*✫︙ارسل الان النص \n\n✫︙يمكنك اضافه التالي  :*\n\n- `#username` > اسم المستخدم\n- `#msgs` > عدد رسائل المستخدم\n- `#photos` > عدد صور المستخدم\n- `#id` > ايدي المستخدم\n- `#auto` > تفاعل المستخدم\n- `#stast` > موقع المستخدم\n- `#bio` > بايو المستخدم\n- `#edit` > عدد السحكات\n- `#game` > المجوهرات\n- `#AddMem` > عدد الجهات\n- `#CustomTitle` > لطبع القب\n- `#Description` > تعليق الصوره\n*⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n- قناة كلايش تعين الايدي : @Gverr*', 1, 'md')
 DevHmD:set("DevTwix:New:id:"..DevTwix..msg.sender_user_id_,'DevTwixTeam')
 return "DevTwixTeam"
 end
@@ -7573,7 +7573,7 @@ end
 end
 ---------------------------------------------------------------------------------------------------------
 if text and text:match("^تعيين الايدي$") and ChCheck(msg) or text and text:match("^تعين الايدي$") and ChCheck(msg) then
-Dev_HmD(msg.chat_id_, msg.id_, 1, '✫︙رجائا اتبع التعليمات للتعيين \n✫︙لطبع كليشة الايدي ارسل كليشه تحتوي على النصوص التي باللغه الانجليزيه ادناه ⇠ \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n `#username` ↬ لطبع المعرف\n `#id` ↬ لطبع الايدي \n `#photos` ↬ لطبع عدد الصور \n `#stast` ↬ لطبع الرتب \n `#msgs` ↬ لطبع عدد الرسائل \n `#msgday` ↬ لطبع الرسائل اليوميه \n `#CustomTitle` ↬ لطبع اللقب \n `#bio` ↬ لطبع البايو \n `#auto` ↬ لطبع التفاعل \n `#game` ↬ لطبع عدد النقاط \n `#cont` ↬ لطبع عدد الجهات \n `#edit` ↬ لطبع عدد السحكات \n `#Description` ↬ لطبع تعليق الصور\n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ', 1, 'md')
+Dev_HmD(msg.chat_id_, msg.id_, 1, '\n*✫︙ارسل الان النص \n\n✫︙يمكنك اضافه التالي  :*\n\n- `#username` > اسم المستخدم\n- `#msgs` > عدد رسائل المستخدم\n- `#photos` > عدد صور المستخدم\n- `#id` > ايدي المستخدم\n- `#auto` > تفاعل المستخدم\n- `#stast` > موقع المستخدم\n- `#bio` > بايو المستخدم\n- `#edit` > عدد السحكات\n- `#game` > المجوهرات\n- `#AddMem` > عدد الجهات\n- `#CustomTitle` > لطبع القب\n- `#Description` > تعليق الصوره\n*⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n- قناة كلايش تعين الايدي : @Gverr*', 1, 'md')
 DevHmD:set("DevTwix:New:id:"..DevTwix..msg.chat_id_..msg.sender_user_id_,'DevTwixTeam')
 return "DevTwixTeam"
 end
