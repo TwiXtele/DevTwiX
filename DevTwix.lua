@@ -9633,7 +9633,7 @@ if text == "تعطيل غنيلي" and Manager(msg) and SourceCh(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1,"✫︙تم تعطيل امر غنيلي بنجاح",'md')
 DevHmD:set(DevTwix..'HmD:Audios:HmD'..msg.chat_id_,true)  
 end
-if text == "غنيلي" then
+if text == "غنيلي" and not DevHmD:get(DevTwix..'HmD:Audios:HmD'..msg.chat_id_) then
 data,res = https.request('https://black-source.tk/BlackTeAM/audios.php')
 if res == 200 then
 audios = json:decode(data)
