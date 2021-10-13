@@ -7644,7 +7644,7 @@ newpicid = newpicid:gsub('#auto',(formsgs(msguser) or 'لا يوجد'))
 newpicid = newpicid:gsub('#stast',(IdRank(msg.sender_user_id_, msg.chat_id_) or 'لا يوجد'))
 newpicid = newpicid:gsub('#Description',(Description or 'لا يوجد'))
 else 
-newpicid = "✫︙"..Description.."\n✫︙معرفك ⇠ "..username.."\n✫︙ايديك ⇠ "..msg.sender_user_id_.."\n✫︙رتبتك ⇠ "..IdRank(msg.sender_user_id_, msg.chat_id_).."\n✫︙رسائلك ⇠ "..user_msgs.."\n✫︙سحكاتك ⇠ "..edit_msg.."\n✫︙تفاعلك ⇠ "..formsgs(msguser).."\n✫︙مجوهراتك ⇠ "..user_nkt.."\n"
+newpicid = "✫︙"..Description.."\n✫︙معرفك ⇠ ["..username.."]\n✫︙ايديك ⇠ "..msg.sender_user_id_.."\n✫︙رتبتك ⇠ "..IdRank(msg.sender_user_id_, msg.chat_id_).."\n✫︙رسائلك ⇠ "..user_msgs.."\n✫︙سحكاتك ⇠ "..edit_msg.."\n✫︙تفاعلك ⇠ "..formsgs(msguser).."\n✫︙مجوهراتك ⇠ "..user_nkt.."\n"
 end
 if not DevHmD:get(DevTwix.."HmD:GpIds:Text"..msg.chat_id_) then 
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, HmD.photos_[0].sizes_[1].photo_.persistent_id_,newpicid,msg.id_,msg.id_.."")
@@ -7683,7 +7683,7 @@ newallid = newallid:gsub('#auto',(formsgs(msguser) or 'لا يوجد'))
 newallid = newallid:gsub('#stast',(IdRank(msg.sender_user_id_, msg.chat_id_) or 'لا يوجد'))
 newallid = newallid:gsub('#Description',(Description or 'لا يوجد'))
 else
-newallid  = "✫︙معرفك ⇠ "..username.."\n✫︙ايديك ⇠ "..msg.sender_user_id_.."\n✫︙رتبتك ⇠ "..IdRank(msg.sender_user_id_, msg.chat_id_).."\n✫︙رسائلك ⇠ "..user_msgs.."\n✫︙سحكاتك ⇠ "..edit_msg.."\n✫︙تفاعلك ⇠ "..formsgs(msguser).."\n✫︙مجوهراتك ⇠ "..user_nkt..""
+newallid  = "✫︙معرفك ⇠ ["..username.."]\n✫︙ايديك ⇠ "..msg.sender_user_id_.."\n✫︙رتبتك ⇠ "..IdRank(msg.sender_user_id_, msg.chat_id_).."\n✫︙رسائلك ⇠ "..user_msgs.."\n✫︙سحكاتك ⇠ "..edit_msg.."\n✫︙تفاعلك ⇠ "..formsgs(msguser).."\n✫︙مجوهراتك ⇠ "..user_nkt..""
 end
 if not DevHmD:get(DevTwix.."HmD:GpIds:Text"..msg.chat_id_) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, newallid, 1, 'html')
@@ -7731,7 +7731,7 @@ notpicid = notpicid:gsub('#auto',(formsgs(msguser) or 'لا يوجد'))
 notpicid = notpicid:gsub('#stast',(IdRank(msg.sender_user_id_, msg.chat_id_) or 'لا يوجد'))
 notpicid = notpicid:gsub('#Description',(Description or 'لا يوجد'))
 else
-notpicid = "✫︙انت لا تملك صورة لحسابك ?\n\n✫︙معرفك ⇠ "..username.."\n✫︙ايديك ⇠ "..msg.sender_user_id_.."\n✫︙رتبتك ⇠ "..IdRank(msg.sender_user_id_, msg.chat_id_).."\n✫︙رسائلك ⇠ "..user_msgs.."\n✫︙سحكاتك ⇠ "..edit_msg.."\n✫︙تفاعلك ⇠ "..formsgs(msguser).."\n✫︙مجوهراتك ⇠ "..user_nkt.."\n"
+notpicid = "✫︙انت لا تملك صورة لحسابك ?\n\n✫︙معرفك ⇠ ["..username.."]\n✫︙ايديك ⇠ "..msg.sender_user_id_.."\n✫︙رتبتك ⇠ "..IdRank(msg.sender_user_id_, msg.chat_id_).."\n✫︙رسائلك ⇠ "..user_msgs.."\n✫︙سحكاتك ⇠ "..edit_msg.."\n✫︙تفاعلك ⇠ "..formsgs(msguser).."\n✫︙مجوهراتك ⇠ "..user_nkt.."\n"
 end 
 if not DevHmD:get(DevTwix..'HmD:Lock:Id'..msg.chat_id_) then
 if not DevHmD:get(DevTwix..'HmD:Lock:Id:Photo'..msg.chat_id_) then
@@ -9634,13 +9634,13 @@ Dev_HmD(msg.chat_id_, msg.id_, 1,"✫︙تم تعطيل امر غنيلي بنج
 DevHmD:set(DevTwix..'HmD:Audios:HmD'..msg.chat_id_,true)  
 end
 if text == "غنيلي" and not DevHmD:get(DevTwix..'HmD:Audios:HmD'..msg.chat_id_) then
-data,res = https.request('https://black-source.tk/BlackTeAM/audios.php')
+data,res = https.request('https://anashtick.ml/TeaMDevTwix/audios.php')
 if res == 200 then
 audios = json:decode(data)
-if audios.Info == true then
+if audios.Info == 'true' then
 local Text ='*: ﭑݪفِۅيسَ ، حِسب ذۅقيّ ♥️، .*'
 keyboard = {}  
-keyboard.inline_keyboard = {{{text = '‏˛ 𝖣𝖾𝗏𝖳𝗐𝗂𝗑 𝖳𝖾𝖺𝖬 .',url="t.me/DevTwix"}},}
+keyboard.inline_keyboard = {{{text = '‏˛ 𝗗𝗲𝘃𝗧𝘄𝗶𝘅 𝗧𝗲𝗮𝗠 .',url="t.me/DevTwix"}},}
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end end end
