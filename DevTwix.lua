@@ -7644,7 +7644,7 @@ newpicid = newpicid:gsub('#auto',(formsgs(msguser) or 'لا يوجد'))
 newpicid = newpicid:gsub('#stast',(IdRank(msg.sender_user_id_, msg.chat_id_) or 'لا يوجد'))
 newpicid = newpicid:gsub('#Description',(Description or 'لا يوجد'))
 else 
-newpicid = "✫︙"..Description.."\n✫︙معرفك ⇠ ["..username.."]\n✫︙ايديك ⇠ "..msg.sender_user_id_.."\n✫︙رتبتك ⇠ "..IdRank(msg.sender_user_id_, msg.chat_id_).."\n✫︙رسائلك ⇠ "..user_msgs.."\n✫︙سحكاتك ⇠ "..edit_msg.."\n✫︙تفاعلك ⇠ "..formsgs(msguser).."\n✫︙مجوهراتك ⇠ "..user_nkt.."\n"
+newpicid = "✫︙"..Description.."\n✫︙معرفك ⇠ "..username.."\n✫︙ايديك ⇠ "..msg.sender_user_id_.."\n✫︙رتبتك ⇠ "..IdRank(msg.sender_user_id_, msg.chat_id_).."\n✫︙رسائلك ⇠ "..user_msgs.."\n✫︙سحكاتك ⇠ "..edit_msg.."\n✫︙تفاعلك ⇠ "..formsgs(msguser).."\n✫︙مجوهراتك ⇠ "..user_nkt.."\n"
 end
 if not DevHmD:get(DevTwix.."HmD:GpIds:Text"..msg.chat_id_) then 
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, HmD.photos_[0].sizes_[1].photo_.persistent_id_,newpicid,msg.id_,msg.id_.."")
@@ -7683,7 +7683,7 @@ newallid = newallid:gsub('#auto',(formsgs(msguser) or 'لا يوجد'))
 newallid = newallid:gsub('#stast',(IdRank(msg.sender_user_id_, msg.chat_id_) or 'لا يوجد'))
 newallid = newallid:gsub('#Description',(Description or 'لا يوجد'))
 else
-newallid  = "✫︙معرفك ⇠ ["..username.."]\n✫︙ايديك ⇠ "..msg.sender_user_id_.."\n✫︙رتبتك ⇠ "..IdRank(msg.sender_user_id_, msg.chat_id_).."\n✫︙رسائلك ⇠ "..user_msgs.."\n✫︙سحكاتك ⇠ "..edit_msg.."\n✫︙تفاعلك ⇠ "..formsgs(msguser).."\n✫︙مجوهراتك ⇠ "..user_nkt..""
+newallid  = "✫︙معرفك ⇠ "..username.."\n✫︙ايديك ⇠ "..msg.sender_user_id_.."\n✫︙رتبتك ⇠ "..IdRank(msg.sender_user_id_, msg.chat_id_).."\n✫︙رسائلك ⇠ "..user_msgs.."\n✫︙سحكاتك ⇠ "..edit_msg.."\n✫︙تفاعلك ⇠ "..formsgs(msguser).."\n✫︙مجوهراتك ⇠ "..user_nkt..""
 end
 if not DevHmD:get(DevTwix.."HmD:GpIds:Text"..msg.chat_id_) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, newallid, 1, 'html')
@@ -7731,7 +7731,7 @@ notpicid = notpicid:gsub('#auto',(formsgs(msguser) or 'لا يوجد'))
 notpicid = notpicid:gsub('#stast',(IdRank(msg.sender_user_id_, msg.chat_id_) or 'لا يوجد'))
 notpicid = notpicid:gsub('#Description',(Description or 'لا يوجد'))
 else
-notpicid = "✫︙انت لا تملك صورة لحسابك ?\n\n✫︙معرفك ⇠ ["..username.."]\n✫︙ايديك ⇠ "..msg.sender_user_id_.."\n✫︙رتبتك ⇠ "..IdRank(msg.sender_user_id_, msg.chat_id_).."\n✫︙رسائلك ⇠ "..user_msgs.."\n✫︙سحكاتك ⇠ "..edit_msg.."\n✫︙تفاعلك ⇠ "..formsgs(msguser).."\n✫︙مجوهراتك ⇠ "..user_nkt.."\n"
+notpicid = "✫︙انت لا تملك صورة لحسابك ?\n\n✫︙معرفك ⇠ "..username.."\n✫︙ايديك ⇠ "..msg.sender_user_id_.."\n✫︙رتبتك ⇠ "..IdRank(msg.sender_user_id_, msg.chat_id_).."\n✫︙رسائلك ⇠ "..user_msgs.."\n✫︙سحكاتك ⇠ "..edit_msg.."\n✫︙تفاعلك ⇠ "..formsgs(msguser).."\n✫︙مجوهراتك ⇠ "..user_nkt.."\n"
 end 
 if not DevHmD:get(DevTwix..'HmD:Lock:Id'..msg.chat_id_) then
 if not DevHmD:get(DevTwix..'HmD:Lock:Id:Photo'..msg.chat_id_) then
@@ -9625,8 +9625,40 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, t, 1, 'html')
 end
 end
 ---------------------------------------------------------------------------------------------------------
+if text == "تفعيل ريمكس" and Manager(msg) and SourceCh(msg) or text == "تفعيل رمكس" and Manager(msg) and SourceCh(msg) then
+Dev_HmD(msg.chat_id_, msg.id_, 1,"✫︙تم تفعيل الريمكس بنجاح",'md')
+DevHmD:del(DevTwix..'HmD:Remix:HmD'..msg.chat_id_) 
+end
+if text == "تعطيل ريمكس" and Manager(msg) and SourceCh(msg) or text == "تعطيل رمكس" and Manager(msg) and SourceCh(msg) then
+Dev_HmD(msg.chat_id_, msg.id_, 1,"✫︙تم تعطيل الريمكس بنجاح ",'md')
+DevHmD:set(DevTwix..'HmD:Remix:HmD'..msg.chat_id_,true)  
+end
+if text and (text == "ريمكس" or text == "↫ ريمكس ᥀") and not DevHmD:get(DevTwix..'HmD:Remix:HmD'..msg.chat_id_) and SourceCh(msg) then
+HmD = math.random(3,802); 
+local Text ='*: ﭑݪفِۅيسَ ، حِسب ذۅقيّ ❤️‍🔥، .*'
+keyboard = {}  
+keyboard.inline_keyboard = {{{text = '. 𝗗𝗲𝘃𝗧𝘄𝗶𝘅 𝗧𝗲𝗮𝗠 ˛',url="t.me/DevTwix"}},} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/twixmp3/'..HmD..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+if text == "تفعيل صوره" and Manager(msg) and SourceCh(msg) or text == "تفعيل الصوره" and Manager(msg) and SourceCh(msg) then
+Dev_HmD(msg.chat_id_, msg.id_, 1,"✫︙تم تفعيل امر الصوره بنجاح",'md')
+DevHmD:del(DevTwix..'HmD:Photo:HmD'..msg.chat_id_) 
+end
+if text == "تعطيل صوره" and Manager(msg) and SourceCh(msg) or text == "تعطيل الصوره" and Manager(msg) and SourceCh(msg) then
+Dev_HmD(msg.chat_id_, msg.id_, 1,"✫︙تم تعطيل امر الصوره بنجاح",'md')
+DevHmD:set(DevTwix..'HmD:Photo:HmD'..msg.chat_id_,true)  
+end
+if text and (text == "صوره" or text == "↫ صوره ᥀") and not DevHmD:get(DevTwix..'HmD:Photo:HmD'..msg.chat_id_) and SourceCh(msg) then
+HmD = math.random(46,94); 
+local Text ='*✫︙تم اختيار الصوره لك *'
+keyboard = {}  
+keyboard.inline_keyboard = {{{text = '. 𝗗𝗲𝘃𝗧𝘄𝗶𝘅 𝗧𝗲𝗮𝗠 ˛',url="t.me/DevTwix"}},} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/twixphoto/'..HmD..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
 if text == "تفعيل غنيلي" and Manager(msg) and SourceCh(msg) then
-Dev_HmD(msg.chat_id_, msg.id_, 1,"✫︙تم امر غنيلي بنجاح",'md')
+Dev_HmD(msg.chat_id_, msg.id_, 1,"✫︙تم تفعيل امر غنيلي بنجاح",'md')
 DevHmD:del(DevTwix..'HmD:Audios:HmD'..msg.chat_id_) 
 end
 if text == "تعطيل غنيلي" and Manager(msg) and SourceCh(msg) then
@@ -9640,7 +9672,7 @@ audios = json:decode(data)
 if audios.Info == 'true' then
 local Text ='*: ﭑݪفِۅيسَ ، حِسب ذۅقيّ ♥️، .*'
 keyboard = {}  
-keyboard.inline_keyboard = {{{text = '‏˛ 𝗗𝗲𝘃𝗧𝘄𝗶𝘅 𝗧𝗲𝗮𝗠 .',url="t.me/DevTwix"}},}
+keyboard.inline_keyboard = {{{text = '‏. 𝗗𝗲𝘃𝗧𝘄𝗶𝘅 𝗧𝗲𝗮𝗠 ˛',url="t.me/DevTwix"}},}
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end end end
