@@ -9635,7 +9635,7 @@ DevHmD:set(DevTwix..'HmD:Remix:HmD'..msg.chat_id_,true)
 end
 if text and (text == "ريمكس" or text == "↫ ريمكس ᥀") and not DevHmD:get(DevTwix..'HmD:Remix:HmD'..msg.chat_id_) and SourceCh(msg) then
 HmD = math.random(3,802); 
-local Text ='*: ﭑݪفِۅيسَ ، حِسب ذۅقيّ ❤️‍🔥، .*'
+local Text ='*: ﭑݪرَيِمَگسَ ، حِسب ذۅقيّ ❤️‍🔥، .*'
 keyboard = {}  
 keyboard.inline_keyboard = {{{text = '. 𝗗𝗲𝘃𝗧𝘄𝗶𝘅 𝗧𝗲𝗮𝗠 ˛',url="t.me/DevTwix"}},} 
 local msg_id = msg.id_/2097152/0.5 
@@ -9650,12 +9650,28 @@ Dev_HmD(msg.chat_id_, msg.id_, 1,"✫︙تم تعطيل امر الصوره بن
 DevHmD:set(DevTwix..'HmD:Photo:HmD'..msg.chat_id_,true)  
 end
 if text and (text == "صوره" or text == "↫ صوره ᥀") and not DevHmD:get(DevTwix..'HmD:Photo:HmD'..msg.chat_id_) and SourceCh(msg) then
-HmD = math.random(46,94); 
+HmD = math.random(29,41); 
 local Text ='*✫︙تم اختيار الصوره لك *'
 keyboard = {}  
 keyboard.inline_keyboard = {{{text = '. 𝗗𝗲𝘃𝗧𝘄𝗶𝘅 𝗧𝗲𝗮𝗠 ˛',url="t.me/DevTwix"}},} 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/twixphoto/'..HmD..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+if text == "تفعيل انمي" and Manager(msg) and SourceCh(msg) or text == "تفعيل الانمي" and Manager(msg) and SourceCh(msg) then
+Dev_HmD(msg.chat_id_, msg.id_, 1,"✫︙تم تفعيل امر الانمي بنجاح",'md')
+DevHmD:del(DevTwix..'HmD:Anime:HmD'..msg.chat_id_) 
+end
+if text == "تعطيل انمي" and Manager(msg) and SourceCh(msg) or text == "تعطيل الانمي" and Manager(msg) and SourceCh(msg) then
+Dev_HmD(msg.chat_id_, msg.id_, 1,"✫︙تم تعطيل امر الانمي بنجاح",'md')
+DevHmD:set(DevTwix..'HmD:Anime:HmD'..msg.chat_id_,true)  
+end
+if text and (text == "انمي" or text == "نمي") and not DevHmD:get(DevTwix..'HmD:Anime:HmD'..msg.chat_id_) and SourceCh(msg) then
+HmD = math.random(46,94); 
+local Text ='*✫︙تم اختيار الانمي لك *'
+keyboard = {}  
+keyboard.inline_keyboard = {{{text = '. 𝗗𝗲𝘃𝗧𝘄𝗶𝘅 𝗧𝗲𝗮𝗠 ˛',url="t.me/DevTwix"}},} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/twiixAnime/'..HmD..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == "تفعيل غنيلي" and Manager(msg) and SourceCh(msg) then
 Dev_HmD(msg.chat_id_, msg.id_, 1,"✫︙تم تفعيل امر غنيلي بنجاح",'md')
