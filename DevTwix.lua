@@ -11252,6 +11252,14 @@ if text == "مبرمج السورس" and SourceCh(msg) or text == "مطور ال
 Text = [[*✫︙مبرمج السورس ⇠@VlVlVI*]] keyboard = {} keyboard.inline_keyboard = {{{text = '• مبرمج السورس •',url="t.me/VLVLVI"}},}
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=t.me/VLVLVI&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) return false end
+
+
+if text == "صوفي" and SourceCh(msg) or text == "صفصف" and SourceCh(msg) or text == "ابو الصوف" and SourceCh(msg) or text == "المبرمج" and SourceCh(msg) or text == "× مطور السورس ×" and SourceCh(msg) then 
+Text = [[*✫︙يردونك حبي ⇠@soofq*]] keyboard = {} keyboard.inline_keyboard = {{{text = '• صوفي •',url="t.me/soofq"}},}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=t.me/soofq&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) return false end
+
+
 ---------------------------------------------------------------------------------------------------------
 if text == "يوتيوب" and SourceCh(msg) or text == "اليوتيوب" and SourceCh(msg) or text == "بوت يوتيوب" and SourceCh(msg) or text == "بوت اليوتيوب" and SourceCh(msg) or text == "اريد بوت يوتيوب" and SourceCh(msg) or text == "شمرلي بوت يوتيوب" and SourceCh(msg) or text == "يوت" and SourceCh(msg) then 
 Text = [[*✫︙اضغط هنا للحصول على بوت يوتيوب*]] keyboard = {} keyboard.inline_keyboard = {{{text = '• آضغط هنا •',url="https://t.me/Y3lBot"}},}
