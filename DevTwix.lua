@@ -1079,6 +1079,205 @@ keyboard.inline_keyboard = {
 https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end,nil)
 end end
+-----------------------------------------------(BAT)------------------------------------------------
+if DataText and DataText:match('/BATList:(.*)') then
+local HmD = DataText:match('/BATList:(.*)')
+if tonumber(HmD) == tonumber(data.sender_user_id_) then
+local Help = DevHmD:get(DevTwix..'HmD:BAT')
+bat = {"💍 بات وعلى النبي الصلوات 🏮","💍 اخذه من اول عضمه 😁","💍 اجه جاسم الأسود راح يطلعه 👳🏻‍♂️","اخذه البات 💍 يا بطل 😉 💪🏻",};
+sendbat = bat[math.random(#bat)]
+local Text = "*"..sendbat.."*"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text="👊🏻",callback_data="/BATList3:"..data.sender_user_id_},{text="👊🏻",callback_data="/BATList1:"..data.sender_user_id_},{text="👊🏻",callback_data="/BATList2:"..data.sender_user_id_}},
+{{text="طك",callback_data="/TkList:"..data.sender_user_id_},{text="طك",callback_data="/TkkList:"..data.sender_user_id_},{text="طك",callback_data="/StopList:"..data.sender_user_id_}},
+{{text="انهاء العبة",callback_data="/DeleteGameList:"..data.sender_user_id_}}}
+return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("× عذرا الامر ليس لك .")..'&show_alert=true')
+end
+end
+---------
+if DataText and DataText:match('/BATList1:(.*)') then
+local HmD = DataText:match('/BATList1:(.*)')
+if tonumber(HmD) == tonumber(data.sender_user_id_) then
+local Help = DevHmD:get(DevTwix..'HmD:BAT1')
+bb = {"BATList6","BATList7",};
+sendbb = bb[math.random(#bb)]
+local Text = "*💍 ضاع البات 😹، خسرت حاول مجدداً 😙*"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text="👊🏻",callback_data="/BATList7"..data.sender_user_id_},{text="👊🏻",callback_data="BATList6"..data.sender_user_id_},{text="👊🏻",callback_data="/BATList8:"..data.sender_user_id_}},
+{{text="طك",callback_data="/TkList:"..data.sender_user_id_},{text="طك",callback_data="/TkkList:"..data.sender_user_id_},{text="طك",callback_data="/BATList6:"..data.sender_user_id_}},
+{{text="انهاء العبة",callback_data="/DeleteGameList:"..data.sender_user_id_}}}
+return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("× عذرا الامر ليس لك .")..'&show_alert=true')
+end
+end
+------------
+if DataText and DataText:match('/BATList2:(.*)') then
+local HmD = DataText:match('/BATList2:(.*)')
+if tonumber(HmD) == tonumber(data.sender_user_id_) then
+local Help = DevHmD:get(DevTwix..'HmD:BAT2')
+local Text = "*~ ضاع البات 💍 ما ظن بعد تلكونه 👌🏼\n~ لديك محالوله جرب حظك للحصول على البات 😃✊🏼*"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text="👊🏻",callback_data="/BATList8:"..data.sender_user_id_},{text="👊🏻",callback_data="/LBATList7:"..data.sender_user_id_},{text="👊🏻",callback_data="/BATList6:"..data.sender_user_id_}},
+{{text="طك",callback_data="/BATList4:"..data.sender_user_id_},{text="طك",callback_data="/BATList6:"..data.sender_user_id_},{text="طك",callback_data="/BATList5:"..data.sender_user_id_}},
+{{text="انهاء العبة",callback_data="/DeleteGameList:"..data.sender_user_id_}}}
+return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("× عذرا الامر ليس لك .")..'&show_alert=true')
+end
+end
+------------
+if DataText and DataText:match('/BATList3:(.*)') then
+local HmD = DataText:match('/BATList3:(.*)')
+if tonumber(HmD) == tonumber(data.sender_user_id_) then
+local Help = DevHmD:get(DevTwix..'HmD:BAT3')
+local Text = "*~ اسحب البات 💍من اول عضة 😃*"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text="👊🏻",callback_data="/BATList7:"..data.sender_user_id_},{text="👊🏻",callback_data="/LBATList8:"..data.sender_user_id_},{text="👊🏻",callback_data="/BATList7:"..data.sender_user_id_}},
+{{text="طك",callback_data="/BATList8:"..data.sender_user_id_},{text="طك",callback_data="/BATList7:"..data.sender_user_id_},{text="طك",callback_data="/BATList6:"..data.sender_user_id_}},
+{{text="انهاء العبة",callback_data="/DeleteGameList:"..data.sender_user_id_}}}
+return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("× عذرا الامر ليس لك .")..'&show_alert=true')
+end
+end
+-------------------------------------(BAT-6-7-8)-----------------------------------------
+if DataText and DataText:match('/BATList6:(.*)') then
+local HmD = DataText:match('/BATList6:(.*)')
+if tonumber(HmD) == tonumber(data.sender_user_id_) then
+local Help = DevHmD:get(DevTwix..'HmD:BAT6')
+local Text = "*~ تلعب خوش تلعب 💍*"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text="👊🏻",callback_data="/BATList9:"..data.sender_user_id_},{text="👊🏻",callback_data="/LBATList10:"..data.sender_user_id_},{text="👊🏻",callback_data="/BATList11:"..data.sender_user_id_}},
+{{text="طك",callback_data="/BATList7:"..data.sender_user_id_},{text="طك",callback_data="/BATList3:"..data.sender_user_id_},{text="طك",callback_data="/BATList6:"..data.sender_user_id_}},
+{{text="انهاء العبة",callback_data="/DeleteGameList:"..data.sender_user_id_}}}
+return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("× عذرا الامر ليس لك .")..'&show_alert=true')
+end
+end
+-------------
+if DataText and DataText:match('/BATList7:(.*)') then
+local HmD = DataText:match('/BATList7:(.*)')
+if tonumber(HmD) == tonumber(data.sender_user_id_) then
+local Help = DevHmD:get(DevTwix..'HmD:BAT7')
+local Text = "ضاع البات 💍 ما ظن بعد تلكونه ✊🏻\n~ لديك اخر محاوله لسحب البات👌🏻😃"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text="👊🏻",callback_data="/BATList11:"..data.sender_user_id_},{text="👊🏻",callback_data="/LBATList6:"..data.sender_user_id_},{text="👊🏻",callback_data="/BATList9:"..data.sender_user_id_}},
+{{text="طك",callback_data="/BATList3:"..data.sender_user_id_},{text="طك",callback_data="/BATList11:"..data.sender_user_id_},{text="طك",callback_data="/BATList6:"..data.sender_user_id_}},
+{{text="انهاء العبة",callback_data="/DeleteGameList:"..data.sender_user_id_}}}
+return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("× عذرا الامر ليس لك .")..'&show_alert=true')
+end
+end
+-------------
+if DataText and DataText:match('/BATList8:(.*)') then
+local HmD = DataText:match('/BATList8:(.*)')
+if tonumber(HmD) == tonumber(data.sender_user_id_) then
+local Help = DevHmD:get(DevTwix..'HmD:BAT8')
+local Text = "~💍 ضاع البات 😹، خسرت تبقا محاوله واحده فقط للحصول على البات 😗"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text="👊🏻",callback_data="/BATList11:"..data.sender_user_id_},{text="👊🏻",callback_data="/LBATList6:"..data.sender_user_id_},{text="👊🏻",callback_data="/BATList10:"..data.sender_user_id_}},
+{{text="طك",callback_data="/BATList:6"..data.sender_user_id_},{text="طك",callback_data="/BATList10:"..data.sender_user_id_},{text="طك",callback_data="/BATList11:"..data.sender_user_id_}},
+{{text="انهاء العبة",callback_data="/DeleteGameList:"..data.sender_user_id_}}}
+return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("× عذرا الامر ليس لك .")..'&show_alert=true')
+end
+end
+------------------------------(BAT-9-10-11)------------------------------------
+if DataText and DataText:match('/BATList9:(.*)') then
+local HmD = DataText:match('/BATList9:(.*)')
+if tonumber(HmD) == tonumber(data.sender_user_id_) then
+local Help = DevHmD:get(DevTwix..'HmD:BAT9')
+local Text = "~ لقد خسرت العبة حظاً موفقاً 😃👌🏻"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text="انهاء اللعبة",callback_data="/DeleteGameList:"..data.sender_user_id_}}}
+return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("× عذرا الامر ليس لك .")..'&show_alert=true')
+end
+end
+----------
+if DataText and DataText:match('/BATList10:(.*)') then
+local HmD = DataText:match('/BATList10:(.*)')
+if tonumber(HmD) == tonumber(data.sender_user_id_) then
+local Help = DevHmD:get(DevTwix..'HmD:BAT10')
+local Text = "*لقد انتهت العبة حظاً موفقاً 😃✊🏻 ~*"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text="انهاء العبة",callback_data="/DeleteGameList:"..data.sender_user_id_}}}
+return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("× عذرا الامر ليس لك .")..'&show_alert=true')
+end
+end
+---------
+if DataText and DataText:match('/BATList11:(.*)') then
+local HmD = DataText:match('/BATList11:(.*)')
+if tonumber(HmD) == tonumber(data.sender_user_id_) then
+local Help = DevHmD:get(DevTwix..'HmD:BAT11')
+local Text = "*~ المحبس 💍بيديك لقد ربحت العبة 🏆😍\nلقد انتهت العبه تهانينا اليك عزيزي 🎉😙*"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text="لعبة مره اخرى 💍",callback_data="/BATList:"..data.sender_user_id_}},
+{{text="انهاء العبة",callback_data="/DeleteGameList:"..data.sender_user_id_}}}
+return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("× عذرا الامر ليس لك .")..'&show_alert=true')
+end
+end
+---------------------------------(Delete-Game-Bat)-----------------------
+if DataText and DataText:match('/DeleteGameList:(.*)') then
+local HmD = DataText:match('/DeleteGameList:(.*)')
+if tonumber(HmD) == tonumber(data.sender_user_id_) then
+EditMsg(Chat_Id2, Msg_Id2, "*✫︙تم انهاء العبة\n~ للاسف يا صديقي لقد خسرتها 🙃*") 
+else
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("✫ عذرا الامر ليس لك .")..'&show_alert=true')
+end
+end
+--------
+if DataText and DataText:match('/StopList:(.*)') then
+local HmD = DataText:match('/StopList:(.*)')
+if tonumber(HmD) == tonumber(data.sender_user_id_) then
+EditMsg(Chat_Id2, Msg_Id2, "*✫︙تم انهاء العبة\n~ للاسف يا صديقي لقد خسرتها 😭*") 
+else
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("✫ عذرا الامر ليس لك .")..'&show_alert=true')
+end
+end
+--------
+if DataText and DataText:match('/BATList3:(.*)') then
+local HmD = DataText:match('/BATList3:(.*)')
+if tonumber(HmD) == tonumber(data.sender_user_id_) then
+local notText = 'ألعب ✊🏻 وخوش تلعب 😉'
+https.request("https://api.telegram.org/bot"..TokenBot.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end end
+if DataText and DataText:match('/TkkList:(.*)') then
+local HmD = DataText:match('/TkkList:(.*)')
+if tonumber(HmD) == tonumber(data.sender_user_id_) then
+local notText = 'تلعب وخوش تلعب 😙🎉'
+https.request("https://api.telegram.org/bot"..TokenBot.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end end
+if DataText and DataText:match('/StopList:(.*)') then
+local HmD = DataText:match('/StopList:(.*)')
+if tonumber(HmD) == tonumber(data.sender_user_id_) then
+local notText = '~ للاسف لقد خسرت العبة 😃👌🏻'
+https.request("https://api.telegram.org/bot"..TokenBot.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end end
 ---------------------------------------------------------------------------------------------------------
 if DataText and DataText:match('/HelpList:(.*)') then
 local HmD = DataText:match('/HelpList:(.*)')
@@ -4420,6 +4619,20 @@ keyboard.inline_keyboard = {{{text="الغاء",callback_data="/NoRolet"}}}
 Msg_id = msg.id_/2097152/0.5
 return https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text=' .. URL.escape(Text).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end,nil) 
+end
+---------------------------------------------------------------------------------------------------------
+if text == "البات" then
+bat = {"💍 بات وعلى النبي الصلوات 🏮","💍 اخذه من اول عضمه 😁","💍 اجه جاسم الأسود راح يطلعه 👳🏻‍♂️","اخذه البات 💍 يا بطل 😉 💪🏻",};
+sendbat = bat[math.random(#bat)]
+local Text = "*"..sendbat.."*"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text="👊🏻",callback_data="/BATList1:"..msg.sender_user_id_},{text="👊🏻",callback_data="/BATList2:"..msg.sender_user_id_},{text="👊🏻",callback_data="/BATList3:"..msg.sender_user_id_}},
+{{text="طك",callback_data="/BATList:3"..msg.sender_user_id_},{text="طك",callback_data="/TkList:"..msg.sender_user_id_},{text="طك",callback_data="/TkkList:"..msg.sender_user_id_}},
+{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..msg.sender_user_id_}}}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false
 end
 ---------------------------------------------------------------------------------------------------------
 if text == 'الالعاب' and ChCheck(msg) or text == 'العاب' and ChCheck(msg) or text == 'اللعبه' and ChCheck(msg) then
@@ -9633,7 +9846,7 @@ if text == "تعطيل ريمكس" and Manager(msg) and SourceCh(msg) or text ==
 Dev_HmD(msg.chat_id_, msg.id_, 1,"✫︙تم تعطيل الريمكس بنجاح ",'md')
 DevHmD:set(DevTwix..'HmD:Remix:HmD'..msg.chat_id_,true)  
 end
-if text and (text == "ريمكس" or text == "↫ ريمكس ᥀") and not DevHmD:get(DevTwix..'HmD:Remix:HmD'..msg.chat_id_) and SourceCh(msg) then
+if text and (text == "ريمكس" or text == "ري") and not DevHmD:get(DevTwix..'HmD:Remix:HmD'..msg.chat_id_) and SourceCh(msg) then
 HmD = math.random(3,802); 
 local Text ='*: ﭑݪرَيِمَگسَ ، حِسب ذۅقيّ ❤️‍🔥، .*'
 keyboard = {}  
@@ -9649,7 +9862,7 @@ if text == "تعطيل صوره" and Manager(msg) and SourceCh(msg) or text == "
 Dev_HmD(msg.chat_id_, msg.id_, 1,"✫︙تم تعطيل امر الصوره بنجاح",'md')
 DevHmD:set(DevTwix..'HmD:Photo:HmD'..msg.chat_id_,true)  
 end
-if text and (text == "صوره" or text == "↫ صوره ᥀") and not DevHmD:get(DevTwix..'HmD:Photo:HmD'..msg.chat_id_) and SourceCh(msg) then
+if text and (text == "صوره" or text == "صو") and not DevHmD:get(DevTwix..'HmD:Photo:HmD'..msg.chat_id_) and SourceCh(msg) then
 HmD = math.random(29,41); 
 local Text ='*✫︙تم اختيار الصوره لك *'
 keyboard = {}  
@@ -11249,17 +11462,9 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/DevTwix&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) return false end
 ---------------------------------------------------------------------------------------------------------
 if text == "مبرمج السورس" and SourceCh(msg) or text == "مطور السورس" and SourceCh(msg) or text == "وين المبرمج" and SourceCh(msg) or text == "المبرمج" and SourceCh(msg) or text == "× مطور السورس ×" and SourceCh(msg) then 
-Text = [[*✫︙مبرمج السورس ⇠@VlVlVI*]] keyboard = {} keyboard.inline_keyboard = {{{text = '• مبرمج السورس •',url="t.me/VLVLVI"}},}
+Text = [[*✫︙مبرمج السورس ⇠@VlVlVI*]] keyboard = {} keyboard.inline_keyboard = {{{text = '• مبرمج السورس •',url="t.me/VlVlVI"}},}
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=t.me/VLVLVI&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) return false end
-
-
-if text == "صوفي" and SourceCh(msg) or text == "صفصف" and SourceCh(msg) or text == "ابو الصوف" and SourceCh(msg) or text == "المبرمج" and SourceCh(msg) or text == "× مطور السورس ×" and SourceCh(msg) then 
-Text = [[*✫︙يردونك حبي ⇠@soofq*]] keyboard = {} keyboard.inline_keyboard = {{{text = '• صوفي •',url="t.me/soofq"}},}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=t.me/soofq&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) return false end
-
-
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=t.me/VlVlVI&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) return false end
 ---------------------------------------------------------------------------------------------------------
 if text == "يوتيوب" and SourceCh(msg) or text == "اليوتيوب" and SourceCh(msg) or text == "بوت يوتيوب" and SourceCh(msg) or text == "بوت اليوتيوب" and SourceCh(msg) or text == "اريد بوت يوتيوب" and SourceCh(msg) or text == "شمرلي بوت يوتيوب" and SourceCh(msg) or text == "يوت" and SourceCh(msg) then 
 Text = [[*✫︙اضغط هنا للحصول على بوت يوتيوب*]] keyboard = {} keyboard.inline_keyboard = {{{text = '• آضغط هنا •',url="https://t.me/Y3lBot"}},}
