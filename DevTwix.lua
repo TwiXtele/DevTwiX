@@ -1232,7 +1232,7 @@ local HmD = DataText:match('/BATList11:(.*)')
 if tonumber(HmD) == tonumber(data.sender_user_id_) then
 local Help = DevHmD:get(DevTwix..'HmD:BAT11')
 local Text = [[*~ المحبس 💍بيديك لقد ربحت 😍🏆
-~ لقد انتهت العبه الف مبروك 🎊✨ ،*]]
+~ لقد انتهت العبه الف مبروك 🎁✨ ،*]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text="لعبة مره اخرى 💍",callback_data="/BATList:"..data.sender_user_id_}},
@@ -1303,7 +1303,7 @@ if DataText and DataText:match('/YasList1:(.*)') then
 local HmD = DataText:match('/YasList1:(.*)')
 if tonumber(HmD) == tonumber(data.sender_user_id_) then
 local Help = DevHmD:get(DevTwix..'HmD:Yas1')
-local Text = [[*⎆︙أحسنت اجابتك صحيحة 🎊 ،*]]
+local Text = [[*⎆︙أحسنت اجابتك صحيحة 🎁 ،*]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text="• آلتالي •",callback_data="/YasList2:"..data.sender_user_id_}},
@@ -1334,7 +1334,7 @@ if DataText and DataText:match('/YasList3:(.*)') then
 local HmD = DataText:match('/YasList3:(.*)')
 if tonumber(HmD) == tonumber(data.sender_user_id_) then
 local Help = DevHmD:get(DevTwix..'HmD:Yas3')
-local Text = [[*⎆︙أحسنت اجابتك صحيحة 🎊 ،*]]
+local Text = [[*⎆︙أحسنت اجابتك صحيحة 🎁 ،*]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text="• آلتالي •",callback_data="/YasList4:"..data.sender_user_id_}},
@@ -1365,7 +1365,7 @@ if DataText and DataText:match('/YasList5:(.*)') then
 local HmD = DataText:match('/YasList5:(.*)')
 if tonumber(HmD) == tonumber(data.sender_user_id_) then
 local Help = DevHmD:get(DevTwix..'HmD:Yas1')
-local Text = [[*⎆︙أحسنت اجابتك صحيحة 🎊 ،*]]
+local Text = [[*⎆︙أحسنت اجابتك صحيحة 🎁 ،*]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text="• آلتالي •",callback_data="/YasList6:"..data.sender_user_id_}},
@@ -1396,7 +1396,7 @@ if DataText and DataText:match('/YASSList6:(.*)') then
 local HmD = DataText:match('/YASSList6:(.*)')
 if tonumber(HmD) == tonumber(data.sender_user_id_) then
 local Help = DevHmD:get(DevTwix..'HmD:YASS6')
-local Text = [[*~ أحسنت اجابتك صحيحة 🎊 ،*]]
+local Text = [[*~ أحسنت اجابتك صحيحة 🎁 ،*]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text="• آلتالي •",callback_data="/YasList7:"..data.sender_user_id_}},
@@ -1427,7 +1427,7 @@ if DataText and DataText:match('/YasList8:(.*)') then
 local HmD = DataText:match('/YasList8:(.*)')
 if tonumber(HmD) == tonumber(data.sender_user_id_) then
 local Help = DevHmD:get(DevTwix..'HmD:Yas8')
-local Text = [[*⎆︙أحسنت اجابتك صحيحة 🎊 ،*]]
+local Text = [[*⎆︙أحسنت اجابتك صحيحة 🎁 ،*]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text="• آلتالي •",callback_data="/YasList9:"..data.sender_user_id_}},
@@ -1458,7 +1458,7 @@ if DataText and DataText:match('/YasList10:(.*)') then
 local HmD = DataText:match('/YasList10:(.*)')
 if tonumber(HmD) == tonumber(data.sender_user_id_) then
 local Help = DevHmD:get(DevTwix..'HmD:Yas10')
-local Text = [[*⎆︙أحسنت اجابتك صحيحة 🎊 ،*]]
+local Text = [[*⎆︙أحسنت اجابتك صحيحة 🎁 ،*]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text="• آلتالي •",callback_data="/YasList11:"..data.sender_user_id_}},
@@ -1472,7 +1472,7 @@ if DataText and DataText:match('/YasList11:(.*)') then
 local HmD = DataText:match('/YasList11:(.*)')
 if tonumber(HmD) == tonumber(data.sender_user_id_) then
 local Help = DevHmD:get(DevTwix..'HmD:Yas11')
-local Text = [[*⎆︙لقـد انتهـت العـبة 🎊
+local Text = [[*⎆︙لقـد انتهـت العـبة 🎁
 ⎆︙ أنتضـرو اسئلـة جـديده قـريباً ..
 ⎆︙ قنــاة الـبوت : @DevTwix*]]
 keyboard = {} 
