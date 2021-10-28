@@ -5833,88 +5833,6 @@ DevHmD:srem(DevTwix..'HmD:SudoBot:',user)
 ReplyStatus(msg,user,"Reply","⎆︙تم تنزيله من قائمة المطورين")  
 end end
 ---------------------------------------------------------------------------------------------------------
---   Set HmDSuper   --
-if ChatType == 'sp' or ChatType == 'gp'  then
-if SudoBot(msg) then
-if text ==('رفع سوبر') and SourceCh(msg) then
-function raf_reply(extra, result, success)
-DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,result.sender_user_id_)
-ReplyStatus(msg,result.sender_user_id_,"Reply","⎆︙تم رفعه سوبر")  
-end 
-if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
-getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),raf_reply)
-end end
-if text and text:match('^رفع سوبر @(.*)') and SourceCh(msg) then
-local username = text:match('^رفع سوبر @(.*)')
-function promreply(extra,result,success)
-if result.id_ then
-DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,result.id_)
-ReplyStatus(msg,result.id_,"Reply","⎆︙تم رفعه سوبر")  
-else 
-Dev_HmD(msg.chat_id_, msg.id_, 1, '*⎆︙المعرف غير صحيح*', 1, 'md')
-end end 
-resolve_username(username,promreply)
-end
-if text and text:match('^رفع سوبر (%d+)') and SourceCh(msg) then
-local user = text:match('رفع سوبر (%d+)')
-DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,user)
-ReplyStatus(msg,user,"Reply","⎆︙تم رفعه سوبر")  
-end
----------------------------------------------------------------------------------------------------------
---   Rem HmDSuper   --
-if text ==('تنزيل سوبر') and SourceCh(msg) then
-function prom_reply(extra, result, success)
-tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
-local admins = data.members_
-for i=0 , #admins do
-if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
-if tonumber(result.sender_user_id_) == tonumber(admins[i].user_id_) then  
-Dev_HmD(msg.chat_id_, msg.id_, 1, '⎆︙لا يمكن تنزيل السوبر الاساسي', 1, 'md')
-else
-DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,result.sender_user_id_)
-ReplyStatus(msg,result.sender_user_id_,"Reply","⎆︙تم تنزيله من السوبرين")  
-end end end
-end,nil)
-end 
-if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
-getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
-end 
-end
-if text and text:match('^تنزيل سوبر @(.*)') and SourceCh(msg) then
-local username = text:match('^تنزيل سوبر @(.*)')
-function promreply(extra,result,success)
-if result.id_ then
-tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
-local admins = data.members_
-for i=0 , #admins do
-if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
-if tonumber(result.id_) == tonumber(admins[i].user_id_) then  
-Dev_HmD(msg.chat_id_, msg.id_, 1, '⎆︙لا يمكن تنزيل السوبر الاساسي', 1, 'md')
-else
-DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,result.id_)
-ReplyStatus(msg,result.id_,"Reply","⎆︙تم تنزيله من السوبرين")  
-end end end
-end,nil)
-else 
-Dev_HmD(msg.chat_id_, msg.id_, 1, '*⎆︙المعرف غير صحيح*', 1, 'md')
-end end 
-resolve_username(username,promreply)
-end
-if text and text:match('^تنزيل سوبر (%d+)') and SourceCh(msg) then
-local user = text:match('تنزيل سوبر (%d+)')
-tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
-local admins = data.members_
-for i=0 , #admins do
-if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
-if tonumber(user) == tonumber(admins[i].user_id_) then  
-Dev_HmD(msg.chat_id_, msg.id_, 1, '⎆︙لا يمكن تنزيل السوبر الاساسي', 1, 'md')
-else
-DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,user)
-ReplyStatus(msg,user,"Reply","⎆︙تم تنزيله من السوبرين")  
-end end end
-end,nil)
-end end end
----------------------------------------------------------------------------------------------------------
 --   Set HmDConstructor   --
 if ChatType == 'sp' or ChatType == 'gp'  then
 if SudoBot(msg) then
@@ -5993,6 +5911,88 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, '⎆︙لا يمكن تنزيل المالك �
 else
 DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⎆︙تم تنزيله من المالكين")  
+end end end
+end,nil)
+end end
+---------------------------------------------------------------------------------------------------------
+--   Set HmDSuper   --
+if ChatType == 'sp' or ChatType == 'gp'  then
+if SudoBot(msg) then
+if text ==('رفع سوبر') and SourceCh(msg) then
+function raf_reply(extra, result, success)
+DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,result.sender_user_id_)
+ReplyStatus(msg,result.sender_user_id_,"Reply","⎆︙تم رفعه سوبر")  
+end 
+if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
+getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),raf_reply)
+end end
+if text and text:match('^رفع سوبر @(.*)') and SourceCh(msg) then
+local username = text:match('^رفع سوبر @(.*)')
+function promreply(extra,result,success)
+if result.id_ then
+DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,result.id_)
+ReplyStatus(msg,result.id_,"Reply","⎆︙تم رفعه سوبر")  
+else 
+Dev_HmD(msg.chat_id_, msg.id_, 1, '*⎆︙المعرف غير صحيح*', 1, 'md')
+end end 
+resolve_username(username,promreply)
+end
+if text and text:match('^رفع سوبر (%d+)') and SourceCh(msg) then
+local user = text:match('رفع سوبر (%d+)')
+DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,user)
+ReplyStatus(msg,user,"Reply","⎆︙تم رفعه سوبر")  
+end
+---------------------------------------------------------------------------------------------------------
+--   Rem HmDSuper   --
+if text ==('تنزيل سوبر') and SourceCh(msg) then
+function prom_reply(extra, result, success)
+tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
+local admins = data.members_
+for i=0 , #admins do
+if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
+if tonumber(result.sender_user_id_) == tonumber(admins[i].user_id_) then  
+Dev_HmD(msg.chat_id_, msg.id_, 1, '⎆︙لا يمكن تنزيل السوبر الاساسي', 1, 'md')
+else
+DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,result.sender_user_id_)
+ReplyStatus(msg,result.sender_user_id_,"Reply","⎆︙تم تنزيله من السوبرين")  
+end end end
+end,nil)
+end 
+if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
+getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
+end 
+end
+if text and text:match('^تنزيل سوبر @(.*)') and SourceCh(msg) then
+local username = text:match('^تنزيل سوبر @(.*)')
+function promreply(extra,result,success)
+if result.id_ then
+tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
+local admins = data.members_
+for i=0 , #admins do
+if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
+if tonumber(result.id_) == tonumber(admins[i].user_id_) then  
+Dev_HmD(msg.chat_id_, msg.id_, 1, '⎆︙لا يمكن تنزيل السوبر الاساسي', 1, 'md')
+else
+DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,result.id_)
+ReplyStatus(msg,result.id_,"Reply","⎆︙تم تنزيله من السوبرين")  
+end end end
+end,nil)
+else 
+Dev_HmD(msg.chat_id_, msg.id_, 1, '*⎆︙المعرف غير صحيح*', 1, 'md')
+end end 
+resolve_username(username,promreply)
+end
+if text and text:match('^تنزيل سوبر (%d+)') and SourceCh(msg) then
+local user = text:match('تنزيل سوبر (%d+)')
+tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
+local admins = data.members_
+for i=0 , #admins do
+if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
+if tonumber(user) == tonumber(admins[i].user_id_) then  
+Dev_HmD(msg.chat_id_, msg.id_, 1, '⎆︙لا يمكن تنزيل السوبر الاساسي', 1, 'md')
+else
+DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,user)
+ReplyStatus(msg,user,"Reply","⎆︙تم تنزيله من السوبرين")  
 end end end
 end,nil)
 end end
