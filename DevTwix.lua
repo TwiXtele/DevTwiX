@@ -604,7 +604,7 @@ end ,nil)
 end
 ---------------------------------------------------------------------------------------------------------
 local HmDRank = function(msg) if SudoId(msg.sender_user_id_) then DevTwixTeam  = "المطور" elseif HmDSudo(msg) then DevTwixTeam = "المطور" elseif SecondSudo(msg) then DevTwixTeam = "المطور" elseif SudoBot(msg) then DevTwixTeam = "المطور" elseif Manager(msg) then DevTwixTeam = "المدير" elseif Admin(msg) then DevTwixTeam = "الادمن" else DevTwixTeam = "العضو" end return DevTwixTeam end
-function IdRank(user_id,chat_id) if tonumber(user_id) == tonumber(332581832) then DevTwixTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(1368021277) then DevTwixTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(1990818758) then DevTwixTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(DevTwix) then DevTwixTeam = 'البوت' elseif SudoId(user_id) then DevTwixTeam = 'المطور الاساسي' elseif DevHmD:sismember(DevTwix..'HmD:HmDSudo:', user_id) then DevTwixTeam = 'المطور الاساسي' elseif DevHmD:sismember(DevTwix..'HmD:SecondSudo:', user_id) then DevTwixTeam = 'المطور الاساسي²' elseif DevHmD:sismember(DevTwix..'HmD:SudoBot:', user_id) then DevTwixTeam = DevHmD:get(DevTwix.."HmD:SudoBot:Rd"..chat_id) or 'المطور' elseif DevHmD:sismember(DevTwix..'HmD:HmDSuper:'..chat_id, user_id) then DevTwixTeam = 'سوبر' elseif DevHmD:sismember(DevTwix..'HmD:HmDConstructor:'..chat_id, user_id) then DevTwixTeam = 'المالك' elseif DevHmD:sismember(DevTwix..'HmD:Owner:', user_id) then DevTwixTeam = 'المالك' elseif DevHmD:sismember(DevTwix..'HmD:BasicConstructor:'..chat_id, user_id) then DevTwixTeam = DevHmD:get(DevTwix.."HmD:BasicConstructor:Rd"..chat_id) or 'المنشئ الاساسي' elseif DevHmD:sismember(DevTwix..'HmD:Constructor:'..chat_id, user_id) then DevTwixTeam = DevHmD:get(DevTwix.."HmD:Constructor:Rd"..chat_id) or 'المنشئ' elseif DevHmD:sismember(DevTwix..'HmD:Managers:'..chat_id, user_id) then DevTwixTeam = DevHmD:get(DevTwix.."HmD:Managers:Rd"..chat_id) or 'المدير' elseif DevHmD:sismember(DevTwix..'HmD:Admins:'..chat_id, user_id) then DevTwixTeam = DevHmD:get(DevTwix.."HmD:Admins:Rd"..chat_id) or 'الادمن' elseif DevHmD:sismember(DevTwix..'HmD:VipMem:'..chat_id, user_id) then  DevTwixTeam = DevHmD:get(DevTwix.."HmD:VipMem:Rd"..chat_id) or 'المميز' elseif DevHmD:sismember(DevTwix..'HmD:Cleaner:'..chat_id, user_id) then  DevTwixTeam = DevHmD:get(DevTwix.."HmD:Cleaner:Rd"..chat_id) or 'المنظف' else DevTwixTeam = DevHmD:get(DevTwix.."HmD:mem:Rd"..chat_id) or 'العضو' end return DevTwixTeam end
+function IdRank(user_id,chat_id) if tonumber(user_id) == tonumber(332581832) then DevTwixTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(1368021277) then DevTwixTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(1990818758) then DevTwixTeam = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(DevTwix) then DevTwixTeam = 'البوت' elseif SudoId(user_id) then DevTwixTeam = 'المطور الاساسي' elseif DevHmD:sismember(DevTwix..'HmD:HmDSudo:', user_id) then DevTwixTeam = 'المطور الاساسي' elseif DevHmD:sismember(DevTwix..'HmD:SecondSudo:', user_id) then DevTwixTeam = 'المطور الاساسي²' elseif DevHmD:sismember(DevTwix..'HmD:SudoBot:', user_id) then DevTwixTeam = DevHmD:get(DevTwix.."HmD:SudoBot:Rd"..chat_id) or 'المطور' elseif DevHmD:sismember(DevTwix..'HmD:HmDSuper:'..chat_id, user_id) then DevTwixTeam = 'السوبر' elseif DevHmD:sismember(DevTwix..'HmD:HmDConstructor:'..chat_id, user_id) then DevTwixTeam = 'المالك' elseif DevHmD:sismember(DevTwix..'HmD:Owner:', user_id) then DevTwixTeam = 'المالك' elseif DevHmD:sismember(DevTwix..'HmD:BasicConstructor:'..chat_id, user_id) then DevTwixTeam = DevHmD:get(DevTwix.."HmD:BasicConstructor:Rd"..chat_id) or 'المنشئ الاساسي' elseif DevHmD:sismember(DevTwix..'HmD:Constructor:'..chat_id, user_id) then DevTwixTeam = DevHmD:get(DevTwix.."HmD:Constructor:Rd"..chat_id) or 'المنشئ' elseif DevHmD:sismember(DevTwix..'HmD:Managers:'..chat_id, user_id) then DevTwixTeam = DevHmD:get(DevTwix.."HmD:Managers:Rd"..chat_id) or 'المدير' elseif DevHmD:sismember(DevTwix..'HmD:Admins:'..chat_id, user_id) then DevTwixTeam = DevHmD:get(DevTwix.."HmD:Admins:Rd"..chat_id) or 'الادمن' elseif DevHmD:sismember(DevTwix..'HmD:VipMem:'..chat_id, user_id) then  DevTwixTeam = DevHmD:get(DevTwix.."HmD:VipMem:Rd"..chat_id) or 'المميز' elseif DevHmD:sismember(DevTwix..'HmD:Cleaner:'..chat_id, user_id) then  DevTwixTeam = DevHmD:get(DevTwix.."HmD:Cleaner:Rd"..chat_id) or 'المنظف' else DevTwixTeam = DevHmD:get(DevTwix.."HmD:mem:Rd"..chat_id) or 'العضو' end return DevTwixTeam end
 ---------------------------------------------------------------------------------------------------------
 function RankChecking(user_id,chat_id)
 if SudoId(user_id) then
@@ -617,6 +617,8 @@ elseif DevHmD:sismember(DevTwix..'HmD:SecondSudo:', user_id) then
 var = true  
 elseif DevHmD:sismember(DevTwix..'HmD:SudoBot:', user_id) then
 var = true 
+elseif DevHmD:sismember(DevTwix..'HmD:HmDSuper:'..chat_id, user_id) then
+var = true
 elseif DevHmD:sismember(DevTwix..'HmD:HmDConstructor:'..chat_id, user_id) then
 var = true
 elseif DevHmD:sismember(DevTwix..'HmD:Owner:'..chat_id, user_id) then
@@ -5838,7 +5840,7 @@ if ChatType == 'sp' or ChatType == 'gp'  then
 if SudoBot(msg) then
 if text ==('رفع مالك') and SourceCh(msg) then
 function raf_reply(extra, result, success)
-DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,result.sender_user_id_)
+DevHmD:sadd(DevTwix..'HmD:HmDConstructor:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","⎆︙تم رفعه مالك")  
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
@@ -5848,7 +5850,7 @@ if text and text:match('^رفع مالك @(.*)') and SourceCh(msg) then
 local username = text:match('^رفع مالك @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,result.id_)
+DevHmD:sadd(DevTwix..'HmD:HmDConstructor:'..msg.chat_id_,result.id_)
 ReplyStatus(msg,result.id_,"Reply","⎆︙تم رفعه مالك")  
 else 
 Dev_HmD(msg.chat_id_, msg.id_, 1, '*⎆︙المعرف غير صحيح*', 1, 'md')
@@ -5857,7 +5859,7 @@ resolve_username(username,promreply)
 end
 if text and text:match('^رفع مالك (%d+)') and SourceCh(msg) then
 local user = text:match('رفع مالك (%d+)')
-DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,user)
+DevHmD:sadd(DevTwix..'HmD:HmDConstructor:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⎆︙تم رفعه مالك")  
 end
 ---------------------------------------------------------------------------------------------------------
@@ -5871,7 +5873,7 @@ if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
 if tonumber(result.sender_user_id_) == tonumber(admins[i].user_id_) then  
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⎆︙لا يمكن تنزيل المالك الاساسي', 1, 'md')
 else
-DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,result.sender_user_id_)
+DevHmD:srem(DevTwix..'HmD:HmDConstructor:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","⎆︙تم تنزيله من المالكين")  
 end end end
 end,nil)
@@ -5891,7 +5893,7 @@ if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
 if tonumber(result.id_) == tonumber(admins[i].user_id_) then  
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⎆︙لا يمكن تنزيل المالك الاساسي', 1, 'md')
 else
-DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,result.id_)
+DevHmD:srem(DevTwix..'HmD:HmDConstructor:'..msg.chat_id_,result.id_)
 ReplyStatus(msg,result.id_,"Reply","⎆︙تم تنزيله من المالكين")  
 end end end
 end,nil)
@@ -5909,7 +5911,7 @@ if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
 if tonumber(user) == tonumber(admins[i].user_id_) then  
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⎆︙لا يمكن تنزيل المالك الاساسي', 1, 'md')
 else
-DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,user)
+DevHmD:srem(DevTwix..'HmD:HmDConstructor:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⎆︙تم تنزيله من المالكين")  
 end end end
 end,nil)
@@ -5920,7 +5922,7 @@ if ChatType == 'sp' or ChatType == 'gp'  then
 if SudoBot(msg) then
 if text ==('رفع سوبر') and SourceCh(msg) then
 function raf_reply(extra, result, success)
-DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,result.sender_user_id_)
+DevHmD:sadd(DevTwix..'HmD:HmDSuper:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","⎆︙تم رفعه سوبر")  
 end 
 if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
@@ -5930,7 +5932,7 @@ if text and text:match('^رفع سوبر @(.*)') and SourceCh(msg) then
 local username = text:match('^رفع سوبر @(.*)')
 function promreply(extra,result,success)
 if result.id_ then
-DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,result.id_)
+DevHmD:sadd(DevTwix..'HmD:HmDSuper:'..msg.chat_id_,result.id_)
 ReplyStatus(msg,result.id_,"Reply","⎆︙تم رفعه سوبر")  
 else 
 Dev_HmD(msg.chat_id_, msg.id_, 1, '*⎆︙المعرف غير صحيح*', 1, 'md')
@@ -5939,7 +5941,7 @@ resolve_username(username,promreply)
 end
 if text and text:match('^رفع سوبر (%d+)') and SourceCh(msg) then
 local user = text:match('رفع سوبر (%d+)')
-DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,user)
+DevHmD:sadd(DevTwix..'HmD:HmDSuper:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⎆︙تم رفعه سوبر")  
 end
 ---------------------------------------------------------------------------------------------------------
@@ -5953,7 +5955,7 @@ if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
 if tonumber(result.sender_user_id_) == tonumber(admins[i].user_id_) then  
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⎆︙لا يمكن تنزيل السوبر الاساسي', 1, 'md')
 else
-DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,result.sender_user_id_)
+DevHmD:srem(DevTwix..'HmD:HmDSuper:'..msg.chat_id_,result.sender_user_id_)
 ReplyStatus(msg,result.sender_user_id_,"Reply","⎆︙تم تنزيله من السوبرين")  
 end end end
 end,nil)
@@ -5973,7 +5975,7 @@ if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
 if tonumber(result.id_) == tonumber(admins[i].user_id_) then  
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⎆︙لا يمكن تنزيل السوبر الاساسي', 1, 'md')
 else
-DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,result.id_)
+DevHmD:srem(DevTwix..'HmD:HmDSuper:'..msg.chat_id_,result.id_)
 ReplyStatus(msg,result.id_,"Reply","⎆︙تم تنزيله من السوبرين")  
 end end end
 end,nil)
@@ -5991,7 +5993,7 @@ if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
 if tonumber(user) == tonumber(admins[i].user_id_) then  
 Dev_HmD(msg.chat_id_, msg.id_, 1, '⎆︙لا يمكن تنزيل السوبر الاساسي', 1, 'md')
 else
-DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,user)
+DevHmD:srem(DevTwix..'HmD:HmDSuper:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⎆︙تم تنزيله من السوبرين")  
 end end end
 end,nil)
@@ -7371,7 +7373,7 @@ end end
 ---------------------------------------------------------------------------------------------------------
 if Owner(msg) then
 if text == "السوبريه" and ChCheck(msg) then 
-local List = DevHmD:smembers(DevTwix..'HmD:Owner:'..msg.chat_id_)
+local List = DevHmD:smembers(DevTwix..'HmD:HmDSuper:'..msg.chat_id_)
 text = "*⎆︙قائمة السوبرية ↞ \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k,v in pairs(List) do
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
@@ -7388,7 +7390,7 @@ end
 end
 if Owner(msg) then
 if text == "المالكين" and ChCheck(msg) then 
-local List = DevHmD:smembers(DevTwix..'HmD:Owner:'..msg.chat_id_)
+local List = DevHmD:smembers(DevTwix..'HmD:HmDConstructor:'..msg.chat_id_)
 text = "*⎆︙قائمة المالكين ↞ \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k,v in pairs(List) do
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
@@ -9465,7 +9467,7 @@ end
 if SudoBot(msg) then
 if txts[2] == 'المالكين' or txtss[2] == 'المالكين' then
 ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","⎆︙تم حذف المالكين")  
-DevHmD:del(DevTwix..'HmD:Owner:'..msg.chat_id_)
+DevHmD:del(DevTwix..'HmD:HmDConstructor:'..msg.chat_id_)
 end
 end
 if Owner(msg) then
