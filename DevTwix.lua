@@ -5995,8 +5995,7 @@ DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⎆︙تم تنزيله من السوبرين")  
 end end end
 end,nil)
-end end
-end end
+end 
 ---------------------------------------------------------------------------------------------------------
 --  Set BasicConstructor  --
 if Owner(msg) then
