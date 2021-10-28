@@ -5941,7 +5941,7 @@ if text and text:match('^رفع سوبر (%d+)') and SourceCh(msg) then
 local user = text:match('رفع سوبر (%d+)')
 DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⎆︙تم رفعه سوبر")  
-end
+end end
 ---------------------------------------------------------------------------------------------------------
 --   Rem HmDSuper   --
 if text ==('تنزيل سوبر') and SourceCh(msg) then
@@ -5995,7 +5995,7 @@ DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,user)
 ReplyStatus(msg,user,"Reply","⎆︙تم تنزيله من السوبرين")  
 end end end
 end,nil)
-end 
+end end
 ---------------------------------------------------------------------------------------------------------
 --  Set BasicConstructor  --
 if Owner(msg) then
