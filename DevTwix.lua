@@ -5915,33 +5915,6 @@ end end end
 end,nil)
 end end
 ---------------------------------------------------------------------------------------------------------
---   Set HmDSuper   --
-if ChatType == 'sp' or ChatType == 'gp'  then
-if SudoBot(msg) then
-if text ==('رفع سوبر') and SourceCh(msg) then
-function raf_reply(extra, result, success)
-DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,result.sender_user_id_)
-ReplyStatus(msg,result.sender_user_id_,"Reply","⎆︙تم رفعه سوبر")  
-end 
-if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
-getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),raf_reply)
-end end
-if text and text:match('^رفع سوبر @(.*)') and SourceCh(msg) then
-local username = text:match('^رفع سوبر @(.*)')
-function promreply(extra,result,success)
-if result.id_ then
-DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,result.id_)
-ReplyStatus(msg,result.id_,"Reply","⎆︙تم رفعه سوبر")  
-else 
-Dev_HmD(msg.chat_id_, msg.id_, 1, '*⎆︙المعرف غير صحيح*', 1, 'md')
-end end 
-resolve_username(username,promreply)
-end
-if text and text:match('^رفع سوبر (%d+)') and SourceCh(msg) then
-local user = text:match('رفع سوبر (%d+)')
-DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,user)
-ReplyStatus(msg,user,"Reply","⎆︙تم رفعه سوبر")  
-end 
 ---------------------------------------------------------------------------------------------------------
 --  Set BasicConstructor  --
 if Owner(msg) then
