@@ -5915,6 +5915,87 @@ end end end
 end,nil)
 end end
 ---------------------------------------------------------------------------------------------------------
+--   Set HmDSuper   --
+if ChatType == 'sp' or ChatType == 'gp'  then
+if SudoBot(msg) then
+if text ==('رفع سوبر') and SourceCh(msg) then
+function raf_reply(extra, result, success)
+DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,result.sender_user_id_)
+ReplyStatus(msg,result.sender_user_id_,"Reply","⎆︙تم رفعه سوبر")  
+end 
+if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
+getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),raf_reply)
+end end
+if text and text:match('^رفع سوبر @(.*)') and SourceCh(msg) then
+local username = text:match('^رفع سوبر @(.*)')
+function promreply(extra,result,success)
+if result.id_ then
+DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,result.id_)
+ReplyStatus(msg,result.id_,"Reply","⎆︙تم رفعه سوبر")  
+else 
+Dev_HmD(msg.chat_id_, msg.id_, 1, '*⎆︙المعرف غير صحيح*', 1, 'md')
+end end 
+resolve_username(username,promreply)
+end
+if text and text:match('^رفع سوبر (%d+)') and SourceCh(msg) then
+local user = text:match('رفع سوبر (%d+)')
+DevHmD:sadd(DevTwix..'HmD:Owner:'..msg.chat_id_,user)
+ReplyStatus(msg,user,"Reply","⎆︙تم رفعه سوبر")  
+end
+---------------------------------------------------------------------------------------------------------
+--   Rem HmDSuper   --
+if text ==('تنزيل سوبر') and SourceCh(msg) then
+function prom_reply(extra, result, success)
+tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
+local admins = data.members_
+for i=0 , #admins do
+if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
+if tonumber(result.sender_user_id_) == tonumber(admins[i].user_id_) then  
+Dev_HmD(msg.chat_id_, msg.id_, 1, '⎆︙لا يمكن تنزيل السوبر الاساسي', 1, 'md')
+else
+DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,result.sender_user_id_)
+ReplyStatus(msg,result.sender_user_id_,"Reply","⎆︙تم تنزيله من السوبرين")  
+end end end
+end,nil)
+end 
+if tonumber(tonumber(msg.reply_to_message_id_)) > 0 then
+getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)
+end 
+end
+if text and text:match('^تنزيل سوبر @(.*)') and SourceCh(msg) then
+local username = text:match('^تنزيل سوبر @(.*)')
+function promreply(extra,result,success)
+if result.id_ then
+tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
+local admins = data.members_
+for i=0 , #admins do
+if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
+if tonumber(result.id_) == tonumber(admins[i].user_id_) then  
+Dev_HmD(msg.chat_id_, msg.id_, 1, '⎆︙لا يمكن تنزيل السوبر الاساسي', 1, 'md')
+else
+DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,result.id_)
+ReplyStatus(msg,result.id_,"Reply","⎆︙تم تنزيله من السوبرين")  
+end end end
+end,nil)
+else 
+Dev_HmD(msg.chat_id_, msg.id_, 1, '*⎆︙المعرف غير صحيح*', 1, 'md')
+end end 
+resolve_username(username,promreply)
+end
+if text and text:match('^تنزيل سوبر (%d+)') and SourceCh(msg) then
+local user = text:match('تنزيل سوبر (%d+)')
+tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
+local admins = data.members_
+for i=0 , #admins do
+if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
+if tonumber(user) == tonumber(admins[i].user_id_) then  
+Dev_HmD(msg.chat_id_, msg.id_, 1, '⎆︙لا يمكن تنزيل السوبر الاساسي', 1, 'md')
+else
+DevHmD:srem(DevTwix..'HmD:Owner:'..msg.chat_id_,user)
+ReplyStatus(msg,user,"Reply","⎆︙تم تنزيله من السوبرين")  
+end end end
+end,nil)
+end end end
 ---------------------------------------------------------------------------------------------------------
 --  Set BasicConstructor  --
 if Owner(msg) then
@@ -7208,13 +7289,12 @@ end
 if Admin(msg) then
 if text == "المميزين" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:VipMem:'..msg.chat_id_)
-text = "⎆︙قائمة المميزين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*⎆︙قائمة المميزين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k,v in pairs(List) do
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
 if username then
 text = text..k.."~ : [@"..username.."]\n"
 else
-text = text..k.."~ : `"..v.."`\n"
 end end
 if #List == 0 then 
 text = "*⎆︙لا يوجد مميزين*"
@@ -7226,7 +7306,7 @@ if Manager(msg) then
 if text == "الادمنيه" and ChCheck(msg) or text == "الادمنية" and ChCheck(msg) then 
 local HmD =  'HmD:Admins:'..msg.chat_id_
 local List = DevHmD:smembers(DevTwix..HmD)
-text = "⎆︙قائمة الادمنيه ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*⎆︙قائمة الادمنيه ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k,v in pairs(List) do
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
 if username then
@@ -7243,7 +7323,7 @@ end end
 if Constructor(msg) then
 if text == "المدراء" and ChCheck(msg) or text == "مدراء" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:Managers:'..msg.chat_id_)
-text = "⎆︙قائمة المدراء ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*⎆︙قائمة المدراء ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k,v in pairs(List) do
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
 if username then
@@ -7258,7 +7338,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end 
 if text == "المنظفين" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:Cleaner:'..msg.chat_id_)
-text = "⎆︙قائمة المنظفين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*⎆︙قائمة المنظفين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k,v in pairs(List) do
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
 if username then
@@ -7275,7 +7355,7 @@ end end
 if BasicConstructor(msg) then
 if text == "المنشئين" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:Constructor:'..msg.chat_id_)
-text = "⎆︙قائمة المنشئين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*⎆︙قائمة المنشئين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k,v in pairs(List) do
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
 if username then
@@ -7290,9 +7370,26 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end end 
 ---------------------------------------------------------------------------------------------------------
 if Owner(msg) then
+if text == "السوبريه" and ChCheck(msg) then 
+local List = DevHmD:smembers(DevTwix..'HmD:Owner:'..msg.chat_id_)
+text = "*⎆︙قائمة السوبرية ↞ \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
+for k,v in pairs(List) do
+local username = DevHmD:get(DevTwix..'Save:UserName'..v)
+if username then
+text = text..k.."~ : [@"..username.."]\n"
+else
+text = text..k.."~ : `"..v.."`\n"
+end end
+if #List == 0 then 
+text = "*⎆︙لا يوجد سوبرية تم رفعهم*"
+end
+Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, "md")
+end 
+end
+if Owner(msg) then
 if text == "المالكين" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:Owner:'..msg.chat_id_)
-text = "⎆︙قائمة المالكين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*⎆︙قائمة المالكين ↞ \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k,v in pairs(List) do
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
 if username then
@@ -7307,7 +7404,7 @@ Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end 
 if text == "المنشئين الاساسيين" and ChCheck(msg) or text == "منشئين اساسيين" and ChCheck(msg) or text == "المنشئين الاساسين" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:BasicConstructor:'..msg.chat_id_)
-text = "⎆︙قائمة المنشئين الاساسيين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*⎆︙قائمة المنشئين الاساسيين ↞ \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k,v in pairs(List) do
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
 if username then
@@ -7334,7 +7431,7 @@ return false
 end
 local UserName = (dp.username_ or "DevTwix")
 local msg_id = msg.id_/2097152/0.5
-Text = "⎆︙*المنشئ ↞*["..dp.first_name_.."](T.me/"..UserName..")\n⎆︙*البايو ↞*["..GetBio(Manager_id).."]"
+Text = "*⎆︙المنشئ ↞*["..dp.first_name_.."](T.me/"..UserName..")\n*⎆︙البايو ↞*["..GetBio(Manager_id).."]"
 keyboard = {} 
 keyboard.inline_keyboard = {{{text = ''..dp.first_name_..' ',url="t.me/"..dp.username_ or DevTwix}}}
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/'..dp.username_..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -7347,7 +7444,7 @@ end
 if Admin(msg) then
 if text == "المكتومين" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:Muted:'..msg.chat_id_)
-text = "⎆︙قائمة المكتومين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*⎆︙قائمة المكتومين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k,v in pairs(List) do
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
 if username then
@@ -7363,7 +7460,7 @@ end
 ---------------------------------------------------------------------------------------------------------
 if text == "المقيدين" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:Tkeed:'..msg.chat_id_)
-text = "⎆︙قائمة المقيدين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*⎆︙قائمة المقيدين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k,v in pairs(List) do
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
 if username then
@@ -7379,7 +7476,7 @@ end
 ---------------------------------------------------------------------------------------------------------
 if text == "المحظورين" and ChCheck(msg) or text == "المحضورين" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:Ban:'..msg.chat_id_)
-text = "⎆︙قائمة المحظورين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*⎆︙قائمة المحظورين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k,v in pairs(List) do
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
 if username then
@@ -7395,23 +7492,22 @@ end
 ---------------------------------------------------------------------------------------------------------
 if text == "المطايه" and ChCheck(msg) or text == "المطاية" and ChCheck(msg) then
 local List = DevHmD:smembers(DevTwix..'User:Donky:'..msg.chat_id_)
-text = "⎆︙قائمة مطاية المجموعه ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*⎆︙قائمة مطاية المجموعه ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k,v in pairs(List) do
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
 if username then
 text = text..k.."~ : [@"..username.."]\n"
 else
-text = text..k.."~ : `"..v.."`\n"
 end end
 if #List == 0 then
-text = "*⎆︙لا يوجد مطايه كلها اوادم*"
+text = "*⎆︙لا يوجد مطايه تم رفعهم*"
 end
 Dev_HmD(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end
 ---------------------------------------------------------------------------------------------------------
 if text == "قائمه المنع" and ChCheck(msg) then
 local List = DevHmD:hkeys(DevTwix..'HmD:Filters:'..msg.chat_id_)
-text = "⎆︙قائمة المنع ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*⎆︙قائمة المنع ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k, v in pairs(List) do
 text = text..k..'~ ( '..v..' )\n'
 end
@@ -7424,7 +7520,7 @@ end
 ---------------------------------------------------------------------------------------------------------
 if text == "المطورين الاساسيين" and ChCheck(msg) and HmDSudo(msg) or text == "الاساسيين" and HmDSudo(msg) and ChCheck(msg) or text == "× الاساسين ×" and HmDSudo(msg) and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:HmDSudo:')
-text = "⎆︙قائمة المطورين الاساسيين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*⎆︙قائمة المطورين الاساسيين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k,v in pairs(List) do
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
 if username then
@@ -7440,7 +7536,7 @@ end
 ---------------------------------------------------------------------------------------------------------
 if text == "المطورين الثانويين" and SecondSudo(msg) and ChCheck(msg) or text == "الثانويين" and SecondSudo(msg) and ChCheck(msg) or text == "× الثانويين ×" and SecondSudo(msg) and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:SecondSudo:')
-text = "⎆︙قائمة المطورين الثانويين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*⎆︙قائمة المطورين الثانويين ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k,v in pairs(List) do
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
 if username then
@@ -7459,7 +7555,7 @@ if text == "قائمه العام" and ChCheck(msg) or text == "المحظوري
 local BanAll = DevHmD:smembers(DevTwix..'HmD:BanAll:')
 local MuteAll = DevHmD:smembers(DevTwix..'HmD:MuteAll:')
 if #BanAll ~= 0 then 
-text = "⎆︙قائمة المحظورين عام ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*⎆︙قائمة المحظورين عام ↞  \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k,v in pairs(BanAll) do
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
 if username then
@@ -7492,7 +7588,7 @@ end
 ---------------------------------------------------------------------------------------------------------
 if text == "المطورين" and ChCheck(msg) or text == "× المطورين ×" and ChCheck(msg) then 
 local List = DevHmD:smembers(DevTwix..'HmD:SudoBot:')
-text = "*⎆︙قائمة احصائيات المطورين :*   \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n"
+text = "*⎆︙قائمة احصائيات المطورين : \n⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ \n*"
 for k,v in pairs(List) do
 local sudouser = DevHmD:get(DevTwix..'HmD:Sudos'..v) 
 local username = DevHmD:get(DevTwix..'Save:UserName'..v)
@@ -7941,7 +8037,7 @@ local List = {
 ]],
 [[
 ┌ 𝐔𝐒𝐄𝐑 𖤱 #username 𖦴 .
-├ 𝐌𝐒𝐆 𖤱 #msgs 𖦴 .
+├ 𝐌𝐒?? 𖤱 #msgs 𖦴 .
 ├ 𝐒𝐓𝐀 𖤱 #stast 𖦴 .
 └ 𝐈𝐃 𖤱 #id 𖦴 .
 ]],
