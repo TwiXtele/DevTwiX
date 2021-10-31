@@ -8147,7 +8147,7 @@ end
 if msg.reply_to_message_id_ ~= 0 then
 return ""
 else
-if text and (text:match("^ايدي$") or text:match("^id$") or text:match("^Id$")) and SourceCh(msg) then
+if text and (text:match("^ايدي$") or text:match("^id$") or text:match("^Id$")) and ChCheck(msg) then
 function DevTwixTeam(extra,HmD,success)
 if HmD.username_ then username = '@'..HmD.username_ else username = 'لا يوجد' end
 if GetCustomTitle(msg.sender_user_id_,msg.chat_id_) ~= false then CustomTitle = GetCustomTitle(msg.sender_user_id_,msg.chat_id_) else CustomTitle = 'لا يوجد' end
