@@ -8577,12 +8577,6 @@ newallid = newallid:gsub('#stast',(IdRank(msg.sender_user_id_, msg.chat_id_) or 
 newallid = newallid:gsub('#Description',(Description or 'لا يوجد'))
 else
 newallid = "*◇︰معرفك -› "..username.."\n◇︰ايديك -› *`"..msg.sender_user_id_.."`*\n◇︰رتبتك -› "..IdRank(msg.sender_user_id_, msg.chat_id_).."\n◇︰رسائلك -› "..user_msgs.."\n◇︰سحكاتك -› "..edit_msg.."\n◇︰تفاعلك -› "..formsgs(msguser).."\n◇︰مجوهراتك -› "..user_nkt.."*"
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = "لقبك . "..CustomTitle.." ", url="https://t.me/DevTwix"},},}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(newallid).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false 
 end
 if not DevHmD:get(DevTwix.."HmD:GpIds:Text"..msg.chat_id_) then
 Dev_HmD(msg.chat_id_, msg.id_, 1, newallid, 1, 'html')
