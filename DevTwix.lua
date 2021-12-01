@@ -3012,7 +3012,7 @@ if text == "ايديي" and ChCheck(msg) or text == "× آيديي ×" and ChChe
 if text and (text == 'المطور' or text == 'مطور' or text == '× المطور ×') then
 tdcli_function({ID="GetUser",user_id_=DevId},function(arg,result)
 local msg_id = msg.id_/2097152/0.5
-Text = "*◇︰Dev Name • * ["..result.first_name_.."](T.me/"..result.username_..")\n*◇︰Dev User •* [@"..result.username_.."]\n*◇︰Dev iD* • `"..DevId.."`\n*◇︰Bio • *["..GetBio(DevId).."]"
+Text = "*• Dev Name • * ["..result.first_name_.."](T.me/"..result.username_..")\n*• Dev User •* [@"..result.username_.."]\n*• Dev iD* • `"..DevId.."`\n*• Bio • *["..GetBio(DevId).."]"
 keyboard = {} 
 keyboard.inline_keyboard = {{{text = ''..result.first_name_..' ',url="t.me/"..result.username_ or DevTwix}}}
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/'..result.username_..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -7776,7 +7776,7 @@ return false
 end
 local UserName = (dp.username_ or "DevTwix")
 local msg_id = msg.id_/2097152/0.5
-Text = "*◇︰المنشئ -›*["..dp.first_name_.."](T.me/"..UserName..")\n*◇︰البايو -›*["..GetBio(Manager_id).."]"
+Text = "*• المنشئ -›*["..dp.first_name_.."](T.me/"..UserName..")\n*• البايو -›*["..GetBio(Manager_id).."]"
 keyboard = {} 
 keyboard.inline_keyboard = {{{text = ''..dp.first_name_..' ',url="t.me/"..dp.username_ or DevTwix}}}
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/'..dp.username_..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
