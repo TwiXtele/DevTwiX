@@ -2872,7 +2872,7 @@ https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id=' 
 return false
 end
 ---------------------------------------------------------------------------------------------------------
-if text == '/start' and ChCheck(msg) then  
+if text == '/start' and ChCheck(msg) then
 if not DevHmD:get(DevTwix..'HmD:Start:Time'..msg.sender_user_id_) then
 tdcli_function({ID="GetUser",user_id_=DevId},function(arg,dp) 
 local start = DevHmD:get(DevTwix.."HmD:Start:Bot")
